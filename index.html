@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>流量卡业务工具导航</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+        body {
+            background-color: #f5f8fa;
+            min-height: 100vh;
+            padding: 20px 15px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .header {
+            background: linear-gradient(135deg, #1e88e5 0%, #42a5f5 100%);
+            color: white;
+            padding: 25px 20px;
+            border-radius: 16px;
+            text-align: center;
+            margin-bottom: 25px;
+            box-shadow: 0 4px 12px rgba(30, 136, 229, 0.2);
+            position: relative;
+            overflow: hidden;
+        }
+        .header::after {
+            content: "";
+            position: absolute;
+            top: -20px;
+            right: -20px;
+            width: 80px;
+            height: 80px;
+            background: rgba(255, 255, 255, 0.15);
+            border-radius: 50%;
+        }
+        /* 新增的标语样式 - 调整字号并优化样式 */
+        .header-slogan {
+            font-size: 28px; /* 调整为比主标题更大 */
+            margin-bottom: 8px;
+            opacity: 0.95;
+            letter-spacing: 1px;
+            position: relative;
+            z-index: 1;
+            font-weight: 600;
+        }
+        /* 微信联系方式样式 */
+        .wechat-info {
+            font-size: 16px;
+            margin-bottom: 12px;
+            position: relative;
+            z-index: 1;
+            opacity: 0.9;
+        }
+        .header h1 {
+            font-size: 26px; /* 主标题字号保持不变，小于标语 */
+            margin-bottom: 10px;
+            position: relative;
+            z-index: 1;
+        }
+        .header p {
+            font-size: 15px;
+            opacity: 0.9;
+            position: relative;
+            z-index: 1;
+        }
+        .header .icon {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            width: 40px;
+            height: 40px;
+            background: white;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        .header .icon::before {
+            content: "📶";
+            font-size: 22px;
+        }
+        .section {
+            margin-bottom: 30px;
+        }
+        .section-title {
+            color: #2d3748;
+            font-size: 19px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            padding-left: 12px;
+            border-left: 4px solid #1e88e5;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        .section-title::before {
+            content: "";
+            width: 6px;
+            height: 6px;
+            background: #42a5f5;
+            border-radius: 50%;
+        }
+        .link-group {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 12px;
+        }
+        .link-item {
+            background-color: white;
+            border: 1px solid #e8f4f8;
+            color: #2d3748;
+            font-size: 15px;
+            padding: 18px 12px;
+            border-radius: 12px;
+            text-decoration: none;
+            text-align: center;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.03);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 70px;
+        }
+        .link-item:hover {
+            background-color: #e8f4f8;
+            border-color: #1e88e5;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 8px rgba(30, 136, 229, 0.15);
+        }
+        .single-link {
+            grid-column: 1 / -1;
+        }
+        .tips {
+            background-color: white;
+            padding: 20px;
+            border-radius: 12px;
+            font-size: 14px;
+            color: #4a5568;
+            line-height: 1.8;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            border-left: 4px solid #42a5f5;
+            margin-top: 10px;
+        }
+        .tips strong {
+            color: #1e88e5;
+            font-weight: 600;
+        }
+        @media (max-width: 375px) {
+            .header h1 {
+                font-size: 22px;
+            }
+            .header-slogan {
+                font-size: 24px; /* 移动端适配，保持比主标题大 */
+            }
+            .wechat-info {
+                font-size: 14px; /* 移动端微信信息字号适配 */
+            }
+            .section-title {
+                font-size: 17px;
+            }
+            .link-item {
+                font-size: 14px;
+                padding: 15px 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <div class="icon"></div>
+        <!-- 调整后的标语 -->
+        <div class="header-slogan">卡多多世界 一次领卡 一生服务</div>
+        <!-- 新增的微信联系方式 -->
+        <div class="wechat-info">微信：kaduoduoshijie</div>
+        <h1>流量卡业务工具导航</h1>
+        <p>发货时效 & 查单撤单指引</p>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">套餐办理入口</h2>
+        <div class="link-group">
+            <a href="https://yc.hk11w.cn/index?k=RnhtbkxIN0FYd1U9" class="link-item" target="_blank">宸宇</a>
+            <a href="https://haoka.kakatx.com/web/#/pages/index/index/?agent_id=206654" class="link-item" target="_blank">共创</a>
+            <a href="https://m.yapingtech.com/#/pages/sales_index/my_store?mall_id=k9n576LJ%2FWBl470WgzQghw%3D%3D" class="link-item" target="_blank">浩卡</a>
+            <a href="https://h5.sim10000.net/#/sc/L115gFkA7X?=" class="link-item" target="_blank">号推</a>
+            <a href="https://hy.yunhaoka.com/#/pages/micro_store/index?agent_id=e8d4914a0b29bbe32210db56129c38e0" class="link-item" target="_blank">号易</a>
+            <a href="http://h5.vip12300.cn/index?k=U2NKL3VYSlN3bGs9" class="link-item" target="_blank">林夕</a>
+            <a href="https://app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" class="link-item" target="_blank">朽月</a>
+            <a href="https://h5.lot-ml.com/ProductEn/Index/77cad8f3af288738" class="link-item" target="_blank">172</a>
+            <a href="http://ka.kaduoduohk.com/index?k=bjlGQzRpU21QV0U9" class="link-item" target="_blank">卡多多</a>
+            <a href="https://ym.ksjhk.com/?s=NcAB9sD5590792" class="link-item" target="_blank">卡世界</a>
+            <a href="https://ky.kyaowang.cn/shop/#/?promoCode=OUEd1j8H" class="link-item" target="_blank">卡耀云</a>
+            <a href="https://h5.gantanhao.com/QeYY" class="link-item" target="_blank">卡业联盟</a>
+            <a href="http://55555.wang/index?k=K3EzdlYwNk5wWDQ9" class="link-item" target="_blank">五湖通信</a>
+            <a href="https://haoka.katuitui.cn/s/tch59g8j" class="link-item" target="_blank">卡推推</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">运营商查单撤单</h2>
+        <div class="link-group">
+            <a href="http://a.189.cn/IBbVib" class="link-item single-link" target="_blank">电信查单撤单</a>
+            <a href="https://m.10010.com/myorder" class="link-item single-link" target="_blank">联通查单/传三证/催发货/撤单</a>
+            <a href="https://dev.coc.10086.cn/coc/web/coc2020/cardqueryorder/" class="link-item single-link" target="_blank">移动查单撤单</a>
+            <a href="#小程序://广电营业厅/NK9nGG98vxDaO4f" class="link-item single-link">广电查单撤单（小程序）</a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2 class="section-title">一证五户查询</h2>
+        <div class="link-group">
+            <a href="https://getsimnum.caict.ac.cn/m/#/" class="link-item single-link" target="_blank">一证五户查询入口</a>
+        </div>
+    </div>
+
+    <div class="tips">
+        <strong>发货时效提示：</strong>正常发货时效为48小时，如超过48小时，一般发不了了，可能是运营商拦截或者证件信息审核不通过，建议更换其他套餐下单。<br>
+        <strong>催发货指引：</strong>只需等待运营商处理即可，若客户比较着急，可直接更换套餐重新下单试试。
+    </div>
+</body>
+</html>
