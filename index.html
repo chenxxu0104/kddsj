@@ -56,6 +56,14 @@
             position: relative;
             z-index: 1;
             opacity: 0.9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+        }
+        .wechat-info::before {
+            content: "📱";
+            font-size: 18px;
         }
         .header h1 {
             font-size: 26px; /* 主标题字号保持不变，小于标语 */
@@ -128,12 +136,28 @@
             align-items: center;
             justify-content: center;
             min-height: 70px;
+            position: relative;
+            overflow: hidden;
+        }
+        /* 点击反馈效果 */
+        .link-item:active {
+            transform: translateY(0);
+            background-color: #e1f5fe;
         }
         .link-item:hover {
             background-color: #e8f4f8;
             border-color: #1e88e5;
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(30, 136, 229, 0.15);
+        }
+        /* 小程序链接样式区分 */
+        .mini-program {
+            background-color: #f3e5f5;
+            border-color: #ba68c8;
+        }
+        .mini-program:hover {
+            background-color: #e1bee7;
+            border-color: #9c27b0;
         }
         .single-link {
             grid-column: 1 / -1;
@@ -152,6 +176,20 @@
         .tips strong {
             color: #1e88e5;
             font-weight: 600;
+        }
+        /* 加载提示样式 */
+        .loading-toast {
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background: rgba(0,0,0,0.7);
+            color: white;
+            padding: 10px 20px;
+            border-radius: 8px;
+            font-size: 14px;
+            z-index: 9999;
+            display: none;
         }
         @media (max-width: 375px) {
             .header h1 {
@@ -174,6 +212,9 @@
     </style>
 </head>
 <body>
+    <!-- 加载提示 -->
+    <div class="loading-toast" id="loadingToast">正在打开链接...</div>
+    
     <div class="header">
         <div class="icon"></div>
         <!-- 调整后的标语 -->
@@ -187,48 +228,107 @@
     <div class="section">
         <h2 class="section-title">套餐办理入口</h2>
         <div class="link-group">
-            <a href="https://yc.hk11w.cn/index?k=RnhtbkxIN0FYd1U9" class="link-item" target="_blank">宸宇</a>
-            <a href="https://haoka.kakatx.com/web/#/pages/index/index/?agent_id=206654" class="link-item" target="_blank">共创</a>
-            <a href="https://m.yapingtech.com/#/pages/sales_index/my_store?mall_id=k9n576LJ%2FWBl470WgzQghw%3D%3D" class="link-item" target="_blank">浩卡</a>
-            <a href="https://h5.sim10000.net/#/sc/L115gFkA7X?=" class="link-item" target="_blank">号推</a>
-            <a href="https://my.86hk.vip/#/pages/micro_store/index?agent_id=e8d4914a0b29bbe32210db56129c38e0" class="link-item" target="_blank">号易</a>
-            <a href="http://h5.vip12300.cn/index?k=U2NKL3VYSlN3bGs9" class="link-item" target="_blank">林夕</a>
-            <a href="https://app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" class="link-item" target="_blank">朽月</a>
-            <a href="https://h5.lot-ml.com/ProductEn/Index/77cad8f3af288738" class="link-item" target="_blank">172</a>
-            <a href="http://ka.kaduoduohk.com/index?k=bjlGQzRpU21QV0U9" class="link-item" target="_blank">卡多多</a>
-            <a href="https://ym.ksjhk.com/?s=NcAB9sD5590792" class="link-item" target="_blank">卡世界</a>
-            <a href="https://haoka.katuitui.cn/s/tch59g8j" class="link-item" target="_blank">卡推推</a>
-            <a href="https://ky.kyaowang.cn/shop/#/?promoCode=OUEd1j8H" class="link-item" target="_blank">卡耀云</a>
-            <a href="https://saler.jkcae.com/small-store-app/#/?agent_id=22841" class="link-item" target="_blank">极客云</a>
-            <a href="https://h5.gantanhao.com/QeYY" class="link-item" target="_blank">卡业联盟</a>
-            <a href="http://55555.wang/index?k=K3EzdlYwNk5wWDQ9" class="link-item" target="_blank">五湖通信</a>
-            <a href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" class="link-item" target="_blank">大鑫卡业</a>
+            <!-- 按字数排序（少→多），大鑫卡业固定在最后 -->
+            <!-- 2字：172、宸宇、共创、浩卡、号易、号推、林夕 -->
+            <a href="https://h5.lot-ml.com/ProductEn/Index/77cad8f3af288738" class="link-item" target="_blank" onclick="showLoading()">172</a>
+            <a href="https://yc.hk11w.cn/index?k=RnhtbkxIN0FYd1U9" class="link-item" target="_blank" onclick="showLoading()">宸宇</a>
+            <a href="https://haoka.kakatx.com/web/#/pages/index/index/?agent_id=206654" class="link-item" target="_blank" onclick="showLoading()">共创</a>
+            <a href="https://m.yapingtech.com/#/pages/sales_index/my_store?mall_id=k9n576LJ%2FWBl470WgzQghw%3D%3D" class="link-item" target="_blank" onclick="showLoading()">浩卡</a>
+            <a href="https://my.86hk.vip/#/pages/micro_store/index?agent_id=e8d4914a0b29bbe32210db56129c38e0" class="link-item" target="_blank" onclick="showLoading()">号易</a>
+            <a href="https://h5.sim10000.net/#/sc/L115gFkA7X?=" class="link-item" target="_blank" onclick="showLoading()">号推</a>
+            <a href="http://h5.vip12300.cn/index?k=U2NKL3VYSlN3bGs9" class="link-item" target="_blank" onclick="showLoading()">林夕</a>
             
+            <!-- 3字：极客云、卡多多、卡世界、卡推推、卡耀云、朽月 -->
+            <a href="https://saler.jkcae.com/small-store-app/#/?agent_id=22841" class="link-item" target="_blank" onclick="showLoading()">极客云</a>
+            <a href="http://ka.kaduoduohk.com/index?k=bjlGQzRpU21QV0U9" class="link-item" target="_blank" onclick="showLoading()">卡多多</a>
+            <a href="https://ym.ksjhk.com/?s=NcAB9sD5590792" class="link-item" target="_blank" onclick="showLoading()">卡世界</a>
+            <a href="https://haoka.katuitui.cn/s/tch59g8j" class="link-item" target="_blank" onclick="showLoading()">卡推推</a>
+            <a href="https://ky.kyaowang.cn/shop/#/?promoCode=OUEd1j8H" class="link-item" target="_blank" onclick="showLoading()">卡耀云</a>
+            <a href="https://app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" class="link-item" target="_blank" onclick="showLoading()">朽月</a>
+            
+            <!-- 4字：卡业联盟、五湖通信 -->
+            <a href="https://h5.gantanhao.com/QeYY" class="link-item" target="_blank" onclick="showLoading()">卡业联盟</a>
+            <a href="http://55555.wang/index?k=K3EzdlYwNk5wWDQ9" class="link-item" target="_blank" onclick="showLoading()">五湖通信</a>
+            
+            <!-- 大鑫卡业固定在最后 -->
+            <a href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" class="link-item" target="_blank" onclick="showLoading()">大鑫卡业</a>
         </div>
     </div>
 
     <div class="section">
         <h2 class="section-title">运营商查单撤单</h2>
         <div class="link-group">
-            <a href="http://a.189.cn/IBbVib" class="link-item single-link" target="_blank">电信查单撤单</a>
-            <a href="https://m.10010.com/myorder" class="link-item single-link" target="_blank">联通查单/传三证/催发货/撤单</a>
-            <a href="https://dev.coc.10086.cn/coc/web/coc2020/cardqueryorder/" class="link-item single-link" target="_blank">移动查单撤单</a>
-            <a href="#小程序://广电营业厅/NK9nGG98vxDaO4f" class="link-item single-link">广电查单撤单（小程序）</a>
+            <a href="http://a.189.cn/IBbVib" class="link-item single-link" target="_blank" onclick="showLoading()">电信查单撤单</a>
+            <a href="https://m.10010.com/myorder" class="link-item single-link" target="_blank" onclick="showLoading()">联通查单/传三证/催发货/撤单</a>
+            <a href="https://dev.coc.10086.cn/coc/web/coc2020/cardqueryorder/" class="link-item single-link" target="_blank" onclick="showLoading()">移动查单撤单</a>
+            <a href="javascript:void(0);" class="link-item single-link mini-program" onclick="showMiniProgramTip()">广电查单撤单（小程序）</a>
         </div>
     </div>
 
     <div class="section">
         <h2 class="section-title">一证五户查询</h2>
         <div class="link-group">
-            <a href="https://getsimnum.caict.ac.cn/m/#/" class="link-item single-link" target="_blank">一证五户查询入口</a>
+            <a href="https://getsimnum.caict.ac.cn/m/#/" class="link-item single-link" target="_blank" onclick="showLoading()">一证五户查询入口</a>
         </div>
     </div>
 
     <div class="tips">
         <strong>发货时效提示：</strong>正常发货时效为48小时，如超过48小时，一般发不了了，可能是运营商拦截或者证件信息审核不通过，建议更换其他套餐下单。<br>
-        <strong>催发货指引：</strong>只需等待运营商处理即可，若客户比较着急，可直接更换套餐重新下单试试。
+        <strong>催发货指引：</strong>只需等待运营商处理即可，若客户比较着急，可直接更换套餐重新下单试试。<br>
+        <strong>使用提示：</strong>小程序链接需在微信内打开，点击对应按钮可获取跳转指引。
     </div>
+
+    <script>
+        // 显示加载提示
+        function showLoading() {
+            const toast = document.getElementById('loadingToast');
+            toast.textContent = '正在打开链接...';
+            toast.style.display = 'block';
+            
+            // 3秒后自动隐藏
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 3000);
+        }
+
+        // 显示小程序提示
+        function showMiniProgramTip() {
+            const toast = document.getElementById('loadingToast');
+            toast.textContent = '请在微信中打开：广电营业厅小程序';
+            toast.style.display = 'block';
+            
+            // 5秒后自动隐藏
+            setTimeout(() => {
+                toast.style.display = 'none';
+            }, 5000);
+            
+            // 可选：复制小程序路径到剪贴板
+            navigator.clipboard.writeText('广电营业厅')
+                .then(() => {
+                    setTimeout(() => {
+                        toast.textContent = '已复制"广电营业厅"到剪贴板';
+                    }, 2000);
+                })
+                .catch(err => {
+                    console.log('复制失败:', err);
+                });
+        }
+
+        // 监听页面加载完成
+        window.onload = function() {
+            // 为所有链接添加错误处理
+            const links = document.querySelectorAll('a[target="_blank"]');
+            links.forEach(link => {
+                link.addEventListener('error', function() {
+                    const toast = document.getElementById('loadingToast');
+                    toast.textContent = '链接打开失败，请重试';
+                    toast.style.display = 'block';
+                    setTimeout(() => {
+                        toast.style.display = 'none';
+                    }, 3000);
+                });
+            });
+        };
+    </script>
 </body>
-
 </html>
-
