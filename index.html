@@ -39,9 +39,8 @@
             background: rgba(255, 255, 255, 0.15);
             border-radius: 50%;
         }
-        /* 新增的标语样式 - 调整字号并优化样式 */
         .header-slogan {
-            font-size: 28px; /* 调整为比主标题更大 */
+            font-size: 28px;
             margin-bottom: 8px;
             opacity: 0.95;
             letter-spacing: 1px;
@@ -49,7 +48,6 @@
             z-index: 1;
             font-weight: 600;
         }
-        /* 微信联系方式样式 */
         .wechat-info {
             font-size: 16px;
             margin-bottom: 12px;
@@ -66,7 +64,7 @@
             font-size: 18px;
         }
         .header h1 {
-            font-size: 26px; /* 主标题字号保持不变，小于标语 */
+            font-size: 26px;
             margin-bottom: 10px;
             position: relative;
             z-index: 1;
@@ -139,7 +137,6 @@
             position: relative;
             overflow: hidden;
         }
-        /* 点击反馈效果 */
         .link-item:active {
             transform: translateY(0);
             background-color: #e1f5fe;
@@ -150,7 +147,6 @@
             transform: translateY(-2px);
             box-shadow: 0 4px 8px rgba(30, 136, 229, 0.15);
         }
-        /* 小程序链接样式区分 */
         .mini-program {
             background-color: #f3e5f5;
             border-color: #ba68c8;
@@ -177,7 +173,6 @@
             color: #1e88e5;
             font-weight: 600;
         }
-        /* 加载提示样式 */
         .loading-toast {
             position: fixed;
             top: 50%;
@@ -196,10 +191,10 @@
                 font-size: 22px;
             }
             .header-slogan {
-                font-size: 24px; /* 移动端适配，保持比主标题大 */
+                font-size: 24px;
             }
             .wechat-info {
-                font-size: 14px; /* 移动端微信信息字号适配 */
+                font-size: 14px;
             }
             .section-title {
                 font-size: 17px;
@@ -212,14 +207,11 @@
     </style>
 </head>
 <body>
-    <!-- 加载提示 -->
     <div class="loading-toast" id="loadingToast">正在打开链接...</div>
     
     <div class="header">
         <div class="icon"></div>
-        <!-- 调整后的标语 -->
         <div class="header-slogan">卡多多世界 一次领卡 一生服务</div>
-        <!-- 新增的微信联系方式 -->
         <div class="wechat-info">微信：kaduoduoshijie</div>
         <h1>流量卡业务工具导航</h1>
         <p>发货时效 & 查单撤单指引</p>
@@ -228,7 +220,6 @@
     <div class="section">
         <h2 class="section-title">套餐办理入口</h2>
         <div class="link-group">
-            <!-- 按字数排序（少→多），大鑫卡业固定在最后 -->
             <!-- 2字：172、宸宇、共创、浩卡、号易、号推、林夕 -->
             <a href="https://h5.lot-ml.com/ProductEn/Index/77cad8f3af288738" class="link-item" target="_blank" onclick="showLoading()">172</a>
             <a href="https://yc.hk11w.cn/index?k=RnhtbkxIN0FYd1U9" class="link-item" target="_blank" onclick="showLoading()">宸宇</a>
@@ -238,13 +229,13 @@
             <a href="https://h5.sim10000.net/#/sc/L115gFkA7X?=" class="link-item" target="_blank" onclick="showLoading()">号推</a>
             <a href="http://h5.vip12300.cn/index?k=U2NKL3VYSlN3bGs9" class="link-item" target="_blank" onclick="showLoading()">林夕</a>
             
-            <!-- 3字：极客云、卡多多、卡世界、卡推推、卡耀云、朽月 -->
+            <!-- 3字：极客云、卡多多、卡世界、卡耀云、朽月、蓝畅速享（新增） -->
             <a href="https://saler.jkcae.com/small-store-app/#/?agent_id=22841" class="link-item" target="_blank" onclick="showLoading()">极客云</a>
             <a href="http://ka.kaduoduohk.com/index?k=bjlGQzRpU21QV0U9" class="link-item" target="_blank" onclick="showLoading()">卡多多</a>
             <a href="https://ym.ksjhk.com/?s=NcAB9sD5590792" class="link-item" target="_blank" onclick="showLoading()">卡世界</a>
-            <a href="https://haoka.katuitui.cn/s/tch59g8j" class="link-item" target="_blank" onclick="showLoading()">卡推推</a>
             <a href="https://ky.kyaowang.cn/shop/#/?promoCode=OUEd1j8H" class="link-item" target="_blank" onclick="showLoading()">卡耀云</a>
             <a href="https://app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" class="link-item" target="_blank" onclick="showLoading()">朽月</a>
+            <a href="https://19890104.haoka.biz" class="link-item" target="_blank" onclick="showLoading()">蓝畅速享</a>
             
             <!-- 4字：卡业联盟、五湖通信 -->
             <a href="https://h5.gantanhao.com/QeYY" class="link-item" target="_blank" onclick="showLoading()">卡业联盟</a>
@@ -279,44 +270,30 @@
     </div>
 
     <script>
-        // 显示加载提示
         function showLoading() {
             const toast = document.getElementById('loadingToast');
             toast.textContent = '正在打开链接...';
             toast.style.display = 'block';
-            
-            // 3秒后自动隐藏
             setTimeout(() => {
                 toast.style.display = 'none';
             }, 3000);
         }
-
-        // 显示小程序提示
         function showMiniProgramTip() {
             const toast = document.getElementById('loadingToast');
             toast.textContent = '请在微信中打开：广电营业厅小程序';
             toast.style.display = 'block';
-            
-            // 5秒后自动隐藏
+            setTimeout(() => {
+                toast.textContent = '已复制"广电营业厅"到剪贴板';
+            }, 2000);
             setTimeout(() => {
                 toast.style.display = 'none';
             }, 5000);
-            
-            // 可选：复制小程序路径到剪贴板
             navigator.clipboard.writeText('广电营业厅')
-                .then(() => {
-                    setTimeout(() => {
-                        toast.textContent = '已复制"广电营业厅"到剪贴板';
-                    }, 2000);
-                })
                 .catch(err => {
                     console.log('复制失败:', err);
                 });
         }
-
-        // 监听页面加载完成
         window.onload = function() {
-            // 为所有链接添加错误处理
             const links = document.querySelectorAll('a[target="_blank"]');
             links.forEach(link => {
                 link.addEventListener('error', function() {
