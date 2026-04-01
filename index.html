@@ -48,6 +48,19 @@
             z-index: 1;
             font-weight: 600;
         }
+        /* 温州本地服务标语 */
+        .local-service {
+            font-size: 15px;
+            margin-bottom: 12px;
+            opacity: 0.98;
+            font-weight: 500;
+            position: relative;
+            z-index: 1;
+            background: rgba(255,255,255,0.15);
+            padding: 6px 14px;
+            border-radius: 20px;
+            display: inline-block;
+        }
         .wechat-info {
             font-size: 16px;
             margin-bottom: 12px;
@@ -58,10 +71,42 @@
             align-items: center;
             justify-content: center;
             gap: 8px;
+            flex-wrap: wrap;
         }
         .wechat-info::before {
             content: "📱";
             font-size: 18px;
+        }
+        .wechat-copy-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            color: white;
+            text-decoration: none;
+            padding: 6px 16px;
+            border-radius: 16px;
+            font-size: 13px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            font-weight: 500;
+        }
+        .wechat-copy-btn:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-1px);
+        }
+        .wechat-switch-btn {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.25);
+            color: white;
+            padding: 6px 14px;
+            border-radius: 16px;
+            font-size: 13px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            font-weight: 500;
+        }
+        .wechat-switch-btn:hover {
+            background: rgba(255, 255, 255, 0.4);
+            transform: translateY(-1px);
         }
         .work-wechat-link {
             display: inline-block;
@@ -277,8 +322,16 @@
             .header-slogan {
                 font-size: 24px;
             }
+            .local-service {
+                font-size: 13px;
+                padding: 5px 10px;
+            }
             .wechat-info {
                 font-size: 14px;
+            }
+            .wechat-copy-btn, .wechat-switch-btn {
+                font-size: 12px;
+                padding: 4px 10px;
             }
             .work-wechat-link {
                 font-size: 13px;
@@ -314,8 +367,19 @@
     
     <div class="header">
         <div class="icon"></div>
-        <div class="header-slogan">卡多多世界 一次领卡 一生服务</div>
-        <div class="wechat-info">微信：kdd_0577</div>
+        <div class="header-slogan">卡多多世界 一次领卡 一生守候</div>
+        
+        <!-- ✅ 你要的温州本地服务标语（最佳位置） -->
+        <div class="local-service">
+            温州电信、广电流量卡免费开卡，温州范围内上门办理
+        </div>
+
+        <div class="wechat-info" id="wechatInfo">
+            <span id="wechatLabel">微信：</span>
+            <span id="wechatAccount">kdd_0577</span>
+            <span class="wechat-copy-btn" onclick="copyWechat()">复制</span>
+            <span class="wechat-switch-btn" onclick="switchWechat()">切换微信</span>
+        </div>
         <a href="https://work.weixin.qq.com/kfid/kfc6fff05dc0082e1c6" class="work-wechat-link" target="_blank" onclick="showLoading()">📞 客服</a>
         <h1>流量卡业务工具导航</h1>
         <p>发货时效 & 查单撤单指引</p>
@@ -382,61 +446,106 @@
         <strong>发货时效提示：</strong>正常发货时效为48小时，如超过48小时，一般发不了了，可能是运营商拦截或者证件信息审核不通过，建议更换其他套餐下单。<br>
         <strong>催发货指引：</strong>只需等待运营商处理即可，若客户比较着急，可直接更换套餐重新下单试试。<br>
         <strong>使用提示：</strong>小程序链接需在微信内打开，点击对应按钮可获取跳转指引。<br>
-        <strong>加群提示：</strong>若二维码失效，可添加微信“kdd_0577”或点击“客服”申请入群。
+        <strong>加群提示：</strong>若二维码失效，可点击上方微信复制按钮添加对应微信申请入群。
     </div>
 
     <script>
+        // 微信账号配置
+        const WECHAT_WENZHOU = "kdd_0577";
+        const WECHAT_NATIONAL = "kaduoduoshijie";
+        let currentWechatType = "wenzhou"; // 默认温州
+
+        // 加载提示
         function showLoading() {
             const toast = document.getElementById('loadingToast');
             toast.textContent = '正在打开链接...';
             toast.style.display = 'block';
-            
             if (window.loadingTimer) clearTimeout(window.loadingTimer);
             window.loadingTimer = setTimeout(() => {
                 toast.style.display = 'none';
             }, 3000);
         }
 
+        // 复制微信
+        function copyWechat() {
+            const wechatAccount = document.getElementById('wechatAccount').textContent;
+            navigator.clipboard.writeText(wechatAccount).then(() => {
+                const t = document.getElementById('loadingToast');
+                t.textContent = '微信已复制 ✅';
+                t.style.display = 'block';
+                setTimeout(() => t.style.display = 'none', 2000);
+            }).catch(() => {
+                const t = document.getElementById('loadingToast');
+                t.textContent = '复制失败，请手动复制';
+                t.style.display = 'block';
+                setTimeout(() => t.style.display = 'none', 2000);
+            });
+        }
+
+        // 切换微信（温州 ↔ 全国）
+        function switchWechat() {
+            if (currentWechatType === "wenzhou") {
+                document.getElementById('wechatAccount').textContent = WECHAT_NATIONAL;
+                document.getElementById('wechatLabel').textContent = "全国微信：";
+                currentWechatType = "national";
+            } else {
+                document.getElementById('wechatAccount').textContent = WECHAT_WENZHOU;
+                document.getElementById('wechatLabel').textContent = "温州微信：";
+                currentWechatType = "wenzhou";
+            }
+            const t = document.getElementById('loadingToast');
+            t.textContent = "已切换微信账号 ✅";
+            t.style.display = "block";
+            setTimeout(() => t.style.display = "none", 1500);
+        }
+
+        // 广电小程序提示
         function showMiniProgramTip() {
             const toast = document.getElementById('loadingToast');
             toast.textContent = '请在微信中打开：广电营业厅小程序';
             toast.style.display = 'block';
-
-            navigator.clipboard.writeText('广电营业厅')
-                .then(() => {
-                    setTimeout(() => {
-                        toast.textContent = '已复制"广电营业厅"到剪贴板 ✅';
-                    }, 2000);
-                })
-                .catch(err => {
-                    setTimeout(() => {
-                        toast.textContent = '复制失败，请手动输入';
-                    }, 2000);
-                });
-
+            navigator.clipboard.writeText('广电营业厅').then(() => {
+                setTimeout(() => toast.textContent = '已复制"广电营业厅"', 2000);
+            });
             if (window.miniProgramTimer) clearTimeout(window.miniProgramTimer);
-            window.miniProgramTimer = setTimeout(() => {
-                toast.style.display = 'none';
-            }, 5000);
+            window.miniProgramTimer = setTimeout(() => toast.style.display = 'none', 5000);
+        }
+
+        // 自动识别地区
+        function setWechatByRegion() {
+            fetch('https://ipapi.co/json/')
+            .then(res => res.json())
+            .then(data => {
+                const city = data.city || "";
+                if (city.includes("温州")) {
+                    currentWechatType = "wenzhou";
+                    document.getElementById('wechatAccount').textContent = WECHAT_WENZHOU;
+                    document.getElementById('wechatLabel').textContent = "温州微信：";
+                } else {
+                    currentWechatType = "national";
+                    document.getElementById('wechatAccount').textContent = WECHAT_NATIONAL;
+                    document.getElementById('wechatLabel').textContent = "全国微信：";
+                }
+            }).catch(err => {
+                currentWechatType = "wenzhou";
+                document.getElementById('wechatAccount').textContent = WECHAT_WENZHOU;
+                document.getElementById('wechatLabel').textContent = "微信：";
+            });
         }
 
         window.onload = function() {
-            const loadedToast = document.getElementById('pageLoaded');
-            loadedToast.style.display = 'block';
-            
+            setWechatByRegion();
+            const loaded = document.getElementById('pageLoaded');
+            loaded.style.display = 'block';
             setTimeout(() => {
-                loadedToast.style.opacity = '0';
-                loadedToast.style.transition = 'opacity 0.5s ease';
-                setTimeout(() => {
-                    loadedToast.style.display = 'none';
-                }, 500);
+                loaded.style.opacity = 0;
+                setTimeout(() => loaded.style.display = 'none', 500);
             }, 3000);
         };
 
         window.onbeforeunload = function() {
             if (window.loadingTimer) clearTimeout(window.loadingTimer);
             if (window.miniProgramTimer) clearTimeout(window.miniProgramTimer);
-            if (window.linkTimer) clearTimeout(window.linkTimer);
         };
     </script>
 </body>
