@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>流量卡业务工具导航</title>
+    <title>流量卡业务工具导航 | 卡多多世界</title>
     <style>
         * {
             margin: 0;
@@ -63,7 +63,6 @@
             content: "📱";
             font-size: 18px;
         }
-        /* 企业微信链接样式 - 优化版 */
         .work-wechat-link {
             display: inline-block;
             background: rgba(255, 255, 255, 0.2);
@@ -73,7 +72,7 @@
             border-radius: 20px;
             font-size: 14px;
             margin: 8px 0 15px;
-            transition: all 0.3 ease;
+            transition: all 0.3s ease;
             position: relative;
             z-index: 1;
             font-weight: 500;
@@ -134,7 +133,6 @@
             background: #42a5f5;
             border-radius: 50%;
         }
-        /* 优化：调整网格布局，移动端自适应更美观 */
         .link-group {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -149,7 +147,7 @@
             border-radius: 12px;
             text-decoration: none;
             text-align: center;
-            transition: all 0.3 ease;
+            transition: all 0.3s ease;
             box-shadow: 0 2px 6px rgba(0,0,0,0.04);
             display: flex;
             align-items: center;
@@ -169,7 +167,6 @@
             transform: translateY(-2px);
             box-shadow: 0 6px 12px rgba(30, 136, 229, 0.15);
         }
-        /* 不同分类的入口添加轻微的颜色区分，提升视觉层次 */
         .link-item.two-char {
             border-top: 3px solid #42a5f5;
         }
@@ -192,7 +189,6 @@
             grid-column: 1 / -1;
             max-width: 100%;
         }
-        /* 群二维码样式 - 优化阴影和间距 */
         .group-qrcode {
             background-color: white;
             border-radius: 12px;
@@ -252,7 +248,6 @@
             text-align: center;
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
-        /* 页面加载完成提示 */
         .page-loaded {
             position: fixed;
             top: 20px;
@@ -265,7 +260,6 @@
             z-index: 9998;
             display: none;
         }
-        /* 优化：移动端适配更精细 */
         @media (max-width: 768px) {
             .link-group {
                 grid-template-columns: repeat(2, 1fr);
@@ -321,9 +315,8 @@
     <div class="header">
         <div class="icon"></div>
         <div class="header-slogan">卡多多世界 一次领卡 一生服务</div>
-        <div class="wechat-info">微信：kaduoduoshijie</div>
-        <!-- 企业微信链接 - 简化文案为"企业微信" -->
-        <a href="https://work.weixin.qq.com/ca/cawcde517b926e803e" class="work-wechat-link" target="_blank" onclick="showLoading()">📞 企业微信</a>
+        <div class="wechat-info">微信：kdd_0577</div>
+        <a href="https://work.weixin.qq.com/kfid/kfc6fff05dc0082e1c6" class="work-wechat-link" target="_blank" onclick="showLoading()">📞 客服</a>
         <h1>流量卡业务工具导航</h1>
         <p>发货时效 & 查单撤单指引</p>
     </div>
@@ -331,7 +324,6 @@
     <div class="section">
         <h2 class="section-title">套餐办理入口</h2>
         <div class="link-group">
-            <!-- 第一组：2字名称（整齐排列） -->
             <a href="https://172.lot-ml.com/ProductEn/Index/77cad8f3af288738" class="link-item two-char" target="_blank" onclick="showLoading()">172</a>
             <a href="https://yc.670k.com/index?k=RnhtbkxIN0FYd1U9" class="link-item two-char" target="_blank" onclick="showLoading()">宸宇</a>
             <a href="https://haoka.kakatx.com/web/#/pages/index/index/?agent_id=206654" class="link-item two-char" target="_blank" onclick="showLoading()">共创</a>
@@ -339,22 +331,18 @@
             <a href="https://my.86hk.vip/#/pages/micro_store/index?agent_id=51be22bae7d74a422210db56129c38e0" class="link-item two-char" target="_blank" onclick="showLoading()">号易</a>
             <a href="https://h5.sim10000.net/#/sc/L115gFkA7X?=" class="link-item two-char" target="_blank" onclick="showLoading()">号推</a>
             <a href="http://h5.vip12300.cn/index?k=U2NKL3VYSlN3bGs9" class="link-item two-char" target="_blank" onclick="showLoading()">林夕</a>
-            
-            <!-- 第二组：3字名称（视觉分组） -->
+
             <a href="https://saler.jkcae.com/small-store-app/#/?agent_id=22841" class="link-item three-char" target="_blank" onclick="showLoading()">极客云</a>
             <a href="http://ka.dandanhou.net/index?k=bjlGQzRpU21QV0U9" class="link-item three-char" target="_blank" onclick="showLoading()">卡多多</a>
             <a href="https://ym.ksjhaoka.com/?s=NcAB9sD5590792" class="link-item three-char" target="_blank" onclick="showLoading()">卡世界</a>
             <a href="https://ky.kyaowang.cn/shop/#/?promoCode=OUEd1j8H" class="link-item three-char" target="_blank" onclick="showLoading()">卡耀云</a>
             <a href="https://app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" class="link-item three-char" target="_blank" onclick="showLoading()">朽月</a>
-            <!-- 五湖通信移至蓝畅速享前面，保持three-char类视觉统一 -->
             <a href="http://55555.wang/index?k=K3EzdlYwNk5wWDQ9" class="link-item three-char" target="_blank" onclick="showLoading()">五湖通信</a>
             <a href="https://19890104.haoka.biz?h=y" class="link-item three-char" target="_blank" onclick="showLoading()">蓝畅速享</a>
             <a href="https://bsx.bsxtx.com/s/FqZmhkS0" class="link-item three-char" target="_blank" onclick="showLoading()">宝时信</a>
             <a href="https://www.71haoka.com/index?k=Vzgzc2I2ZUN0YjA9" class="link-item three-char" target="_blank" onclick="showLoading()">号卡研究所</a>
-            
-            <!-- 第三组：4字及以上名称（单独成行） -->
+
             <a href="https://h5.gantanhao.com/QeYY" class="link-item four-char single-link" target="_blank" onclick="showLoading()">卡业联盟</a>
-            <!-- 最后两位：大鑫卡业 + 号卡屋 -->
             <a href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" class="link-item four-char single-link" target="_blank" onclick="showLoading()">大鑫卡业</a>
             <a href="https://hk5.kyaowang.cn/s/pHexRyhy" class="link-item four-char single-link" target="_blank" onclick="showLoading()">号卡屋</a>
         </div>
@@ -377,12 +365,10 @@
         </div>
     </div>
 
-    <!-- 卡多多茶水间群二维码区域 -->
     <div class="section">
         <h2 class="section-title">加入卡多多「茶水间」交流群</h2>
         <div class="group-qrcode">
             <img src="https://raw.githubusercontent.com/chenxxu0104/kddsj/main/qrcode.png" alt="卡多多茶水间群二维码" class="qrcode-img">
-            <!-- 替换说明：请将上面的 src 替换为实际的群二维码图片链接 -->
             <div class="qrcode-desc">扫码加入卡多多「茶水间」交流群</div>
             <div class="qrcode-tips">
                 ✅ 群内可交流流量卡业务经验<br>
@@ -396,30 +382,26 @@
         <strong>发货时效提示：</strong>正常发货时效为48小时，如超过48小时，一般发不了了，可能是运营商拦截或者证件信息审核不通过，建议更换其他套餐下单。<br>
         <strong>催发货指引：</strong>只需等待运营商处理即可，若客户比较着急，可直接更换套餐重新下单试试。<br>
         <strong>使用提示：</strong>小程序链接需在微信内打开，点击对应按钮可获取跳转指引。<br>
-        <strong>加群提示：</strong>若二维码失效，可添加微信“kaduoduoshijie”或点击“企业微信”申请入群。
+        <strong>加群提示：</strong>若二维码失效，可添加微信“kdd_0577”或点击“客服”申请入群。
     </div>
 
     <script>
-        // 加载提示函数
         function showLoading() {
             const toast = document.getElementById('loadingToast');
             toast.textContent = '正在打开链接...';
             toast.style.display = 'block';
             
-            // 清除之前的定时器，避免多个定时器冲突
             if (window.loadingTimer) clearTimeout(window.loadingTimer);
             window.loadingTimer = setTimeout(() => {
                 toast.style.display = 'none';
             }, 3000);
         }
 
-        // 广电小程序提示函数
         function showMiniProgramTip() {
             const toast = document.getElementById('loadingToast');
             toast.textContent = '请在微信中打开：广电营业厅小程序';
             toast.style.display = 'block';
 
-            // 复制功能增强：有成功/失败提示
             navigator.clipboard.writeText('广电营业厅')
                 .then(() => {
                     setTimeout(() => {
@@ -427,25 +409,21 @@
                     }, 2000);
                 })
                 .catch(err => {
-                    console.log('复制失败:', err);
                     setTimeout(() => {
-                        toast.textContent = '复制失败，请手动输入"广电营业厅"';
+                        toast.textContent = '复制失败，请手动输入';
                     }, 2000);
                 });
 
-            // 延长提示显示时间
             if (window.miniProgramTimer) clearTimeout(window.miniProgramTimer);
             window.miniProgramTimer = setTimeout(() => {
                 toast.style.display = 'none';
             }, 5000);
         }
 
-        // 页面加载完成提示
         window.onload = function() {
             const loadedToast = document.getElementById('pageLoaded');
             loadedToast.style.display = 'block';
             
-            // 3秒后自动隐藏
             setTimeout(() => {
                 loadedToast.style.opacity = '0';
                 loadedToast.style.transition = 'opacity 0.5s ease';
@@ -453,52 +431,13 @@
                     loadedToast.style.display = 'none';
                 }, 500);
             }, 3000);
-
-            // 链接错误处理增强
-            const links = document.querySelectorAll('a[target="_blank"]');
-            links.forEach(link => {
-                // 链接点击超时检测
-                link.addEventListener('click', function() {
-                    if (window.linkTimer) clearTimeout(window.linkTimer);
-                    window.linkTimer = setTimeout(() => {
-                        const toast = document.getElementById('loadingToast');
-                        toast.textContent = '链接加载超时，请检查网络';
-                        toast.style.display = 'block';
-                        setTimeout(() => {
-                            toast.style.display = 'none';
-                        }, 3000);
-                    }, 10000); // 10秒超时
-                });
-                
-                // 链接打开失败处理（增强兼容性）
-                link.addEventListener('error', function(e) {
-                    e.preventDefault();
-                    const toast = document.getElementById('loadingToast');
-                    toast.textContent = '链接打开失败，请重试';
-                    toast.style.display = 'block';
-                    setTimeout(() => {
-                        toast.style.display = 'none';
-                    }, 3000);
-                });
-            });
         };
 
-        // 页面离开时清除所有定时器
         window.onbeforeunload = function() {
             if (window.loadingTimer) clearTimeout(window.loadingTimer);
             if (window.miniProgramTimer) clearTimeout(window.miniProgramTimer);
             if (window.linkTimer) clearTimeout(window.linkTimer);
         };
-
-        // 新增：平滑滚动效果（提升用户体验）
-        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-            anchor.addEventListener('click', function (e) {
-                e.preventDefault();
-                document.querySelector(this.getAttribute('href')).scrollIntoView({
-                    behavior: 'smooth'
-                });
-            });
-        });
     </script>
 </body>
 </html>
