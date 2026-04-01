@@ -139,11 +139,11 @@
             position: relative;
             z-index: 1;
         }
+        /* 修复图标重叠问题 - 调整图标定位和显示规则 */
         .header .icon {
             position: absolute;
             left: 20px;
-            top: 50%;
-            transform: translateY(-50%);
+            top: 20px; /* 从垂直居中改为顶部对齐，避免和微信信息重叠 */
             width: 40px;
             height: 40px;
             background: white;
@@ -152,6 +152,7 @@
             align-items: center;
             justify-content: center;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            z-index: 2; /* 提高层级，避免被遮挡 */
         }
         .header .icon::before {
             content: "📶";
@@ -316,11 +317,22 @@
             }
         }
         @media (max-width: 375px) {
+            /* 移动端适配优化 - 解决图标重叠核心 */
+            .header .icon {
+                width: 35px; /* 缩小图标尺寸 */
+                height: 35px;
+                left: 15px; /* 调整左侧间距 */
+                top: 15px; /* 调整顶部间距 */
+            }
+            .header .icon::before {
+                font-size: 20px; /* 缩小图标内容 */
+            }
             .header h1 {
                 font-size: 22px;
             }
             .header-slogan {
                 font-size: 24px;
+                margin-top: 10px; /* 给标语加顶部间距，避开图标 */
             }
             .local-service {
                 font-size: 13px;
@@ -328,6 +340,7 @@
             }
             .wechat-info {
                 font-size: 14px;
+                margin-top: 5px; /* 微信信息区加顶部间距 */
             }
             .wechat-copy-btn, .wechat-switch-btn {
                 font-size: 12px;
@@ -369,7 +382,7 @@
         <div class="icon"></div>
         <div class="header-slogan">卡多多世界 一次领卡 一生守候</div>
         
-        <!-- ✅ 你要的温州本地服务标语（最佳位置） -->
+        <!-- ✅ 温州本地服务标语 -->
         <div class="local-service">
             温州电信、广电流量卡免费开卡，温州范围内上门办理
         </div>
