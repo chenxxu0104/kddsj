@@ -139,24 +139,24 @@
             position: relative;
             z-index: 1;
         }
-        /* 修复图标重叠问题 - 调整图标定位和显示规则 */
+        /* 核心修复：调整图标定位，彻底解决重叠问题 */
         .header .icon {
             position: absolute;
-            left: 20px;
-            top: 20px; /* 从垂直居中改为顶部对齐，避免和微信信息重叠 */
-            width: 40px;
-            height: 40px;
+            left: 15px;      /* 向左再挪一点 */
+            top: 10px;       /* 向上挪，远离文字区域 */
+            width: 38px;     /* 微调尺寸，更适配小屏 */
+            height: 38px;
             background: white;
             border-radius: 8px;
             display: flex;
             align-items: center;
             justify-content: center;
             box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            z-index: 2; /* 提高层级，避免被遮挡 */
+            z-index: 2;      /* 确保层级最高，不被遮挡 */
         }
         .header .icon::before {
             content: "📶";
-            font-size: 22px;
+            font-size: 20px; /* 稍微缩小图标，减少占用空间 */
         }
         .section {
             margin-bottom: 30px;
@@ -317,22 +317,22 @@
             }
         }
         @media (max-width: 375px) {
-            /* 移动端适配优化 - 解决图标重叠核心 */
+            /* 移动端适配优化 - 强化图标不重叠 */
             .header .icon {
-                width: 35px; /* 缩小图标尺寸 */
+                width: 35px;    /* 小屏进一步缩小 */
                 height: 35px;
-                left: 15px; /* 调整左侧间距 */
-                top: 15px; /* 调整顶部间距 */
+                left: 10px;     /* 更靠左 */
+                top: 8px;       /* 更靠上 */
             }
             .header .icon::before {
-                font-size: 20px; /* 缩小图标内容 */
+                font-size: 18px;/* 图标内容再缩小 */
             }
             .header h1 {
                 font-size: 22px;
             }
             .header-slogan {
                 font-size: 24px;
-                margin-top: 10px; /* 给标语加顶部间距，避开图标 */
+                margin-top: 15px; /* 给标语加更多顶部间距，彻底避开图标 */
             }
             .local-service {
                 font-size: 13px;
@@ -340,7 +340,7 @@
             }
             .wechat-info {
                 font-size: 14px;
-                margin-top: 5px; /* 微信信息区加顶部间距 */
+                margin-top: 5px;
             }
             .wechat-copy-btn, .wechat-switch-btn {
                 font-size: 12px;
@@ -445,7 +445,7 @@
     <div class="section">
         <h2 class="section-title">加入卡多多「茶水间」交流群</h2>
         <div class="group-qrcode">
-            <img src="https://raw.githubusercontent.com/chenxxu0104/kddsj/main/qrcode.png" alt="卡多多茶水间群二维码" class="qrcode-img">
+            <img src="https://raw.githubusercontent.com/chenxxu0104/kddsj/main/qrcode.png" alt="卡多多茶水间群二维码" class="qrcode-img" onerror="this.style.display='none'">
             <div class="qrcode-desc">扫码加入卡多多「茶水间」交流群</div>
             <div class="qrcode-tips">
                 ✅ 群内可交流流量卡业务经验<br>
@@ -479,20 +479,30 @@
             }, 3000);
         }
 
-        // 复制微信
+        // 复制微信（兼容所有浏览器）
         function copyWechat() {
             const wechatAccount = document.getElementById('wechatAccount').textContent;
-            navigator.clipboard.writeText(wechatAccount).then(() => {
+            try {
+                if(navigator.clipboard) {
+                    navigator.clipboard.writeText(wechatAccount);
+                } else {
+                    const input = document.createElement('input');
+                    input.value = wechatAccount;
+                    document.body.appendChild(input);
+                    input.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(input);
+                }
                 const t = document.getElementById('loadingToast');
                 t.textContent = '微信已复制 ✅';
                 t.style.display = 'block';
                 setTimeout(() => t.style.display = 'none', 2000);
-            }).catch(() => {
+            } catch(e) {
                 const t = document.getElementById('loadingToast');
                 t.textContent = '复制失败，请手动复制';
                 t.style.display = 'block';
                 setTimeout(() => t.style.display = 'none', 2000);
-            });
+            }
         }
 
         // 切换微信（温州 ↔ 全国）
@@ -517,9 +527,12 @@
             const toast = document.getElementById('loadingToast');
             toast.textContent = '请在微信中打开：广电营业厅小程序';
             toast.style.display = 'block';
-            navigator.clipboard.writeText('广电营业厅').then(() => {
-                setTimeout(() => toast.textContent = '已复制"广电营业厅"', 2000);
-            });
+            try {
+                if(navigator.clipboard) {
+                    navigator.clipboard.writeText('广电营业厅');
+                    setTimeout(() => toast.textContent = '已复制"广电营业厅"', 2000);
+                }
+            }catch(e){}
             if (window.miniProgramTimer) clearTimeout(window.miniProgramTimer);
             window.miniProgramTimer = setTimeout(() => toast.style.display = 'none', 5000);
         }
