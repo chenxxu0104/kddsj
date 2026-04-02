@@ -21,7 +21,7 @@
         .header {
             background: linear-gradient(135deg, #1e88e5 0%, #42a5f5 100%);
             color: white;
-            padding: 25px 20px;
+            padding: 30px 20px;
             border-radius: 16px;
             text-align: center;
             margin-bottom: 25px;
@@ -29,143 +29,65 @@
             position: relative;
             overflow: hidden;
         }
-        .header::after {
-            content: "";
-            position: absolute;
-            top: -20px;
-            right: -20px;
-            width: 80px;
-            height: 80px;
-            background: rgba(255, 255, 255, 0.15);
-            border-radius: 50%;
-        }
         .header-slogan {
-            font-size: 28px;
-            margin-bottom: 8px;
-            opacity: 0.95;
-            letter-spacing: 1px;
-            position: relative;
-            z-index: 1;
+            font-size: 26px;
+            margin-bottom: 10px;
             font-weight: 600;
+            letter-spacing: 1px;
         }
-        /* 温州本地服务标语 */
         .local-service {
-            font-size: 15px;
-            margin-bottom: 12px;
-            opacity: 0.98;
-            font-weight: 500;
-            position: relative;
-            z-index: 1;
+            font-size: 14px;
+            margin-bottom: 14px;
             background: rgba(255,255,255,0.15);
             padding: 6px 14px;
             border-radius: 20px;
             display: inline-block;
         }
         .wechat-info {
-            font-size: 16px;
+            font-size: 15px;
             margin-bottom: 12px;
-            position: relative;
-            z-index: 1;
-            opacity: 0.9;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 8px;
             flex-wrap: wrap;
         }
-        .wechat-info::before {
-            content: "📱";
-            font-size: 18px;
-        }
-        .wechat-copy-btn {
+        .wechat-copy-btn,
+        .wechat-switch-btn {
             display: inline-block;
             background: rgba(255, 255, 255, 0.2);
             color: white;
-            text-decoration: none;
-            padding: 6px 16px;
-            border-radius: 16px;
-            font-size: 13px;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            font-weight: 500;
-        }
-        .wechat-copy-btn:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-1px);
-        }
-        .wechat-switch-btn {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.25);
-            color: white;
-            padding: 6px 14px;
+            padding: 5px 14px;
             border-radius: 16px;
             font-size: 13px;
             cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 500;
-        }
-        .wechat-switch-btn:hover {
-            background: rgba(255, 255, 255, 0.4);
-            transform: translateY(-1px);
         }
         .work-wechat-link {
             display: inline-block;
             background: rgba(255, 255, 255, 0.2);
             color: white;
-            text-decoration: none;
-            padding: 8px 24px;
+            padding: 8px 22px;
             border-radius: 20px;
             font-size: 14px;
-            margin: 8px 0 15px;
-            transition: all 0.3s ease;
-            position: relative;
-            z-index: 1;
-            font-weight: 500;
-        }
-        .work-wechat-link:hover {
-            background: rgba(255, 255, 255, 0.3);
-            transform: translateY(-2px);
-            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            margin: 8px 0 12px;
+            text-decoration: none;
         }
         .header h1 {
-            font-size: 26px;
-            margin-bottom: 10px;
-            position: relative;
-            z-index: 1;
+            font-size: 24px;
+            margin-bottom: 6px;
         }
         .header p {
-            font-size: 15px;
+            font-size: 14px;
             opacity: 0.9;
-            position: relative;
-            z-index: 1;
-        }
-        /* 核心修复：调整图标定位，彻底解决重叠问题 */
-        .header .icon {
-            position: absolute;
-            left: 15px;      /* 向左再挪一点 */
-            top: 10px;       /* 向上挪，远离文字区域 */
-            width: 38px;     /* 微调尺寸，更适配小屏 */
-            height: 38px;
-            background: white;
-            border-radius: 8px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
-            z-index: 2;      /* 确保层级最高，不被遮挡 */
-        }
-        .header .icon::before {
-            content: "📶";
-            font-size: 20px; /* 稍微缩小图标，减少占用空间 */
         }
         .section {
             margin-bottom: 30px;
         }
         .section-title {
             color: #2d3748;
-            font-size: 19px;
+            font-size: 18px;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 14px;
             padding-left: 12px;
             border-left: 4px solid #1e88e5;
             display: flex;
@@ -181,62 +103,41 @@
         }
         .link-group {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
-            gap: 14px;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 12px;
         }
         .link-item {
-            background-color: white;
+            background: white;
             border: 1px solid #e8f4f8;
             color: #2d3748;
             font-size: 15px;
-            padding: 20px 12px;
+            padding: 18px 10px;
             border-radius: 12px;
             text-decoration: none;
             text-align: center;
-            transition: all 0.3s ease;
-            box-shadow: 0 2px 6px rgba(0,0,0,0.04);
+            min-height: 70px;
             display: flex;
             align-items: center;
             justify-content: center;
-            min-height: 75px;
-            position: relative;
-            overflow: hidden;
             font-weight: 500;
         }
-        .link-item:active {
-            transform: translateY(0);
-            background-color: #e1f5fe;
-        }
         .link-item:hover {
-            background-color: #e8f4f8;
+            background: #e8f4f8;
             border-color: #1e88e5;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 12px rgba(30, 136, 229, 0.15);
         }
-        .link-item.two-char {
-            border-top: 3px solid #42a5f5;
-        }
-        .link-item.three-char {
-            border-top: 3px solid #64b5f6;
-        }
-        .link-item.four-char {
-            border-top: 3px solid #90caf9;
-        }
+        .link-item.two-char { border-top: 3px solid #42a5f5; }
+        .link-item.three-char { border-top: 3px solid #64b5f6; }
+        .link-item.four-char { border-top: 3px solid #90caf9; }
         .mini-program {
-            background-color: #f3e5f5;
+            background: #f3e5f5;
             border-color: #ba68c8;
             border-top: 3px solid #9c27b0;
         }
-        .mini-program:hover {
-            background-color: #e1bee7;
-            border-color: #9c27b0;
-        }
         .single-link {
             grid-column: 1 / -1;
-            max-width: 100%;
         }
         .group-qrcode {
-            background-color: white;
+            background: white;
             border-radius: 12px;
             padding: 25px 20px;
             text-align: center;
@@ -244,55 +145,47 @@
             margin-top: 15px;
         }
         .qrcode-img {
-            width: 200px;
-            height: 200px;
+            width: 180px;
+            height: 180px;
             border-radius: 8px;
             margin: 0 auto 15px;
             border: 1px solid #eee;
-            object-fit: cover;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
         }
         .qrcode-desc {
             font-size: 16px;
-            color: #2d3748;
             font-weight: 600;
-            margin-bottom: 10px;
+            margin-bottom: 8px;
         }
         .qrcode-tips {
             font-size: 14px;
             color: #718096;
-            line-height: 1.8;
+            line-height: 1.7;
         }
         .tips {
-            background-color: white;
-            padding: 20px;
+            background: white;
+            padding: 18px;
             border-radius: 12px;
             font-size: 14px;
             color: #4a5568;
-            line-height: 1.8;
-            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            line-height: 1.7;
             border-left: 4px solid #42a5f5;
             margin-top: 10px;
         }
         .tips strong {
             color: #1e88e5;
-            font-weight: 600;
         }
         .loading-toast {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: rgba(0,0,0,0.8);
+            background: rgba(0,0,0,0.75);
             color: white;
             padding: 12px 24px;
             border-radius: 8px;
             font-size: 15px;
             z-index: 9999;
             display: none;
-            min-width: 180px;
-            text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
         .page-loaded {
             position: fixed;
@@ -309,67 +202,6 @@
         @media (max-width: 768px) {
             .link-group {
                 grid-template-columns: repeat(2, 1fr);
-                gap: 12px;
-            }
-            .qrcode-img {
-                width: 180px;
-                height: 180px;
-            }
-        }
-        @media (max-width: 375px) {
-            /* 移动端适配优化 - 强化图标不重叠 */
-            .header .icon {
-                width: 35px;    /* 小屏进一步缩小 */
-                height: 35px;
-                left: 10px;     /* 更靠左 */
-                top: 8px;       /* 更靠上 */
-            }
-            .header .icon::before {
-                font-size: 18px;/* 图标内容再缩小 */
-            }
-            .header h1 {
-                font-size: 22px;
-            }
-            .header-slogan {
-                font-size: 24px;
-                margin-top: 15px; /* 给标语加更多顶部间距，彻底避开图标 */
-            }
-            .local-service {
-                font-size: 13px;
-                padding: 5px 10px;
-            }
-            .wechat-info {
-                font-size: 14px;
-                margin-top: 5px;
-            }
-            .wechat-copy-btn, .wechat-switch-btn {
-                font-size: 12px;
-                padding: 4px 10px;
-            }
-            .work-wechat-link {
-                font-size: 13px;
-                padding: 6px 18px;
-                margin: 8px 0 12px;
-            }
-            .section-title {
-                font-size: 17px;
-            }
-            .link-item {
-                font-size: 14px;
-                padding: 16px 8px;
-                min-height: 65px;
-            }
-            .loading-toast {
-                padding: 10px 20px;
-                font-size: 14px;
-                min-width: 160px;
-            }
-            .qrcode-img {
-                width: 160px;
-                height: 160px;
-            }
-            .qrcode-desc {
-                font-size: 15px;
             }
         }
     </style>
@@ -379,14 +211,10 @@
     <div class="page-loaded" id="pageLoaded">页面加载完成 ✅</div>
     
     <div class="header">
-        <div class="icon"></div>
         <div class="header-slogan">卡多多世界 一次领卡 一生守候</div>
-        
-        <!-- ✅ 温州本地服务标语 -->
         <div class="local-service">
             温州电信、广电流量卡免费开卡，温州范围内上门办理
         </div>
-
         <div class="wechat-info" id="wechatInfo">
             <span id="wechatLabel">微信：</span>
             <span id="wechatAccount">kdd_0577</span>
@@ -463,49 +291,27 @@
     </div>
 
     <script>
-        // 微信账号配置
         const WECHAT_WENZHOU = "kdd_0577";
         const WECHAT_NATIONAL = "kaduoduoshijie";
-        let currentWechatType = "wenzhou"; // 默认温州
+        let currentWechatType = "wenzhou";
 
-        // 加载提示
         function showLoading() {
-            const toast = document.getElementById('loadingToast');
-            toast.textContent = '正在打开链接...';
-            toast.style.display = 'block';
-            if (window.loadingTimer) clearTimeout(window.loadingTimer);
-            window.loadingTimer = setTimeout(() => {
-                toast.style.display = 'none';
-            }, 3000);
+            const t = document.getElementById('loadingToast');
+            t.textContent = '正在打开链接...';
+            t.style.display = 'block';
+            setTimeout(() => t.style.display = 'none', 2000);
         }
 
-        // 复制微信（兼容所有浏览器）
         function copyWechat() {
-            const wechatAccount = document.getElementById('wechatAccount').textContent;
-            try {
-                if(navigator.clipboard) {
-                    navigator.clipboard.writeText(wechatAccount);
-                } else {
-                    const input = document.createElement('input');
-                    input.value = wechatAccount;
-                    document.body.appendChild(input);
-                    input.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(input);
-                }
+            const text = document.getElementById('wechatAccount').innerText;
+            navigator.clipboard.writeText(text).then(() => {
                 const t = document.getElementById('loadingToast');
                 t.textContent = '微信已复制 ✅';
                 t.style.display = 'block';
-                setTimeout(() => t.style.display = 'none', 2000);
-            } catch(e) {
-                const t = document.getElementById('loadingToast');
-                t.textContent = '复制失败，请手动复制';
-                t.style.display = 'block';
-                setTimeout(() => t.style.display = 'none', 2000);
-            }
+                setTimeout(() => t.style.display = 'none', 1500);
+            });
         }
 
-        // 切换微信（温州 ↔ 全国）
         function switchWechat() {
             if (currentWechatType === "wenzhou") {
                 document.getElementById('wechatAccount').textContent = WECHAT_NATIONAL;
@@ -522,28 +328,18 @@
             setTimeout(() => t.style.display = "none", 1500);
         }
 
-        // 广电小程序提示
         function showMiniProgramTip() {
-            const toast = document.getElementById('loadingToast');
-            toast.textContent = '请在微信中打开：广电营业厅小程序';
-            toast.style.display = 'block';
-            try {
-                if(navigator.clipboard) {
-                    navigator.clipboard.writeText('广电营业厅');
-                    setTimeout(() => toast.textContent = '已复制"广电营业厅"', 2000);
-                }
-            }catch(e){}
-            if (window.miniProgramTimer) clearTimeout(window.miniProgramTimer);
-            window.miniProgramTimer = setTimeout(() => toast.style.display = 'none', 5000);
+            const t = document.getElementById('loadingToast');
+            t.textContent = '请在微信打开：广电营业厅';
+            t.style.display = 'block';
+            setTimeout(() => t.style.display = 'none', 3000);
         }
 
-        // 自动识别地区
         function setWechatByRegion() {
             fetch('https://ipapi.co/json/')
             .then(res => res.json())
             .then(data => {
-                const city = data.city || "";
-                if (city.includes("温州")) {
+                if (data.city?.includes("温州")) {
                     currentWechatType = "wenzhou";
                     document.getElementById('wechatAccount').textContent = WECHAT_WENZHOU;
                     document.getElementById('wechatLabel').textContent = "温州微信：";
@@ -552,11 +348,7 @@
                     document.getElementById('wechatAccount').textContent = WECHAT_NATIONAL;
                     document.getElementById('wechatLabel').textContent = "全国微信：";
                 }
-            }).catch(err => {
-                currentWechatType = "wenzhou";
-                document.getElementById('wechatAccount').textContent = WECHAT_WENZHOU;
-                document.getElementById('wechatLabel').textContent = "微信：";
-            });
+            }).catch(()=>{});
         }
 
         window.onload = function() {
@@ -566,12 +358,7 @@
             setTimeout(() => {
                 loaded.style.opacity = 0;
                 setTimeout(() => loaded.style.display = 'none', 500);
-            }, 3000);
-        };
-
-        window.onbeforeunload = function() {
-            if (window.loadingTimer) clearTimeout(window.loadingTimer);
-            if (window.miniProgramTimer) clearTimeout(window.miniProgramTimer);
+            }, 2500);
         };
     </script>
 </body>
