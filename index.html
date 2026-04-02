@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
-    <title>流量卡业务工具导航 | 卡多多世界</title>
+    <title>卡多多世界 | 流量卡业务工具导航</title>
     <style>
         * {
             margin: 0;
@@ -17,34 +17,50 @@
             padding: 20px 15px;
             max-width: 800px;
             margin: 0 auto;
+            line-height: 1.5;
         }
+        /* 加载动画 */
+        @keyframes pulse {
+            0% { transform: scale(1); }
+            50% { transform: scale(1.05); }
+            100% { transform: scale(1); }
+        }
+        @keyframes fadeInUp {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        /* 头部 */
         .header {
             background: linear-gradient(135deg, #1e88e5 0%, #42a5f5 100%);
             color: white;
-            padding: 30px 20px;
+            padding: 25px 20px;
             border-radius: 16px;
             text-align: center;
-            margin-bottom: 25px;
+            margin-bottom: 20px;
             box-shadow: 0 4px 12px rgba(30, 136, 229, 0.2);
-            position: relative;
-            overflow: hidden;
+            animation: fadeInUp 0.6s ease-out;
+        }
+        .brand-name {
+            font-size: 32px;
+            font-weight: 700;
+            margin-bottom: 8px;
+            letter-spacing: 2px;
+            animation: pulse 3s infinite ease-in-out;
         }
         .header-slogan {
-            font-size: 26px;
-            margin-bottom: 10px;
-            font-weight: 600;
-            letter-spacing: 1px;
+            font-size: 18px;
+            margin-bottom: 12px;
         }
         .local-service {
             font-size: 14px;
-            margin-bottom: 14px;
-            background: rgba(255,255,255,0.15);
-            padding: 6px 14px;
-            border-radius: 20px;
+            margin-bottom: 15px;
+            background: rgba(255,255,255,0.1);
+            padding: 6px 15px;
+            border-radius: 16px;
             display: inline-block;
         }
         .wechat-info {
-            font-size: 15px;
+            font-size: 14px;
             margin-bottom: 12px;
             display: flex;
             align-items: center;
@@ -54,94 +70,87 @@
         }
         .wechat-copy-btn,
         .wechat-switch-btn {
-            display: inline-block;
             background: rgba(255, 255, 255, 0.2);
             color: white;
-            padding: 5px 14px;
-            border-radius: 16px;
-            font-size: 13px;
+            padding: 5px 12px;
+            border-radius: 14px;
+            font-size: 12px;
             cursor: pointer;
+            border: 1px solid rgba(255,255,255,0.3);
         }
         .work-wechat-link {
             display: inline-block;
-            background: rgba(255, 255, 255, 0.2);
+            background: #ff7e5f;
             color: white;
-            padding: 8px 22px;
-            border-radius: 20px;
+            padding: 8px 20px;
+            border-radius: 16px;
             font-size: 14px;
-            margin: 8px 0 12px;
+            margin: 5px 0 15px;
             text-decoration: none;
         }
-        .header h1 {
-            font-size: 24px;
-            margin-bottom: 6px;
+        .nav-title {
+            font-size: 18px;
+            margin-bottom: 5px;
         }
-        .header p {
+        .nav-subtitle {
             font-size: 14px;
-            opacity: 0.9;
+            opacity: 0.8;
         }
+        /* 内容区块 */
         .section {
-            margin-bottom: 30px;
+            margin-bottom: 20px;
+            animation: fadeInUp 0.6s ease-out;
         }
         .section-title {
             color: #2d3748;
             font-size: 18px;
             font-weight: 600;
-            margin-bottom: 14px;
-            padding-left: 12px;
+            margin-bottom: 15px;
+            padding: 6px 10px;
             border-left: 4px solid #1e88e5;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .section-title::before {
-            content: "";
-            width: 6px;
-            height: 6px;
-            background: #42a5f5;
-            border-radius: 50%;
         }
         .link-group {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-            gap: 12px;
+            grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+            gap: 10px;
+            margin-bottom: 15px;
         }
         .link-item {
             background: white;
-            border: 1px solid #e8f4f8;
+            border: 1px solid #e2e8f0;
             color: #2d3748;
-            font-size: 15px;
-            padding: 18px 10px;
-            border-radius: 12px;
+            font-size: 14px;
+            padding: 15px 8px;
+            border-radius: 8px;
             text-decoration: none;
             text-align: center;
-            min-height: 70px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 500;
+            transition: all 0.2s ease;
         }
         .link-item:hover {
             background: #e8f4f8;
-            border-color: #1e88e5;
+            border-color: #42a5f5;
+            transform: translateY(-2px);
         }
-        .link-item.two-char { border-top: 3px solid #42a5f5; }
-        .link-item.three-char { border-top: 3px solid #64b5f6; }
-        .link-item.four-char { border-top: 3px solid #90caf9; }
         .mini-program {
-            background: #f3e5f5;
-            border-color: #ba68c8;
-            border-top: 3px solid #9c27b0;
+            background: #fdf2f8;
+            border-color: #f0e6ee;
+            color: #9c27b0;
+        }
+        .mini-program:hover {
+            background: #fef7fb;
+            border-color: #9c27b0;
         }
         .single-link {
             grid-column: 1 / -1;
+            font-size: 15px;
+            padding: 15px 10px;
         }
+        /* 二维码区块 */
         .group-qrcode {
-            background: white;
+            background: #f8f9fa;
             border-radius: 12px;
-            padding: 25px 20px;
+            padding: 20px;
             text-align: center;
-            box-shadow: 0 4px 12px rgba(0,0,0,0.06);
             margin-top: 15px;
         }
         .qrcode-img {
@@ -149,41 +158,43 @@
             height: 180px;
             border-radius: 8px;
             margin: 0 auto 15px;
-            border: 1px solid #eee;
         }
         .qrcode-desc {
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 8px;
+            color: #1e88e5;
         }
         .qrcode-tips {
-            font-size: 14px;
+            font-size: 13px;
             color: #718096;
-            line-height: 1.7;
+            line-height: 1.6;
         }
+        /* 提示区块 */
         .tips {
             background: white;
-            padding: 18px;
-            border-radius: 12px;
-            font-size: 14px;
+            padding: 15px;
+            border-radius: 8px;
+            font-size: 13px;
             color: #4a5568;
-            line-height: 1.7;
+            line-height: 1.6;
             border-left: 4px solid #42a5f5;
-            margin-top: 10px;
+            margin-top: 15px;
         }
         .tips strong {
             color: #1e88e5;
         }
-        .loading-toast {
+        /* 提示框 */
+        .toast {
             position: fixed;
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: rgba(0,0,0,0.75);
+            background: rgba(0,0,0,0.7);
             color: white;
-            padding: 12px 24px;
+            padding: 10px 20px;
             border-radius: 8px;
-            font-size: 15px;
+            font-size: 14px;
             z-index: 9999;
             display: none;
         }
@@ -191,85 +202,100 @@
             position: fixed;
             top: 20px;
             right: 20px;
-            background: rgba(76, 175, 80, 0.9);
+            background: #4caf50;
             color: white;
-            padding: 8px 16px;
+            padding: 8px 15px;
             border-radius: 6px;
-            font-size: 14px;
+            font-size: 13px;
             z-index: 9998;
             display: none;
         }
+        /* 适配调整 */
         @media (max-width: 768px) {
             .link-group {
+                grid-template-columns: repeat(4, 1fr);
+            }
+        }
+        @media (max-width: 480px) {
+            .link-group {
                 grid-template-columns: repeat(2, 1fr);
+            }
+            .brand-name {
+                font-size: 28px;
             }
         }
     </style>
 </head>
 <body>
-    <div class="loading-toast" id="loadingToast">正在打开链接...</div>
+    <div class="toast" id="toast">正在打开链接...</div>
     <div class="page-loaded" id="pageLoaded">页面加载完成 ✅</div>
     
+    <!-- 头部 -->
     <div class="header">
-        <div class="header-slogan">卡多多世界 一次领卡 一生守候</div>
+        <div class="brand-name">卡多多世界</div>
+        <div class="header-slogan">一次领卡 一生守候</div>
+        
         <div class="local-service">
             温州电信、广电流量卡免费开卡，温州范围内上门办理
         </div>
         <div class="wechat-info" id="wechatInfo">
             <span id="wechatLabel">微信：</span>
             <span id="wechatAccount">kdd_0577</span>
-            <span class="wechat-copy-btn" onclick="copyWechat()">复制</span>
-            <span class="wechat-switch-btn" onclick="switchWechat()">切换微信</span>
+            <button class="wechat-copy-btn" onclick="copyWechat()">复制</button>
+            <button class="wechat-switch-btn" onclick="switchWechat()">切换微信</button>
         </div>
-        <a href="https://work.weixin.qq.com/kfid/kfc6fff05dc0082e1c6" class="work-wechat-link" target="_blank" onclick="showLoading()">📞 客服</a>
-        <h1>流量卡业务工具导航</h1>
-        <p>发货时效 & 查单撤单指引</p>
+        <a href="https://work.weixin.qq.com/kfid/kfc6fff05dc0082e1c6" class="work-wechat-link" target="_blank" onclick="showToast('正在打开客服...')">📞 客服</a>
+        
+        <div class="nav-title">流量卡业务工具导航</div>
+        <div class="nav-subtitle">发货时效 & 查单撤单指引</div>
     </div>
 
+    <!-- 套餐办理入口 -->
     <div class="section">
         <h2 class="section-title">套餐办理入口</h2>
         <div class="link-group">
-            <a href="https://172.lot-ml.com/ProductEn/Index/77cad8f3af288738" class="link-item two-char" target="_blank" onclick="showLoading()">172</a>
-            <a href="https://yc.670k.com/index?k=RnhtbkxIN0FYd1U9" class="link-item two-char" target="_blank" onclick="showLoading()">宸宇</a>
-            <a href="https://haoka.kakatx.com/web/#/pages/index/index/?agent_id=206654" class="link-item two-char" target="_blank" onclick="showLoading()">共创</a>
-            <a href="https://m.yapingtech.com/#/pages/sales_index/my_store?mall_id=k9n576LJ%2FWBl470WgzQghw%3D%3D" class="link-item two-char" target="_blank" onclick="showLoading()">浩卡</a>
-            <a href="https://my.86hk.vip/#/pages/micro_store/index?agent_id=51be22bae7d74a422210db56129c38e0" class="link-item two-char" target="_blank" onclick="showLoading()">号易</a>
-            <a href="https://h5.sim10000.net/#/sc/L115gFkA7X?=" class="link-item two-char" target="_blank" onclick="showLoading()">号推</a>
-            <a href="http://h5.vip12300.cn/index?k=U2NKL3VYSlN3bGs9" class="link-item two-char" target="_blank" onclick="showLoading()">林夕</a>
-
-            <a href="https://saler.jkcae.com/small-store-app/#/?agent_id=22841" class="link-item three-char" target="_blank" onclick="showLoading()">极客云</a>
-            <a href="http://ka.dandanhou.net/index?k=bjlGQzRpU21QV0U9" class="link-item three-char" target="_blank" onclick="showLoading()">卡多多</a>
-            <a href="https://ym.ksjhaoka.com/?s=NcAB9sD5590792" class="link-item three-char" target="_blank" onclick="showLoading()">卡世界</a>
-            <a href="https://ky.kyaowang.cn/shop/#/?promoCode=OUEd1j8H" class="link-item three-char" target="_blank" onclick="showLoading()">卡耀云</a>
-            <a href="https://app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" class="link-item three-char" target="_blank" onclick="showLoading()">朽月</a>
-            <a href="http://55555.wang/index?k=K3EzdlYwNk5wWDQ9" class="link-item three-char" target="_blank" onclick="showLoading()">五湖通信</a>
-            <a href="https://19890104.haoka.biz?h=y" class="link-item three-char" target="_blank" onclick="showLoading()">蓝畅速享</a>
-            <a href="https://bsx.bsxtx.com/s/FqZmhkS0" class="link-item three-char" target="_blank" onclick="showLoading()">宝时信</a>
-            <a href="https://www.71haoka.com/index?k=Vzgzc2I2ZUN0YjA9" class="link-item three-char" target="_blank" onclick="showLoading()">号卡研究所</a>
-
-            <a href="https://h5.gantanhao.com/QeYY" class="link-item four-char single-link" target="_blank" onclick="showLoading()">卡业联盟</a>
-            <a href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" class="link-item four-char single-link" target="_blank" onclick="showLoading()">大鑫卡业</a>
-            <a href="https://hk5.kyaowang.cn/s/pHexRyhy" class="link-item four-char single-link" target="_blank" onclick="showLoading()">号卡屋</a>
+            <a href="https://172.lot-ml.com/ProductEn/Index/77cad8f3af288738" class="link-item" target="_blank" onclick="showToast('正在打开链接...')">172</a>
+            <a href="https://yc.670k.com/index?k=RnhtbkxIN0FYd1U9" class="link-item" target="_blank" onclick="showToast('正在打开链接...')">宸宇</a>
+            <a href="https://haoka.kakatx.com/web/#/pages/index/index/?agent_id=206654" class="link-item" target="_blank" onclick="showToast('正在打开链接...')">共创</a>
+            <a href="https://m.yapingtech.com/#/pages/sales_index/my_store?mall_id=k9n576LJ%2FWBl470WgzQghw%3D%3D" class="link-item" target="_blank" onclick="showToast('正在打开链接...')">浩卡</a>
+            <a href="https://my.86hk.vip/#/pages/micro_store/index?agent_id=51be22bae7d74a422210db56129c38e0" class="link-item" target="_blank" onclick="showToast('正在打开链接...')">号易</a>
+            <a href="https://h5.sim10000.net/#/sc/L115gFkA7X?=" class="link-item" target="_blank" onclick="showToast('正在打开链接...')">号推</a>
+            <a href="http://h5.vip12300.cn/index?k=U2NKL3VYSlN3bGs9" class="link-item" target="_blank" onclick="showToast('正在打开链接...')">林夕</a>
+            <a href="https://saler.jkcae.com/small-store-app/#/?agent_id=22841" class="link-item" target="_blank" onclick="showToast('正在打开链接...')">极客云</a>
+            <a href="http://ka.dandanhou.net/index?k=bjlGQzRpU21QV0U9" class="link-item" target="_blank" onclick="showToast('正在打开链接...')">卡多多</a>
+            <a href="https://ym.ksjhaoka.com/?s=NcAB9sD5590792" class="link-item" target="_blank" onclick="showToast('正在打开链接...')">卡世界</a>
+            <a href="https://ky.kyaowang.cn/shop/#/?promoCode=OUEd1j8H" class="link-item" target="_blank" onclick="showToast('正在打开链接...')">卡耀云</a>
+            <a href="https://app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" class="link-item" target="_blank" onclick="showToast('正在打开链接...')">朽月</a>
+            <a href="http://55555.wang/index?k=K3EzdlYwNk5wWDQ9" class="link-item" target="_blank" onclick="showToast('正在打开链接...')">五湖通信</a>
+            <a href="https://19890104.haoka.biz?h=y" class="link-item" target="_blank" onclick="showToast('正在打开链接...')">蓝畅速享</a>
+            <a href="https://bsx.bsxtx.com/s/FqZmhkS0" class="link-item" target="_blank" onclick="showToast('正在打开链接...')">宝时信</a>
+            <a href="https://www.71haoka.com/index?k=Vzgzc2I2ZUN0YjA9" class="link-item" target="_blank" onclick="showToast('正在打开链接...')">号卡研究所</a>
+            <a href="https://h5.gantanhao.com/QeYY" class="link-item single-link" target="_blank" onclick="showToast('正在打开链接...')">卡业联盟</a>
+            <a href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" class="link-item single-link" target="_blank" onclick="showToast('正在打开链接...')">大鑫卡业</a>
+            <a href="https://hk5.kyaowang.cn/s/pHexRyhy" class="link-item single-link" target="_blank" onclick="showToast('正在打开链接...')">号卡屋</a>
         </div>
     </div>
 
+    <!-- 运营商查单撤单 -->
     <div class="section">
         <h2 class="section-title">运营商查单撤单</h2>
         <div class="link-group">
-            <a href="http://a.189.cn/IBbVib" class="link-item single-link" target="_blank" onclick="showLoading()">电信查单撤单</a>
-            <a href="https://m.10010.com/myorder" class="link-item single-link" target="_blank" onclick="showLoading()">联通查单/传三证/催发货/撤单</a>
-            <a href="https://dev.coc.10086.cn/coc/web/coc2020/cardqueryorder/" class="link-item single-link" target="_blank" onclick="showLoading()">移动查单撤单</a>
+            <a href="http://a.189.cn/IBbVib" class="link-item single-link" target="_blank" onclick="showToast('正在打开链接...')">电信查单撤单</a>
+            <a href="https://m.10010.com/myorder" class="link-item single-link" target="_blank" onclick="showToast('正在打开链接...')">联通查单/传三证/催发货/撤单</a>
+            <a href="https://dev.coc.10086.cn/coc/web/coc2020/cardqueryorder/" class="link-item single-link" target="_blank" onclick="showToast('正在打开链接...')">移动查单撤单</a>
             <a href="javascript:void(0);" class="link-item single-link mini-program" onclick="showMiniProgramTip()">广电查单撤单（小程序）</a>
         </div>
     </div>
 
+    <!-- 一证五户查询 -->
     <div class="section">
         <h2 class="section-title">一证五户查询</h2>
         <div class="link-group">
-            <a href="https://getsimnum.caict.ac.cn/m/#/" class="link-item single-link" target="_blank" onclick="showLoading()">一证五户查询入口</a>
+            <a href="https://getsimnum.caict.ac.cn/m/#/" class="link-item single-link" target="_blank" onclick="showToast('正在打开链接...')">一证五户查询入口</a>
         </div>
     </div>
 
+    <!-- 交流群 -->
     <div class="section">
         <h2 class="section-title">加入卡多多「茶水间」交流群</h2>
         <div class="group-qrcode">
@@ -283,6 +309,7 @@
         </div>
     </div>
 
+    <!-- 提示信息 -->
     <div class="tips">
         <strong>发货时效提示：</strong>正常发货时效为48小时，如超过48小时，一般发不了了，可能是运营商拦截或者证件信息审核不通过，建议更换其他套餐下单。<br>
         <strong>催发货指引：</strong>只需等待运营商处理即可，若客户比较着急，可直接更换套餐重新下单试试。<br>
@@ -295,20 +322,21 @@
         const WECHAT_NATIONAL = "kaduoduoshijie";
         let currentWechatType = "wenzhou";
 
-        function showLoading() {
-            const t = document.getElementById('loadingToast');
-            t.textContent = '正在打开链接...';
+        function showToast(text, time = 2000) {
+            const t = document.getElementById('toast');
+            t.textContent = text;
             t.style.display = 'block';
-            setTimeout(() => t.style.display = 'none', 2000);
+            setTimeout(() => {
+                t.style.display = 'none';
+            }, time);
         }
 
         function copyWechat() {
             const text = document.getElementById('wechatAccount').innerText;
             navigator.clipboard.writeText(text).then(() => {
-                const t = document.getElementById('loadingToast');
-                t.textContent = '微信已复制 ✅';
-                t.style.display = 'block';
-                setTimeout(() => t.style.display = 'none', 1500);
+                showToast('微信已复制 ✅', 1500);
+            }).catch(() => {
+                showToast('复制失败，请手动复制', 2000);
             });
         }
 
@@ -322,24 +350,18 @@
                 document.getElementById('wechatLabel').textContent = "温州微信：";
                 currentWechatType = "wenzhou";
             }
-            const t = document.getElementById('loadingToast');
-            t.textContent = "已切换微信账号 ✅";
-            t.style.display = "block";
-            setTimeout(() => t.style.display = "none", 1500);
+            showToast("已切换微信账号 ✅", 1500);
         }
 
         function showMiniProgramTip() {
-            const t = document.getElementById('loadingToast');
-            t.textContent = '请在微信打开：广电营业厅';
-            t.style.display = 'block';
-            setTimeout(() => t.style.display = 'none', 3000);
+            showToast('请在微信打开：广电营业厅', 3000);
         }
 
         function setWechatByRegion() {
             fetch('https://ipapi.co/json/')
             .then(res => res.json())
             .then(data => {
-                if (data.city?.includes("温州")) {
+                if (data.region?.includes("浙江") || data.city?.includes("温州")) {
                     currentWechatType = "wenzhou";
                     document.getElementById('wechatAccount').textContent = WECHAT_WENZHOU;
                     document.getElementById('wechatLabel').textContent = "温州微信：";
@@ -356,8 +378,7 @@
             const loaded = document.getElementById('pageLoaded');
             loaded.style.display = 'block';
             setTimeout(() => {
-                loaded.style.opacity = 0;
-                setTimeout(() => loaded.style.display = 'none', 500);
+                loaded.style.display = 'none';
             }, 2500);
         };
     </script>
