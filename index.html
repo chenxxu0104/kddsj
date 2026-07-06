@@ -17,7 +17,7 @@
             padding: 20px 15px;
             max-width: 800px;
             margin: 0 auto;
-            line-height: 1.5;
+            line-height: 1.55;
         }
         /* 回到顶部按钮 */
         .back-top {
@@ -35,7 +35,7 @@
             cursor: pointer;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3 ease;
+            transition: all 0.3s ease;
             z-index: 999;
         }
         .back-top.show {
@@ -56,35 +56,35 @@
         .header {
             background: linear-gradient(135deg, #1e88e5 0%, #42a5f5 100%);
             color: white;
-            padding: 25px 20px;
+            padding: 28px 20px;
             border-radius: 16px;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             box-shadow: 0 4px 12px rgba(30, 136, 229, 0.2);
-            animation: fadeInUp 0.6 ease-out;
+            animation: fadeInUp 0.6s ease-out;
         }
         .brand-name {
             font-size: 32px;
             font-weight: 700;
             margin-bottom: 8px;
             letter-spacing: 2px;
-            animation: pulse 3 infinite ease-in-out;
+            animation: pulse 3s infinite ease-in-out;
         }
         .header-slogan {
             font-size: 18px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
         }
         .local-service {
             font-size: 14px;
-            margin-bottom: 15px;
-            background: rgba(255,255,255,0.1);
-            padding: 6px 15px;
+            margin-bottom: 16px;
+            background: rgba(255,255,255,0.12);
+            padding: 6px 16px;
             border-radius: 16px;
             display: inline-block;
         }
         .wechat-info {
             font-size: 14px;
-            margin-bottom: 12px;
+            margin-bottom: 14px;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -93,27 +93,27 @@
         }
         .wechat-copy-btn,
         .wechat-switch-btn {
-            background: rgba(255, 255, 255, 0.2);
+            background: rgba(255, 255, 255, 0.22);
             color: white;
             padding: 5px 12px;
             border-radius: 14px;
             font-size: 12px;
             cursor: pointer;
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 1px solid rgba(255,255,255,0.35);
             transition: background 0.2s ease;
         }
         .wechat-copy-btn:hover,
         .wechat-switch-btn:hover {
-            background: rgba(255,255,255,0.35);
+            background: rgba(255,255,255,0.4);
         }
         .work-wechat-link {
             display: inline-block;
             background: #ff7e5f;
             color: white;
-            padding: 8px 20px;
+            padding: 9px 22px;
             border-radius: 16px;
             font-size: 14px;
-            margin: 5px 0 15px;
+            margin: 6px 0 16px;
             text-decoration: none;
             transition: opacity 0.2s ease;
         }
@@ -126,42 +126,42 @@
         }
         .nav-subtitle {
             font-size: 14px;
-            opacity: 0.8;
+            opacity: 0.85;
         }
         /* 内容区块 */
         .section {
-            margin-bottom: 20px;
+            margin-bottom: 26px;
             animation: fadeInUp 0.6s ease-out;
         }
         .section-title {
             color: #2d3748;
             font-size: 18px;
             font-weight: 600;
-            margin-bottom: 15px;
+            margin-bottom: 16px;
             padding: 6px 10px;
             border-left: 4px solid #1e88e5;
         }
         .link-group {
             display: grid;
             grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
-            gap: 10px;
-            margin-bottom: 15px;
+            gap: 12px;
+            margin-bottom: 18px;
         }
         .link-item {
             background: white;
             border: 1px solid #e2e8f0;
             color: #2d3748;
             font-size: 14px;
-            padding: 15px 8px;
+            padding: 16px 8px;
             border-radius: 8px;
             text-decoration: none;
             text-align: center;
-            transition: all 0.2 ease;
+            transition: all 0.2s ease;
         }
         .link-item:hover {
             background: #e8f4f8;
             border-color: #42a5f5;
-            transform: translateY(-2px);
+            transform: translateY(-3px);
         }
         .mini-program {
             background: #fdf2f8;
@@ -175,21 +175,34 @@
         .single-link {
             grid-column: 1 / -1;
             font-size: 15px;
-            padding: 15px 10px;
+            padding: 16px 10px;
+            background: linear-gradient(90deg, #ffffff 0%, #f7fbff 100%);
+        }
+        .single-link:hover {
+            background: linear-gradient(90deg, #ffffff 0%, #e4f3ff 100%);
+        }
+        /* 高频入口高亮样式（易优、号卡屋、大鑫卡业专用） */
+        .single-link.highlight {
+            border: 1px solid #1e88e5;
+            background: linear-gradient(90deg, #ffffff 0%, #edf6ff 100%);
+            font-weight: 500;
+        }
+        .single-link.highlight:hover {
+            background: linear-gradient(90deg, #ffffff 0%, #d8ecff 100%);
         }
         /* 二维码区块 */
         .group-qrcode {
             background: #f8f9fa;
             border-radius: 12px;
-            padding: 20px;
+            padding: 24px 20px;
             text-align: center;
-            margin-top: 15px;
+            margin-top: 20px;
         }
         .qrcode-img {
             width: 180px;
             height: 180px;
             border-radius: 8px;
-            margin: 0 auto 15px;
+            margin: 0 auto 16px;
             object-fit: cover;
         }
         .qrcode-desc {
@@ -201,18 +214,18 @@
         .qrcode-tips {
             font-size: 13px;
             color: #718096;
-            line-height: 1.6;
+            line-height: 1.65;
         }
         /* 提示区块 */
         .tips {
             background: white;
-            padding: 15px;
+            padding: 18px;
             border-radius: 8px;
             font-size: 13px;
             color: #4a5568;
-            line-height: 1.6;
+            line-height: 1.7;
             border-left: 4px solid #42a5f5;
-            margin-top: 15px;
+            margin-top: 18px;
         }
         .tips strong {
             color: #1e88e5;
@@ -223,9 +236,9 @@
             top: 50%;
             left: 50%;
             transform: translate(-50%, -50%);
-            background: rgba(0,0,0,0.7);
+            background: rgba(0,0,0,0.72);
             color: white;
-            padding: 10px 20px;
+            padding: 12px 24px;
             border-radius: 8px;
             font-size: 14px;
             z-index: 9999;
@@ -237,7 +250,7 @@
             right: 20px;
             background: #4caf50;
             color: white;
-            padding: 8px 15px;
+            padding: 9px 16px;
             border-radius: 6px;
             font-size: 13px;
             z-index: 9998;
@@ -252,9 +265,13 @@
         @media (max-width: 480px) {
             .link-group {
                 grid-template-columns: repeat(2, 1fr);
+                gap: 14px;
             }
             .brand-name {
                 font-size: 28px;
+            }
+            .header {
+                padding: 24px 16px;
             }
         }
         /* 深色模式简单适配 */
@@ -266,6 +283,20 @@
                 background: #1e2633;
                 color: #e2e8f0;
                 border-color: #333c4d;
+            }
+            .single-link {
+                background: linear-gradient(90deg, #1e2633 0%, #253042 100%);
+            }
+            .single-link:hover {
+                background: linear-gradient(90deg, #1e2633 0%, #2a384f 100%);
+            }
+            /* 深色模式高亮适配 */
+            .single-link.highlight {
+                border-color: #42a5f5;
+                background: linear-gradient(90deg, #1e2633 0%, #203652 100%);
+            }
+            .single-link.highlight:hover {
+                background: linear-gradient(90deg, #1e2633 0%, #274063 100%);
             }
             .section-title {
                 color: #e2e8f0;
@@ -305,7 +336,7 @@
     <div class="section">
         <h2 class="section-title">套餐办理入口</h2>
         <div class="link-group" id="packageGroup">
-            <!-- 随机区域所有渠道 -->
+            <!-- 随机区域所有渠道（卡业联盟无single-link，小方块） -->
             <a href="https://172.lot-ml.com/ProductEn/Index/77cad8f3af288738" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">172</a>
             <a href="https://yc.670k.com/index?k=RnhtbkxIN0FYd1U9" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">宸宇</a>
             <a href="https://haoka.kakatx.com/web/#/pages/index/index/?agent_id=206654" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">共创</a>
@@ -322,16 +353,16 @@
             <a href="https://19890104.haoka.biz?h=y" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">蓝畅速享</a>
             <a href="bsx.bsxtx.com/s/FqZmhkS0" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">宝时信</a>
             <a href="https://www.71haoka.com/index?k=Vzgzc2I2ZUN0YjA9" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">号卡研究所</a>
-            <a href="https://h5.gantanhao.com/QeYY" class="link-item rand-item single-link" target="_blank" onclick="showToast('正在打开链接...')">卡业联盟</a>
+            <a href="https://h5.gantanhao.com/QeYY" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">卡业联盟</a>
 
-            <!-- 底部固定顺序：易优 → 号卡屋 → 大鑫卡业 -->
-            <a href="https://hk.euhaoka.cn/index?k=eFZheStSYVFFUVk9" class="link-item fixed-bottom" target="_blank" onclick="showToast('正在打开链接...')">易优</a>
-            <a href="https://hk5.kyaowang.cn/s/pHexRyhy" class="link-item fixed-bottom single-link" target="_blank" onclick="showToast('正在打开链接...')">号卡屋</a>
-            <a href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" class="link-item fixed-bottom single-link" target="_blank" onclick="showToast('正在打开链接...')">大鑫卡业</a>
+            <!-- 易优、号卡屋、大鑫卡业 增加highlight高亮类 -->
+            <a href="https://hk.euhaoka.cn/index?k=eFZheStSYVFFUVk9" class="link-item fixed-bottom single-link highlight" target="_blank" onclick="showToast('正在打开链接...')">易优</a>
+            <a href="https://hk5.kyaowang.cn/s/pHexRyhy" class="link-item fixed-bottom single-link highlight" target="_blank" onclick="showToast('正在打开链接...')">号卡屋</a>
+            <a href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" class="link-item fixed-bottom single-link highlight" target="_blank" onclick="showToast('正在打开链接...')">大鑫卡业</a>
         </div>
     </div>
 
-    <!-- 运营商查单撤单 -->
+    <!-- 运营商查单撤单（普通通栏，无高亮） -->
     <div class="section">
         <h2 class="section-title">运营商查单撤单</h2>
         <div class="link-group">
@@ -342,7 +373,7 @@
         </div>
     </div>
 
-    <!-- 一证五户查询 -->
+    <!-- 一证五户查询（普通通栏，无高亮） -->
     <div class="section">
         <h2 class="section-title">一证五户查询</h2>
         <div class="link-group">
