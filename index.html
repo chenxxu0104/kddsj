@@ -35,12 +35,32 @@
             cursor: pointer;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3 ease;
+            transition: all 0.3s ease;
             z-index: 999;
         }
         .back-top.show {
             opacity: 1;
             visibility: visible;
+        }
+        /* 随机排序控制按钮 */
+        .rand-control-wrap {
+            display: flex;
+            justify-content: flex-end;
+            margin-bottom: 12px;
+        }
+        .rand-toggle-btn {
+            padding: 5px 12px;
+            border-radius: 14px;
+            border: 1px solid #1e88e5;
+            background: #fff;
+            color: #1e88e5;
+            font-size: 13px;
+            cursor: pointer;
+            transition: 0.2s ease;
+        }
+        .rand-toggle-btn.active {
+            background: #1e88e5;
+            color: #fff;
         }
         /* 加载动画 */
         @keyframes pulse {
@@ -61,14 +81,14 @@
             text-align: center;
             margin-bottom: 24px;
             box-shadow: 0 4px 12px rgba(30, 136, 229, 0.2);
-            animation: fadeInUp 0.6 ease-out;
+            animation: fadeInUp 0.6s ease-out;
         }
         .brand-name {
             font-size: 32px;
             font-weight: 700;
             margin-bottom: 8px;
             letter-spacing: 2px;
-            animation: pulse 3 infinite ease-in-out;
+            animation: pulse 3s infinite ease-in-out;
         }
         .header-slogan {
             font-size: 18px;
@@ -100,7 +120,7 @@
             font-size: 12px;
             cursor: pointer;
             border: 1px solid rgba(255,255,255,0.35);
-            transition: background 0.2 ease;
+            transition: background 0.2s ease;
         }
         .wechat-copy-btn:hover,
         .wechat-switch-btn:hover {
@@ -115,7 +135,7 @@
             font-size: 14px;
             margin: 6px 0 16px;
             text-decoration: none;
-            transition: opacity 0.2 ease;
+            transition: opacity 0.2s ease;
         }
         .work-wechat-link:hover {
             opacity: 0.9;
@@ -131,13 +151,13 @@
         /* 内容区块 */
         .section {
             margin-bottom: 26px;
-            animation: fadeInUp 0.6 ease-out;
+            animation: fadeInUp 0.6s ease-out;
         }
         .section-title {
             color: #2d3748;
             font-size: 18px;
             font-weight: 600;
-            margin-bottom: 16px;
+            margin-bottom: 10px;
             padding: 6px 10px;
             border-left: 4px solid #1e88e5;
         }
@@ -156,7 +176,7 @@
             border-radius: 8px;
             text-decoration: none;
             text-align: center;
-            transition: all 0.2 ease;
+            transition: all 0.2s ease;
         }
         .link-item:hover {
             background: #e8f4f8;
@@ -304,6 +324,14 @@
             .group-qrcode {
                 background: #1e2633;
             }
+            .rand-toggle-btn {
+                background-color: #1e2633;
+                color:#42a5f5;
+            }
+            .rand-toggle-btn.active {
+                background-color:#42a5f5;
+                color:#fff;
+            }
         }
     </style>
 </head>
@@ -334,9 +362,14 @@
 
     <!-- 套餐办理入口 -->
     <div class="section">
-        <h2 class="section-title">套餐办理入口</h2>
+        <div style="display:flex;justify-content:space-between;align-items:center;">
+            <h2 class="section-title">套餐办理入口</h2>
+            <div class="rand-control-wrap">
+                <button class="rand-toggle-btn" id="randToggleBtn">开启随机排序</button>
+            </div>
+        </div>
         <div class="link-group" id="packageGroup">
-            <!-- 随机区域所有渠道（卡业联盟无single-link，小方块） -->
+            <!-- 固定原始顺序渠道（不再自动乱序） -->
             <a href="https://172.lot-ml.com/ProductEn/Index/77cad8f3af288738" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">172</a>
             <a href="https://yc.670k.com/index?k=RnhtbkxIN0FYd1U9" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">宸宇</a>
             <a href="https://haoka.kakatx.com/web/#/pages/index/index/?agent_id=206654" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">共创</a>
@@ -355,7 +388,7 @@
             <a href="https://www.71haoka.com/index?k=Vzgzc2I2ZUN0YjA9" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">号卡研究所</a>
             <a href="https://h5.gantanhao.com/QeYY" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">卡业联盟</a>
 
-            <!-- 易优、号卡屋、大鑫卡业 增加highlight高亮类 -->
+            <!-- 易优、号卡屋、大鑫卡业 永久固定底部 -->
             <a href="https://hk.euhaoka.cn/index?k=eFZheStSYVFFUVk9" class="link-item fixed-bottom single-link highlight" target="_blank" onclick="showToast('正在打开链接...')">易优</a>
             <a href="https://hk5.kyaowang.cn/s/pHexRyhy" class="link-item fixed-bottom single-link highlight" target="_blank" onclick="showToast('正在打开链接...')">号卡屋</a>
             <a href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" class="link-item fixed-bottom single-link highlight" target="_blank" onclick="showToast('正在打开链接...')">大鑫卡业</a>
@@ -377,7 +410,7 @@
     <div class="section">
         <h2 class="section-title">一证五户查询</h2>
         <div class="link-group">
-            <a href="https://getsimnum.caict.ac.****/#/" class="link-item single-link" target="_blank" onclick="showToast('正在打开链接...')">一证五户查询入口</a>
+            <a href="https://getsimnum.caict.ac.cn/#/" class="link-item single-link" target="_blank" onclick="showToast('正在打开链接...')">一证五户查询入口</a>
         </div>
     </div>
 
@@ -412,6 +445,37 @@
         const toast = document.getElementById('toast');
         const pageLoaded = document.getElementById('pageLoaded');
         const backTopBtn = document.getElementById('backTop');
+        const randToggleBtn = document.getElementById('randToggleBtn');
+        const packageGroup = document.getElementById('packageGroup');
+
+        // 读取本地存储随机模式状态
+        let enableAutoRandom = localStorage.getItem("linkRandomMode") === "1";
+
+        // 更新按钮文字样式
+        function refreshRandButtonUI(){
+            if(enableAutoRandom){
+                randToggleBtn.textContent = "关闭随机排序";
+                randToggleBtn.classList.add("active");
+            }else{
+                randToggleBtn.textContent = "开启随机排序";
+                randToggleBtn.classList.remove("active");
+            }
+        }
+        refreshRandButtonUI();
+
+        // 切换随机模式
+        randToggleBtn.onclick = function(){
+            enableAutoRandom = !enableAutoRandom;
+            localStorage.setItem("linkRandomMode", enableAutoRandom ? "1" : "0");
+            refreshRandButtonUI();
+            if(enableAutoRandom){
+                randomPackageList();
+                showToast("已开启随机排序，刷新页面渠道会打乱", 2200);
+            }else{
+                restoreOriginOrder();
+                showToast("已关闭随机排序，固定原始顺序", 2200);
+            }
+        }
 
         // 回到顶部
         backTopBtn.addEventListener('click', () => {
@@ -481,20 +545,22 @@
             return copy;
         }
 
-        // 页面加载随机排序
+        // 保存原始DOM顺序（关键！用于恢复固定排序）
+        const originRandItems = Array.from(packageGroup.querySelectorAll('.rand-item'));
+        const fixedItems = Array.from(packageGroup.querySelectorAll('.fixed-bottom'));
+
+        // 随机排序渠道
         function randomPackageList() {
-            const group = document.getElementById('packageGroup');
-            // 区分随机项、固定底部项
-            const randItems = Array.from(group.querySelectorAll('.rand-item'));
-            const fixedItems = Array.from(group.querySelectorAll('.fixed-bottom'));
-
-            // 打乱随机区域
-            const shuffledRand = shuffleArray(randItems);
-
-            // 清空容器，先放随机内容，再放固定顺序底部
-            group.innerHTML = '';
-            shuffledRand.forEach(el => group.appendChild(el));
-            fixedItems.forEach(el => group.appendChild(el));
+            const shuffledRand = shuffleArray(originRandItems);
+            packageGroup.innerHTML = '';
+            shuffledRand.forEach(el => packageGroup.appendChild(el));
+            fixedItems.forEach(el => packageGroup.appendChild(el));
+        }
+        // 恢复原始固定顺序
+        function restoreOriginOrder() {
+            packageGroup.innerHTML = '';
+            originRandItems.forEach(el => packageGroup.appendChild(el));
+            fixedItems.forEach(el => packageGroup.appendChild(el));
         }
 
         // IP自动切换微信
@@ -517,7 +583,12 @@
         }
 
         window.onload = function() {
-            randomPackageList();
+            // 默认固定顺序；只有开启随机模式才打乱
+            if(enableAutoRandom){
+                randomPackageList();
+            }else{
+                restoreOriginOrder();
+            }
             setWechatByRegion();
             pageLoaded.style.display = 'block';
             setTimeout(() => {
