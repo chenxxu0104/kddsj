@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="keywords" content="流量卡办理,联通电信移动广电,号卡代理,一证五户查询">
+    <meta name="description" content="卡多多世界‑流量卡业务导航平台，提供各大运营商办卡入口、查单撤单、一证五户查询，温州可上门办卡">
     <title>卡多多世界 | 流量卡业务工具导航</title>
     <style>
         * {
@@ -10,6 +12,10 @@
             padding: 0;
             box-sizing: border-box;
             font-family: "PingFang SC", "Microsoft YaHei", sans-serif;
+        }
+        :root{
+            --main:#2989c4;
+            --light:#54ace0;
         }
         body {
             background-color: #f5f8fa;
@@ -19,7 +25,26 @@
             margin: 0 auto;
             line-height: 1.55;
         }
-        /* 回到顶部按钮 */
+        .theme-wrap{
+            display:flex;
+            gap:8px;
+            justify-content:flex-end;
+            margin-bottom:12px;
+            flex-wrap:wrap;
+        }
+        .theme-item{
+            padding:4px 10px;
+            border-radius:12px;
+            font-size:12px;
+            border:1px solid var(--main);
+            color:var(--main);
+            background:#fff;
+            cursor:pointer;
+        }
+        .theme-item.active{
+            background:var(--main);
+            color:#fff;
+        }
         .back-top {
             position: fixed;
             bottom: 24px;
@@ -27,11 +52,11 @@
             width: 44px;
             height: 44px;
             border-radius: 50%;
-            background: #1e88e5;
+            background: var(--main);
             color: #fff;
             border: none;
             font-size: 18px;
-            box-shadow: 0 2px 10px rgba(30,136,229,0.3);
+            box-shadow: 0 2px 10px rgba(41,137,196,0.3);
             cursor: pointer;
             opacity: 0;
             visibility: hidden;
@@ -42,27 +67,30 @@
             opacity: 1;
             visibility: visible;
         }
-        /* 随机排序控制按钮 */
         .rand-control-wrap {
             display: flex;
             justify-content: flex-end;
+            gap:10px;
             margin-bottom: 12px;
         }
-        .rand-toggle-btn {
+        .rand-toggle-btn,.reset-setting-btn {
             padding: 5px 12px;
             border-radius: 14px;
-            border: 1px solid #1e88e5;
+            border: 1px solid var(--main);
             background: #fff;
-            color: #1e88e5;
+            color: var(--main);
             font-size: 13px;
             cursor: pointer;
             transition: 0.2s ease;
         }
         .rand-toggle-btn.active {
-            background: #1e88e5;
+            background: var(--main);
             color: #fff;
         }
-        /* 加载动画 */
+        .reset-setting-btn{
+            border-color:#666;
+            color:#444;
+        }
         @keyframes pulse {
             0% { transform: scale(1); }
             50% { transform: scale(1.05); }
@@ -72,15 +100,14 @@
             from { opacity: 0; transform: translateY(20px); }
             to { opacity: 1; transform: translateY(0); }
         }
-        /* 头部 */
         .header {
-            background: linear-gradient(135deg, #1e88e5 0%, #42a5f5 100%);
+            background: linear-gradient(135deg, var(--main) 0%, var(--light) 100%);
             color: white;
             padding: 28px 20px;
             border-radius: 16px;
             text-align: center;
             margin-bottom: 24px;
-            box-shadow: 0 4px 12px rgba(30, 136, 229, 0.2);
+            box-shadow: 0 4px 12px rgba(41,137,196,0.2);
             animation: fadeInUp 0.6s ease-out;
         }
         .brand-name {
@@ -124,7 +151,7 @@
         }
         .wechat-copy-btn:hover,
         .wechat-switch-btn:hover {
-            background: rgba(255,255,255,0.4);
+            background: rgba(255, 255, 255, 0.4);
         }
         .work-wechat-link {
             display: inline-block;
@@ -137,8 +164,8 @@
             text-decoration: none;
             transition: opacity 0.2s ease;
         }
-        .work-wechat-link:hover {
-            opacity: 0.9;
+        .work-wechat-link:active {
+            opacity: 0.8;
         }
         .nav-title {
             font-size: 18px;
@@ -148,7 +175,6 @@
             font-size: 14px;
             opacity: 0.85;
         }
-        /* 内容区块 */
         .section {
             margin-bottom: 26px;
             animation: fadeInUp 0.6s ease-out;
@@ -159,7 +185,7 @@
             font-weight: 600;
             margin-bottom: 10px;
             padding: 6px 10px;
-            border-left: 4px solid #1e88e5;
+            border-left: 4px solid var(--main);
         }
         .link-group {
             display: grid;
@@ -179,9 +205,12 @@
             transition: all 0.2s ease;
         }
         .link-item:hover {
-            background: #e8f4f8;
-            border-color: #42a5f5;
+            background: #e8f4fb;
+            border-color: var(--light);
             transform: translateY(-3px);
+        }
+        .link-item:active{
+            transform:scale(0.97);
         }
         .mini-program {
             background: #fdf2f8;
@@ -196,21 +225,19 @@
             grid-column: 1 / -1;
             font-size: 15px;
             padding: 16px 10px;
-            background: linear-gradient(90deg, #ffffff 0%, #f7fbff 100%);
+            background: linear-gradient(90deg, #ffffff 0%, #f3f8fd 100%);
         }
         .single-link:hover {
-            background: linear-gradient(90deg, #ffffff 0%, #e4f3ff 100%);
+            background: linear-gradient(90deg, #ffffff 0%, #dcecf9 100%);
         }
-        /* 高频入口高亮样式（易优、号卡屋、大鑫卡业专用） */
         .single-link.highlight {
-            border: 1px solid #1e88e5;
-            background: linear-gradient(90deg, #ffffff 0%, #edf6ff 100%);
+            border: 1px solid var(--main);
+            background: linear-gradient(90deg, #ffffff 0%, #e4f1fb 100%);
             font-weight: 500;
         }
         .single-link.highlight:hover {
-            background: linear-gradient(90deg, #ffffff 0%, #d8ecff 100%);
+            background: linear-gradient(90deg, #ffffff 0%, #cde3f5 100%);
         }
-        /* 二维码区块 */
         .group-qrcode {
             background: #f8f9fa;
             border-radius: 12px;
@@ -229,14 +256,13 @@
             font-size: 16px;
             font-weight: 600;
             margin-bottom: 8px;
-            color: #1e88e5;
+            color: var(--main);
         }
         .qrcode-tips {
             font-size: 13px;
             color: #718096;
             line-height: 1.65;
         }
-        /* 提示区块 */
         .tips {
             background: white;
             padding: 18px;
@@ -244,13 +270,12 @@
             font-size: 13px;
             color: #4a5568;
             line-height: 1.7;
-            border-left: 4px solid #42a5f5;
+            border-left: 4px solid var(--light);
             margin-top: 18px;
         }
         .tips strong {
-            color: #1e88e5;
+            color: var(--main);
         }
-        /* 弹窗提示 */
         .toast {
             position: fixed;
             top: 50%;
@@ -264,19 +289,6 @@
             z-index: 9999;
             display: none;
         }
-        .page-loaded {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            background: #4caf50;
-            color: white;
-            padding: 9px 16px;
-            border-radius: 6px;
-            font-size: 13px;
-            z-index: 9998;
-            display: none;
-        }
-        /* 适配调整 */
         @media (max-width: 768px) {
             .link-group {
                 grid-template-columns: repeat(4, 1fr);
@@ -293,8 +305,10 @@
             .header {
                 padding: 24px 16px;
             }
+            .single-link{
+                padding:20px 10px;
+            }
         }
-        /* 深色模式简单适配 */
         @media (prefers-color-scheme: dark) {
             body {
                 background-color: #121720;
@@ -310,9 +324,8 @@
             .single-link:hover {
                 background: linear-gradient(90deg, #1e2633 0%, #2a384f 100%);
             }
-            /* 深色模式高亮适配 */
             .single-link.highlight {
-                border-color: #42a5f5;
+                border-color: var(--light);
                 background: linear-gradient(90deg, #1e2633 0%, #203652 100%);
             }
             .single-link.highlight:hover {
@@ -324,12 +337,10 @@
             .group-qrcode {
                 background: #1e2633;
             }
-            .rand-toggle-btn {
+            .rand-toggle-btn,.reset-setting-btn,.theme-item {
                 background-color: #1e2633;
-                color:#42a5f5;
             }
-            .rand-toggle-btn.active {
-                background-color:#42a5f5;
+            .theme-item.active{
                 color:#fff;
             }
         }
@@ -337,10 +348,18 @@
 </head>
 <body>
     <div class="toast" id="toast">正在打开链接...</div>
-    <div class="page-loaded" id="pageLoaded">页面加载完成 ✅</div>
     <button class="back-top" id="backTop">↑</button>
+    <div class="theme-wrap">
+        <div class="theme-item active" data-main="#2989c4" data-light="#54ace0">晴空浅蓝</div>
+        <div class="theme-item" data-main="#208c57" data-light="#37b97b">墨绿版本</div>
+        <div class="theme-item" data-main="#d26926" data-light="#f08c48">焦糖橙色</div>
+        <div class="theme-item" data-main="#444444" data-light="#777777">高级深灰</div>
+        <div class="theme-item" data-main="#c45c83" data-light="#dd88a7">豆沙粉</div>
+        <div class="theme-item" data-main="#239c97" data-light="#4ec5c0">薄荷青</div>
+        <div class="theme-item" data-main="#6852b7" data-light="#8872d6">紫罗兰紫</div>
+        <div class="theme-item" data-main="#915c3c" data-light="#b97e57">胡桃棕</div>
+    </div>
     
-    <!-- 头部 -->
     <div class="header">
         <div class="brand-name">卡多多世界</div>
         <div class="header-slogan">一次领卡 一生守候</div>
@@ -349,76 +368,70 @@
             温州移动、联通、电信、广电流量卡免费开卡，温州范围内上门办理
         </div>
         <div class="wechat-info" id="wechatInfo">
-            <span id="wechatLabel">微信：</span>
+            <span id="wechatLabel">温州微信：</span>
             <span id="wechatAccount">kdd_0577</span>
-            <button class="wechat-copy-btn" onclick="copyWechat()">复制</button>
-            <button class="wechat-switch-btn" onclick="switchWechat()">切换微信</button>
+            <button class="wechat-copy-btn">复制</button>
+            <button class="wechat-switch-btn">切换微信</button>
         </div>
-        <a href="https://work.weixin.qq.com/kfid/kfc6fff05dc0082e1c6" class="work-wechat-link" target="_blank" onclick="showToast('正在打开客服...')">📞 客服</a>
+        <a href="https://work.weixin.qq.com/kfid/kfc6fff05dc0082e1c6" class="work-wechat-link" target="_blank" rel="noopener noreferrer">📞 客服</a>
         
         <div class="nav-title">流量卡业务工具导航</div>
         <div class="nav-subtitle">发货时效 & 查单撤单指引</div>
     </div>
 
-    <!-- 套餐办理入口 -->
     <div class="section">
-        <div style="display:flex;justify-content:space-between;align-items:center;">
+        <div style="display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;">
             <h2 class="section-title">套餐办理入口</h2>
             <div class="rand-control-wrap">
                 <button class="rand-toggle-btn" id="randToggleBtn">开启随机排序</button>
+                <button class="reset-setting-btn" id="resetSettingBtn">重置设置</button>
             </div>
         </div>
         <div class="link-group" id="packageGroup">
-            <!-- 固定原始顺序渠道（不再自动乱序） -->
-            <a href="https://172.lot-ml.com/ProductEn/Index/77cad8f3af288738" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">172</a>
-            <a href="https://yc.670k.com/index?k=RnhtbkxIN0FYd1U9" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">宸宇</a>
-            <a href="https://haoka.kakatx.com/web/#/pages/index/index/?agent_id=206654" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">共创</a>
-            <a href="https://m.yapingtech.com/#/pages/sales_index/my_store?mall_id=k9n576LJ%2FWBl470WgzQghw%3D%3D" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">浩卡</a>
-            <a href="https://my.86hk.vip/#/pages/micro_store/index?agent_id=51be22bae7d74a422210db56129c38e0" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">号易</a>
-            <a href="https://h5.sim10000.net/#/sc/L115gFkA7X?=" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">号推</a>
-            <a href="http://h5.vip12300.cn/index?k=U2NKL3VYSlN3bGs9" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">林夕</a>
-            <a href="https://saler.jkcae.com/small-store-app/#/?agent_id=22841" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">极客云</a>
-            <a href="http://ka.dandanhou.net/index?k=bjlGQzRpU21QV0U9" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">卡多多</a>
-            <a href="https://ym.ksjhaoka.com/?s=NcAB9sD5590792" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">卡世界</a>
-            <a href="https://ky.kyaowang.cn/shop/#/?promoCode=OUEd1j8H" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">卡耀云</a>
-            <a href="https://app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">朽月</a>
-            <a href="http://55555.wang/index?k=K3EzdlYwNk5wWDQ9" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">五湖通信</a>
-            <a href="https://19890104.haoka.biz?h=y" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">蓝畅速享</a>
-            <a href="bsx.bsxtx.com/s/FqZmhkS0" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">宝时信</a>
-            <a href="https://www.71haoka.com/index?k=Vzgzc2I2ZUN0YjA9" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">号卡研究所</a>
-            <a href="https://h5.gantanhao.com/QeYY" class="link-item rand-item" target="_blank" onclick="showToast('正在打开链接...')">卡业联盟</a>
-
-            <!-- 易优、号卡屋、大鑫卡业 永久固定底部 -->
-            <a href="https://hk.euhaoka.cn/index?k=eFZheStSYVFFUVk9" class="link-item fixed-bottom single-link highlight" target="_blank" onclick="showToast('正在打开链接...')">易优</a>
-            <a href="https://hk5.kyaowang.cn/s/pHexRyhy" class="link-item fixed-bottom single-link highlight" target="_blank" onclick="showToast('正在打开链接...')">号卡屋</a>
-            <a href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" class="link-item fixed-bottom single-link highlight" target="_blank" onclick="showToast('正在打开链接...')">大鑫卡业</a>
+            <a href="https://172.lot-ml.com/ProductEn/Index/77cad8f3af288738" class="link-item rand-item" target="_blank" rel="noopener noreferrer">172</a>
+            <a href="https://yc.670k.com/index?k=RnhtbkxIN0FYd1U9" class="link-item rand-item" target="_blank" rel="noopener noreferrer">宸宇</a>
+            <a href="https://haoka.kakatx.com/web/#/pages/index/index/index/?agent_id=206654" class="link-item rand-item" target="_blank" rel="noopener noreferrer">共创</a>
+            <a href="m.yapingtech.com/#/pages/sales_index/my_store?mall_id=k9n576LJ/WBl470WgzQghw==" class="link-item rand-item" target="_blank" rel="noopener noreferrer">浩卡</a>
+            <a href="my.86hk.vip/#/pages/micro_store/index?agent_id=51be22bae7d74a422210db56129c38e0" class="link-item rand-item" target="_blank" rel="noopener noreferrer">号易</a>
+            <a href="h5.sim10000.net/#/sc/L115gFkA7X?=" class="link-item rand-item" target="_blank" rel="noopener noreferrer">号推</a>
+            <a href="http://h5.vip12300.cn/index?k=U2NKL3VYSlN3bGs9" class="link-item rand-item" target="_blank" rel="noopener noreferrer">林夕</a>
+            <a href="saler.jkcae.com/small-store-app/#/?agent_id=22841" class="link-item rand-item" target="_blank" rel="noopener noreferrer">极客云</a>
+            <a href="http://ka.dandanhou.net/index?k=bjlGQzRpU21QV0U9" class="link-item rand-item" target="_blank" rel="noopener noreferrer">卡多多</a>
+            <a href="ym.ksjhaoka.com/?s=NcAB9sD5590792" class="link-item rand-item" target="_blank" rel="noopener noreferrer">卡世界</a>
+            <a href="ky.kyaowang.cn/shop/#/?promoCode=OUEd1j8H" class="link-item rand-item" target="_blank" rel="noopener noreferrer">卡耀云</a>
+            <a href="app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" class="link-item rand-item" target="_blank" rel="noopener noreferrer">朽月</a>
+            <a href="http://55555.wang/index?k=K3EzdlYwNk5wWDQ9" class="link-item rand-item" target="_blank" rel="noopener noreferrer">五湖通信</a>
+            <a href="19890104.haoka.biz?h=y" class="link-item rand-item" target="_blank" rel="noopener noreferrer">蓝畅速享</a>
+            <a href="bsx.bsxtx.com/s/FqZmhkS0" class="link-item rand-item" target="_blank" rel="noopener noreferrer">宝时信</a>
+            <a href="https://www.71haoka.com/index?k=Vzgzc2I2ZUN0YjA9" class="link-item rand-item" target="_blank" rel="noopener noreferrer">号卡研究所</a>
+            <a href="h5.gantanhao.com/QeYY" class="link-item rand-item" target="_blank" rel="noopener noreferrer">卡业联盟</a>
+            <a href="https://hk.euhaoka.cn/index?k=eFZheStSYVFFUVk9" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer">易优</a>
+            <a href="hk5.kyaowang.cn/s/pHexRyhy" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer">号卡屋</a>
+            <a href="daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer">大鑫卡业</a>
         </div>
     </div>
 
-    <!-- 运营商查单撤单（普通通栏，无高亮） -->
     <div class="section">
         <h2 class="section-title">运营商查单撤单</h2>
         <div class="link-group">
-            <a href="http://a.189.cn/IBbVib" class="link-item single-link" target="_blank" onclick="showToast('正在打开链接...')">电信查单撤单</a>
-            <a href="https://m.10010.com/myorder" class="link-item single-link" target="_blank" onclick="showToast('正在打开链接...')">联通查单/传三证/催发货/撤单</a>
-            <a href="https://dev.coc.10086.cn/coc/web/coc2020/cardqueryorder/" class="link-item single-link" target="_blank" onclick="showToast('正在打开链接...')">移动查单撤单</a>
-            <a href="javascript:void(0);" class="link-item single-link mini-program" onclick="showMiniProgramTip()">广电查单撤单（小程序）</a>
+            <a href="http://a.189.cn/IBbVib" class="link-item single-link" target="_blank" rel="noopener noreferrer">电信查单撤单</a>
+            <a href="https://m.10010.com/myorder" class="link-item single-link" target="_blank" rel="noopener noreferrer">联通查单/传三证/催发货/撤单</a>
+            <a href="dev.coc.10086.cn/coc/web/coc2020/cardqueryorder/" class="link-item single-link" target="_blank" rel="noopener noreferrer">移动查单撤单</a>
+            <a href="javascript:void(0);" class="link-item single-link mini-program">广电查单撤单（小程序）</a>
         </div>
     </div>
 
-    <!-- 一证五户查询（普通通栏，无高亮） -->
     <div class="section">
         <h2 class="section-title">一证五户查询</h2>
         <div class="link-group">
-            <a href="https://getsimnum.caict.ac.cn/#/" class="link-item single-link" target="_blank" onclick="showToast('正在打开链接...')">一证五户查询入口</a>
+            <a href="https://getsimnum.caict.ac.cn/#/" class="link-item single-link" target="_blank" rel="noopener noreferrer">一证五户查询入口</a>
         </div>
     </div>
 
-    <!-- 交流群 -->
     <div class="section">
         <h2 class="section-title">加入卡多多「茶水间」交流群</h2>
         <div class="group-qrcode">
-            <img src="https://raw.githubusercontent.com/chenxxu0104/kddsj/main/qrcode.png" alt="卡多多茶水间群二维码" class="qrcode-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block'">
+            <img src="https://raw.githubusercontent.com/chenxxu0104/kddsj/main/qrcode.png" alt="卡多多茶水间群二维码" class="qrcode-img">
             <div style="display:none;color:#999;margin:10px 0;">二维码加载失败，请复制微信联系群主入群</div>
             <div class="qrcode-desc">扫码加入卡多多「茶水间」交流群</div>
             <div class="qrcode-tips">
@@ -429,7 +442,6 @@
         </div>
     </div>
 
-    <!-- 提示信息 -->
     <div class="tips">
         <strong>发货时效提示：</strong>正常发货时效为48小时，如超过48小时，一般发不了了，可能是运营商拦截或者证件信息审核不通过，建议更换其他套餐下单。<br>
         <strong>催发货指引：</strong>只需等待运营商处理即可，若客户比较着急，可直接更换套餐重新下单试试。<br>
@@ -438,68 +450,97 @@
     </div>
 
     <script>
-        const WECHAT_WENZHOU = "kdd_0577";
-        const WECHAT_NATIONAL = "chenxxu0104";
+        const CONFIG = {
+            WECHAT_WENZHOU: "kdd_0577",
+            WECHAT_NATIONAL: "chenxxu0104"
+        }
+        const els = {
+            toast: document.getElementById('toast'),
+            backTopBtn: document.getElementById('backTop'),
+            randToggleBtn: document.getElementById('randToggleBtn'),
+            resetSettingBtn: document.getElementById('resetSettingBtn'),
+            packageGroup: document.getElementById('packageGroup'),
+            wechatAccount: document.getElementById('wechatAccount'),
+            wechatLabel: document.getElementById('wechatLabel'),
+            copyBtn: document.querySelector('.wechat-copy-btn'),
+            switchBtn: document.querySelector('.wechat-switch-btn'),
+            miniProgramBtn: document.querySelector('.mini-program'),
+            themeItems:document.querySelectorAll('.theme-item')
+        }
         let currentWechatType = "wenzhou";
+        let enableAutoRandom = false;
+        let isWeChat = /MicroMessenger/i.test(navigator.userAgent);
+        let lastClickTime = 0;
 
-        const toast = document.getElementById('toast');
-        const pageLoaded = document.getElementById('pageLoaded');
-        const backTopBtn = document.getElementById('backTop');
-        const randToggleBtn = document.getElementById('randToggleBtn');
-        const packageGroup = document.getElementById('packageGroup');
-
-        // 读取本地存储随机模式状态
-        let enableAutoRandom = localStorage.getItem("linkRandomMode") === "1";
-
-        // 更新按钮文字样式
-        function refreshRandButtonUI(){
-            if(enableAutoRandom){
-                randToggleBtn.textContent = "关闭随机排序";
-                randToggleBtn.classList.add("active");
-            }else{
-                randToggleBtn.textContent = "开启随机排序";
-                randToggleBtn.classList.remove("active");
-            }
+        function setTheme(mainColor,lightColor,domItem){
+            document.documentElement.style.setProperty('--main',mainColor);
+            document.documentElement.style.setProperty('--light',lightColor);
+            els.themeItems.forEach(item=>item.classList.remove('active'));
+            domItem.classList.add('active');
+            localStorage.setItem('themeMain',mainColor);
+            localStorage.setItem('themeLight',lightColor);
         }
-        refreshRandButtonUI();
-
-        // 切换随机模式
-        randToggleBtn.onclick = function(){
-            enableAutoRandom = !enableAutoRandom;
-            localStorage.setItem("linkRandomMode", enableAutoRandom ? "1" : "0");
-            refreshRandButtonUI();
-            if(enableAutoRandom){
-                randomPackageList();
-                showToast("已开启随机排序，刷新页面渠道会打乱", 2200);
-            }else{
-                restoreOriginOrder();
-                showToast("已关闭随机排序，固定原始顺序", 2200);
-            }
-        }
-
-        // 回到顶部
-        backTopBtn.addEventListener('click', () => {
-            window.scrollTo({ top: 0, behavior: 'smooth' });
+        els.themeItems.forEach(item=>{
+            item.addEventListener('click',()=>{
+                setTheme(item.dataset.main,item.dataset.light,item);
+                showToast("主题切换成功",1500);
+            })
         })
-        window.addEventListener('scroll', () => {
-            if(window.scrollY > 300) {
-                backTopBtn.classList.add('show');
+        function initTheme(){
+            let main = localStorage.getItem("themeMain");
+            let light = localStorage.getItem("themeLight");
+            if(main&&light){
+                els.themeItems.forEach(item=>{
+                    if(item.dataset.main === main){
+                        setTheme(main,light,item);
+                    }
+                })
+            }
+        }
+
+        function throttle(fn, delay = 100) {
+            let last = 0;
+            return function (...args) {
+                let now = Date.now();
+                if (now - last >= delay) {
+                    last = now;
+                    fn.apply(this, args);
+                }
+            }
+        }
+        function getLocalStorage(key) {
+            try {
+                return localStorage.getItem(key);
+            } catch {
+                return null;
+            }
+        }
+        function setLocalStorage(key, val) {
+            try {
+                localStorage.setItem(key, val);
+            } catch (err) { }
+        }
+        function refreshRandButtonUI() {
+            if (enableAutoRandom) {
+                els.randToggleBtn.textContent = "关闭随机排序";
+                els.randToggleBtn.classList.add("active");
             } else {
-                backTopBtn.classList.remove('show');
+                els.randToggleBtn.textContent = "开启随机排序";
+                els.randToggleBtn.classList.remove("active");
             }
-        })
-
+        }
         function showToast(text, time = 2000) {
-            toast.textContent = text;
-            toast.style.display = 'block';
+            const now = Date.now();
+            if (now - lastClickTime < 600) return;
+            lastClickTime = now;
+            els.toast.textContent = text;
+            els.toast.style.display = 'block';
             setTimeout(() => {
-                toast.style.display = 'none';
+                els.toast.style.display = 'none';
             }, time);
         }
-
-        // 复制微信兼容兜底
         function copyWechat() {
-            const text = document.getElementById('wechatAccount').innerText;
+            const text = els.wechatAccount.innerText;
             if (navigator.clipboard && window.isSecureContext) {
                 navigator.clipboard.writeText(text).then(() => {
                     showToast('微信已复制 ✅', 1500);
@@ -517,25 +558,25 @@
             document.body.removeChild(textarea);
             showToast('微信已复制 ✅', 1500);
         }
-
         function switchWechat() {
             if (currentWechatType === "wenzhou") {
-                document.getElementById('wechatAccount').textContent = WECHAT_NATIONAL;
-                document.getElementById('wechatLabel').textContent = "全国微信：";
+                els.wechatAccount.textContent = CONFIG.WECHAT_NATIONAL;
+                els.wechatLabel.textContent = "全国微信：";
                 currentWechatType = "national";
             } else {
-                document.getElementById('wechatAccount').textContent = WECHAT_WENZHOU;
-                document.getElementById('wechatLabel').textContent = "温州微信：";
+                els.wechatAccount.textContent = CONFIG.WECHAT_WENZHOU;
+                els.wechatLabel.textContent = "温州微信：";
                 currentWechatType = "wenzhou";
             }
             showToast("已切换微信账号 ✅", 1500);
         }
-
         function showMiniProgramTip() {
-            showToast('请在微信打开：广电营业厅', 3000);
+            if (isWeChat) {
+                showToast('复制文字：广电营业厅，搜索小程序', 3000);
+            } else {
+                showToast('请在微信打开：广电营业厅', 3000);
+            }
         }
-
-        // Fisher-Yates 公平洗牌算法
         function shuffleArray(arr) {
             const copy = [...arr];
             for (let i = copy.length - 1; i > 0; i--) {
@@ -544,56 +585,62 @@
             }
             return copy;
         }
-
-        // 保存原始DOM顺序（关键！用于恢复固定排序）
-        const originRandItems = Array.from(packageGroup.querySelectorAll('.rand-item'));
-        const fixedItems = Array.from(packageGroup.querySelectorAll('.fixed-bottom'));
-
-        // 随机排序渠道
+        const originRandItems = Array.from(els.packageGroup.querySelectorAll('.rand-item'));
+        const fixedItems = Array.from(els.packageGroup.querySelectorAll('.fixed-bottom'));
         function randomPackageList() {
             const shuffledRand = shuffleArray(originRandItems);
-            packageGroup.innerHTML = '';
-            shuffledRand.forEach(el => packageGroup.appendChild(el));
-            fixedItems.forEach(el => packageGroup.appendChild(el));
+            els.packageGroup.innerHTML = '';
+            shuffledRand.forEach(el => els.packageGroup.appendChild(el));
+            fixedItems.forEach(el => els.packageGroup.appendChild(el));
         }
-        // 恢复原始固定顺序
         function restoreOriginOrder() {
-            packageGroup.innerHTML = '';
-            originRandItems.forEach(el => packageGroup.appendChild(el));
-            fixedItems.forEach(el => packageGroup.appendChild(el));
+            els.packageGroup.innerHTML = '';
+            originRandItems.forEach(el => els.packageGroup.appendChild(el));
+            fixedItems.forEach(el => els.packageGroup.appendChild(el));
         }
-
-        // IP自动切换微信
-        function setWechatByRegion() {
-            fetch('https://ipapi.co/json/', { signal: AbortSignal.timeout(3000) })
-            .then(res => res.json())
-            .then(data => {
-                const region = data.region || '';
-                const city = data.city || '';
-                if (region.includes("浙江") || city.includes("温州")) {
-                    currentWechatType = "wenzhou";
-                    document.getElementById('wechatAccount').textContent = WECHAT_WENZHOU;
-                    document.getElementById('wechatLabel').textContent = "温州微信：";
-                } else {
-                    currentWechatType = "national";
-                    document.getElementById('wechatAccount').textContent = WECHAT_NATIONAL;
-                    document.getElementById('wechatLabel').textContent = "全国微信：";
-                }
-            }).catch(()=>{});
+        function resetAllSetting() {
+            enableAutoRandom = false;
+            setLocalStorage("linkRandomMode", "0");
+            restoreOriginOrder();
+            refreshRandButtonUI();
+            showToast("配置重置完成",1500);
         }
-
-        window.onload = function() {
-            // 默认固定顺序；只有开启随机模式才打乱
-            if(enableAutoRandom){
+        els.copyBtn.addEventListener('click', copyWechat);
+        els.switchBtn.addEventListener('click', switchWechat);
+        els.miniProgramBtn.addEventListener('click', showMiniProgramTip);
+        els.resetSettingBtn.addEventListener('click', resetAllSetting);
+        els.randToggleBtn.addEventListener('click', () => {
+            enableAutoRandom = !enableAutoRandom;
+            setLocalStorage("linkRandomMode", enableAutoRandom ? "1" : "0");
+            refreshRandButtonUI();
+            if (enableAutoRandom) {
                 randomPackageList();
-            }else{
+                showToast("已开启随机排序，刷新页面渠道会打乱", 2200);
+            } else {
+                restoreOriginOrder();
+                showToast("已关闭随机排序，固定原始顺序", 2200);
+            }
+        })
+        els.backTopBtn.addEventListener('click', () => {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+        })
+        window.addEventListener('scroll', throttle(() => {
+            if (window.scrollY > 300) {
+                els.backTopBtn.classList.add('show');
+            } else {
+                els.backTopBtn.classList.remove('show');
+            }
+        }));
+        window.onload = function () {
+            initTheme();
+            const localState = getLocalStorage("linkRandomMode");
+            enableAutoRandom = localState === "1";
+            refreshRandButtonUI();
+            if (enableAutoRandom) {
+                randomPackageList();
+            } else {
                 restoreOriginOrder();
             }
-            setWechatByRegion();
-            pageLoaded.style.display = 'block';
-            setTimeout(() => {
-                pageLoaded.style.display = 'none';
-            }, 2500);
         };
     </script>
 </body>
