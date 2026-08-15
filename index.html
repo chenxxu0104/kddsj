@@ -3,6 +3,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="default">
     <meta name="keywords" content="流量卡办理,联通电信移动广电,号卡代理,一证五户查询">
     <meta name="description" content="卡多多世界‑流量卡业务导航平台，提供各大运营商办卡入口、查单撤单、一证五户查询，温州可上门办卡">
     <title>卡多多世界 | 流量卡业务工具导航</title>
@@ -17,6 +19,9 @@
             --main:#2989c4;
             --light:#54ace0;
         }
+        html {
+            scroll-behavior: smooth;
+        }
         body {
             background-color: #f5f8fa;
             min-height: 100vh;
@@ -24,6 +29,7 @@
             max-width: 800px;
             margin: 0 auto;
             line-height: 1.55;
+            -webkit-tap-highlight-color: transparent;
         }
         .back-top {
             position: fixed;
@@ -40,8 +46,12 @@
             cursor: pointer;
             opacity: 0;
             visibility: hidden;
-            transition: all 0.3 ease;
+            transition: all 0.3s ease;
             z-index: 999;
+        }
+        .back-top.show {
+            opacity: 1;
+            visibility: visible;
         }
         .rand-control-wrap {
             display: flex;
@@ -50,6 +60,7 @@
             margin: 10px 0 18px 0;
             align-items: center;
             position: relative;
+            flex-wrap: wrap;
         }
         .rand-toggle-btn,.reset-setting-btn,.theme-toggle-inline {
             padding: 7px 16px;
@@ -59,7 +70,7 @@
             color: var(--main);
             font-size: 14px;
             cursor: pointer;
-            transition: 0.2 ease;
+            transition: 0.2s ease;
             display: inline-flex;
             align-items: center;
             gap: 6px;
@@ -103,7 +114,7 @@
             font-size: 13px;
             color: #333;
             cursor: pointer;
-            transition: 0.18 ease;
+            transition: 0.18s ease;
         }
         .theme-item:hover {
             background: #f5f8fa;
@@ -140,14 +151,14 @@
             text-align: center;
             margin-bottom: 24px;
             box-shadow: 0 4px 12px rgba(41,137,196,0.2);
-            animation: fadeInUp 0.6 ease-out;
+            animation: fadeInUp 0.6s ease-out;
         }
         .brand-name {
             font-size: 32px;
             font-weight: 700;
             margin-bottom: 8px;
             letter-spacing: 2px;
-            animation: pulse 3 infinite ease-in-out;
+            animation: pulse 3s infinite ease-in-out;
         }
         .header-slogan {
             font-size: 18px;
@@ -179,7 +190,7 @@
             font-size: 12px;
             cursor: pointer;
             border: 1px solid rgba(255,255,255,0.35);
-            transition: background 0.2 ease;
+            transition: background 0.2s ease;
         }
         .wechat-copy-btn:hover,
         .wechat-switch-btn:hover {
@@ -194,10 +205,11 @@
             font-size: 14px;
             margin: 6px 0 16px;
             text-decoration: none;
-            transition: opacity 0.2 ease;
+            transition: opacity 0.2s ease;
         }
         .work-wechat-link:active {
             opacity: 0.8;
+            transform: scale(0.98);
         }
         .nav-title {
             font-size: 18px;
@@ -209,7 +221,7 @@
         }
         .section {
             margin-bottom: 26px;
-            animation: fadeInUp 0.6 ease-out;
+            animation: fadeInUp 0.6s ease-out;
         }
         .section-title {
             color: #2d3748;
@@ -238,7 +250,8 @@
             align-items: center;
             justify-content: center;
             text-align: center;
-            transition: all 0.2 ease;
+            transition: all 0.2s ease;
+            word-break: break-all;
         }
         .link-item:hover {
             background: #e8f4fb;
@@ -286,6 +299,13 @@
             border-radius: 8px;
             margin: 0 auto 16px;
             object-fit: cover;
+            display: block;
+        }
+        .qrcode-fail-tip {
+            display: none;
+            color: #999;
+            margin: 10px 0;
+            font-size: 14px;
         }
         .qrcode-desc {
             font-size: 16px;
@@ -383,18 +403,18 @@
             .rand-toggle-btn,.reset-setting-btn,.theme-toggle-inline {
                 background-color: #1e2633;
             }
-            body.dark .theme-dropdown-inline{
+            .theme-dropdown-inline{
                 background: #1e2633;
                 border-color: #2a3342;
                 box-shadow: 0 4px 18px rgba(0,0,0,0.22);
             }
-            body.dark .theme-item{
+            .theme-item{
                 color: #cfd6e6;
             }
-            body.dark .theme-item:hover{
+            .theme-item:hover{
                 background: #2a3342;
             }
-            body.dark .theme-item.active{
+            .theme-item.active{
                 background: #25384f;
                 color: #fff;
             }
@@ -403,7 +423,7 @@
 </head>
 <body>
     <div class="toast" id="toast">正在打开链接...</div>
-    <button class="back-top" id="backTop">↑</button>
+    <button class="back-top" id="backTop" aria-label="返回顶部">↑</button>
 
     <div class="header">
         <div class="brand-name">卡多多世界</div>
@@ -466,52 +486,53 @@
             </div>
         </div>
         <div class="link-group" id="packageGroup">
-            <a href="https://172.lot-ml.com/ProductEn/Index/77cad8f3af288738" class="link-item rand-item" target="_blank" rel="noopener noreferrer">172</a>
-            <a href="https://yc.670k.com/index?k=RnhtbkxIN0FYd1U9" class="link-item rand-item" target="_blank" rel="noopener noreferrer">宸宇</a>
-            <a href="https://haoka.kakatx.com/web/#/?token=MjA2NjU0fDE3ODQwNDk2NjA2MDNoYW9rYTY2Ng" class="link-item rand-item" target="_blank" rel="noopener noreferrer">共创</a>
-            <a href="https://mp.yapingkeji.com/#/pages/sales_index/my_store?mall_id=k9n576LJ%2FWBl470WgzQghw%3D%3D" class="link-item rand-item" target="_blank" rel="noopener noreferrer">浩卡</a>
-            <a href="https://lingqu.87haoka.cn/s/jgcjTJXe" class="link-item rand-item" target="_blank" rel="noopener noreferrer">翼卡云</a>
-            <a href="https://h5.app.yuxuantongxin.com/#/?shop_id=6606&sell_id=6606&t=1785497196" class="link-item rand-item" target="_blank" rel="noopener noreferrer">号码家园</a>
-            <a href="https://my.86hk.vip/#/pages/micro_store/index?agent_id=51be22bae7d74a422210db56129c38e0" class="link-item rand-item" target="_blank" rel="noopener noreferrer">号易</a>
-            <a href="https://t.nnkj77.com/c/19890104?h=y" class="link-item rand-item" target="_blank" rel="noopener noreferrer">号推</a>
-            <a href="http://h5.vip12300.cn/index?k=U2NKL3VYSlN3bGs9" class="link-item rand-item" target="_blank" rel="noopener noreferrer">林夕</a>
-            <a href="https://saler.jkcae.com/small-store-app/#/?agent_id=22841" class="link-item rand-item" target="_blank" rel="noopener noreferrer">极客云</a>
-            <a href="http://ka.dandanhou.net/index?k=bjlGQzRpU21QV0U9" class="link-item rand-item" target="_blank" rel="noopener noreferrer">卡多多</a>
-            <a href="https://ym.ksjhaoka.com/?s=NcAB9sD5590792" class="link-item rand-item" target="_blank" rel="noopener noreferrer">卡世界</a>
-            <a href="https://app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" class="link-item rand-item" target="_blank" rel="noopener noreferrer">朽月</a>
-            <a href="http://55555.wang/index?k=K3EzdlYwNk5wWDQ9" class="link-item rand-item" target="_blank" rel="noopener noreferrer">五湖通信</a>
-            <a href="https://t.nnkj77.com/c/19890104?h=y" class="link-item rand-item" target="_blank" rel="noopener noreferrer">蓝畅速享</a>
-            <a href="https://bsx.bsxtx.com/s/FqZmhkS0" class="link-item rand-item" target="_blank" rel="noopener noreferrer">宝时信</a>
-            <a href="https://svip.yunjuka.cn/index?k=Vzgzc2I2ZUN0YjA9" class="link-item rand-item" target="_blank" rel="noopener noreferrer">号卡研究所</a>
-            <a href="https://h5.gantanhao.com/owhV" class="link-item rand-item" target="_blank" rel="noopener noreferrer">卡业联盟</a>
-            <a href="https://hk.euhaoka.cn/index?k=eFZheStSYVFFUVk9" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer">易优</a>
-            <a href="https://hk5.kyaowang.cn/shop#/?promoCode=pHexRyhy&indexFirstGroup=2" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer">号卡屋</a>
-            <a href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer">大鑫卡业</a>
+            <a href="https://172.lot-ml.com/ProductEn/Index/77cad8f3af288738" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="172号卡平台">172</a>
+            <a href="https://yc.670k.com/index?k=RnhtbkxIN0FYd1U9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="宸宇号卡平台">宸宇</a>
+            <a href="https://haoka.kakatx.com/web/#/?token=MjA2NjU0fDE3ODQwNDk2NjA2MDNoYW9rYTY2Ng" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="共创号卡平台">共创</a>
+            <a href="https://mp.yapingkeji.com/#/pages/sales_index/my_store?mall_id=k9n576LJ%2FWBl470WgzQghw%3D%3D" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="浩卡号卡平台">浩卡</a>
+            <a href="https://lingqu.87haoka.cn/s/jgcjTJXe" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="翼卡云平台">翼卡云</a>
+            <a href="https://h5.app.yuxuantongxin.com/#/?shop_id=6606&sell_id=6606&t=1785497196" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="号码家园平台">号码家园</a>
+            <a href="https://my.86hk.vip/#/pages/micro_store/index?agent_id=51be22bae7d74a422210db56129c38e0" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="号易平台">号易</a>
+            <a href="https://t.nnkj77.com/c/19890104?h=y" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="号推平台">号推</a>
+            <a href="http://h5.vip12300.cn/index?k=U2NKL3VYSlN3bGs9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="林夕号卡平台">林夕</a>
+            <a href="https://saler.jkcae.com/small-store-app/#/?agent_id=22841" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="极客云平台">极客云</a>
+            <a href="http://ka.dandanhou.net/index?k=bjlGQzRpU21QV0U9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="卡多多平台">卡多多</a>
+            <a href="https://ym.ksjhaoka.com/?s=NcAB9sD5590792" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="卡世界平台">卡世界</a>
+            <a href="https://app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="朽月通信平台">朽月</a>
+            <a href="http://55555.wang/index?k=K3EzdlYwNk5wWDQ9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="五湖通信平台">五湖通信</a>
+            <a href="https://t.nnkj77.com/c/19890104?h=y" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="蓝畅速享平台">蓝畅速享</a>
+            <a href="https://bsx.bsxtx.com/s/FqZmhkS0" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="宝时信平台">宝时信</a>
+            <a href="https://svip.yunjuka.cn/index?k=Vzgzc2I2ZUN0YjA9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="号卡研究所平台">号卡研究所</a>
+            <a href="https://h5.gantanhao.com/owhV" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="卡业联盟平台">卡业联盟</a>
+            <a href="https://hk.usim.vip/s/IUfTWBfu" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="爱卡号卡商城">爱卡</a>
+            <a href="https://hk.euhaoka.cn/index?k=eFZheStSYVFFUVk9" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer" title="易优号卡平台">易优</a>
+            <a href="https://hk5.kyaowang.cn/shop#/?promoCode=pHexRyhy&indexFirstGroup=2" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer" title="号卡屋平台">号卡屋</a>
+            <a href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer" title="大鑫卡业平台">大鑫卡业</a>
         </div>
     </div>
 
     <div class="section">
         <h2 class="section-title">运营商查单撤单</h2>
         <div class="link-group">
-            <a href="http://a.189.cn/IBbVib" class="link-item single-link" target="_blank" rel="noopener noreferrer">电信查单撤单</a>
-            <a href="https://m.10010.com/myorder" class="link-item single-link" target="_blank" rel="noopener noreferrer">联通查单/传三证/催发货/撤单</a>
-            <a href="https://dev.coc.10086.cn/coc/web/coc2020/cardqueryorder/" class="link-item single-link" target="_blank" rel="noopener noreferrer">移动查单撤单</a>
-            <a href="javascript:void(0);" class="link-item single-link mini-program">广电查单撤单（小程序）</a>
+            <a href="http://a.189.cn/IBbVib" class="link-item single-link" target="_blank" rel="noopener noreferrer" title="电信官方查单撤单入口">电信查单撤单</a>
+            <a href="https://m.10010.com/myorder" class="link-item single-link" target="_blank" rel="noopener noreferrer" title="联通官方查单、传三证、催发货、撤单入口">联通查单/传三证/催发货/撤单</a>
+            <a href="https://dev.coc.10086.cn/coc/web/coc2020/cardqueryorder/" class="link-item single-link" target="_blank" rel="noopener noreferrer" title="移动官方查单撤单入口">移动查单撤单</a>
+            <a href="javascript:void(0);" class="link-item single-link mini-program" title="广电营业厅小程序查单">广电查单撤单（小程序）</a>
         </div>
     </div>
 
     <div class="section">
         <h2 class="section-title">一证五户查询</h2>
         <div class="link-group">
-            <a href="https://getsimnum.caict.ac.cn/#/" class="link-item single-link" target="_blank" rel="noopener noreferrer">一证五户查询入口</a>
+            <a href="https://getsimnum.caict.ac.cn/#/" class="link-item single-link" target="_blank" rel="noopener noreferrer" title="工信部官方一证五户查询入口">一证五户查询入口</a>
         </div>
     </div>
 
     <div class="section">
         <h2 class="section-title">加入卡多多「茶水间」交流群</h2>
         <div class="group-qrcode">
-            <img src="https://raw.githubusercontent.com/chenxxu0104/kddsj/main/qrcode.png" alt="卡多多茶水间群二维码" class="qrcode-img">
-            <div style="display:none;color:#999;margin:10px 0;">二维码加载失败，请复制微信联系群主入群</div>
+            <img src="https://raw.githubusercontent.com/chenxxu0104/kddsj/main/qrcode.png" alt="卡多多茶水间群二维码" class="qrcode-img" onerror="this.style.display='none';this.nextElementSibling.style.display='block';">
+            <div class="qrcode-fail-tip">二维码加载失败，请复制上方微信联系群主入群</div>
             <div class="qrcode-desc">扫码加入卡多多「茶水间」交流群</div>
             <div class="qrcode-tips">
                 ✅ 群内可交流流量卡业务经验<br>
