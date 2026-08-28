@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="default">
-    <meta name="keywords" content="流量卡办理,联通电信移动广电,号卡代理,一证五户查询">
+    <meta name="keywords" content="流量卡办理,联通电信移动广电,号卡代理,一证五户查询,龙创星联">
     <meta name="description" content="卡多多世界‑流量卡业务导航平台，提供各大运营商办卡入口、查单撤单、一证五户查询，温州可上门办卡">
     <title>卡多多世界 | 流量卡业务工具导航</title>
     <style>
@@ -211,6 +211,20 @@
             opacity: 0.8;
             transform: scale(0.98);
         }
+        /* 头部主推快捷按钮（可选，不需要可以删掉这段） */
+        .header-quick-push{
+            display:inline-block;
+            background:#ffffff;
+            color:var(--main);
+            font-weight:bold;
+            padding:8px 20px;
+            border-radius:20px;
+            text-decoration:none;
+            margin-bottom:12px;
+        }
+        .header-quick-push:active{
+            transform:scale(0.97);
+        }
         .nav-title {
             font-size: 18px;
             margin-bottom: 5px;
@@ -279,9 +293,9 @@
             background: linear-gradient(90deg, #ffffff 0%, #dcecf9 100%);
         }
         .single-link.highlight {
-            border: 1px solid var(--main);
+            border: 2px solid var(--main);
             background: linear-gradient(90deg, #ffffff 0%, #e4f1fb 100%);
-            font-weight: 500;
+            font-weight: 600;
         }
         .single-link.highlight:hover {
             background: linear-gradient(90deg, #ffffff 0%, #cde3f5 100%);
@@ -424,7 +438,6 @@
 <body>
     <div class="toast" id="toast">正在打开链接...</div>
     <button class="back-top" id="backTop" aria-label="返回顶部">↑</button>
-
     <div class="header">
         <div class="brand-name">卡多多世界</div>
         <div class="header-slogan">一次领卡 一生守候</div>
@@ -432,6 +445,9 @@
         <div class="local-service">
             温州移动、联通、电信、广电流量卡免费开卡，温州范围内上门办理
         </div>
+        <!-- 头部主推快捷按钮，不需要直接注释或者删除 -->
+        <a href="https://sim.loonginno.cn/web/shangpinguanli/zaishoushangpin" target="_blank" rel="noopener noreferrer" class="header-quick-push">🔥主推渠道｜龙创星联</a>
+
         <div class="wechat-info" id="wechatInfo">
             <span id="wechatLabel">温州微信：</span>
             <span id="wechatAccount">kdd_0577</span>
@@ -443,7 +459,6 @@
         <div class="nav-title">流量卡业务工具导航</div>
         <div class="nav-subtitle">发货时效 & 查单撤单指引</div>
     </div>
-
     <div class="section">
         <h2 class="section-title">套餐办理入口</h2>
         <div class="rand-control-wrap">
@@ -486,6 +501,9 @@
             </div>
         </div>
         <div class="link-group" id="packageGroup">
+            <!-- 主推：龙创星联，放在最顶部，不参与随机打乱 -->
+            <a href="https://sim.loonginno.cn/web/shangpinguanli/zaishoushangpin" class="link-item single-link highlight fixed-top" target="_blank" rel="noopener noreferrer" title="龙创星联｜主推渠道">🔥龙创星联【主推渠道】</a>
+
             <a href="https://172.lot-ml.com/ProductEn/Index/77cad8f3af288738" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="172号卡平台">172</a>
             <a href="https://yc.670k.com/index?k=RnhtbkxIN0FYd1U9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="宸宇号卡平台">宸宇</a>
             <a href="https://haoka.kakatx.com/web/#/?token=MjA2NjU0fDE3ODQwNDk2NjA2MDNoYW9rYTY2Ng" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="共创号卡平台">共创</a>
@@ -510,7 +528,6 @@
             <a href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer" title="大鑫卡业平台">大鑫卡业</a>
         </div>
     </div>
-
     <div class="section">
         <h2 class="section-title">运营商查单撤单</h2>
         <div class="link-group">
@@ -520,14 +537,12 @@
             <a href="javascript:void(0);" class="link-item single-link mini-program" title="广电营业厅小程序查单">广电查单撤单（小程序）</a>
         </div>
     </div>
-
     <div class="section">
         <h2 class="section-title">一证五户查询</h2>
         <div class="link-group">
             <a href="https://getsimnum.caict.ac.cn/#/" class="link-item single-link" target="_blank" rel="noopener noreferrer" title="工信部官方一证五户查询入口">一证五户查询入口</a>
         </div>
     </div>
-
     <div class="section">
         <h2 class="section-title">加入卡多多「茶水间」交流群</h2>
         <div class="group-qrcode">
@@ -541,14 +556,12 @@
             </div>
         </div>
     </div>
-
     <div class="tips">
         <strong>发货时效提示：</strong>下单后运营商24‑48小时完成审核发货，最长48小时；超过48小时大概率无法出卡，大多是运营商风控拦截或者证件审核失败，您可以更换套餐重新下单。<br>
         <strong>催发货指引：</strong>只需等待运营商处理即可，若客户比较着急，可直接更换套餐重新下单试试。<br>
         <strong>使用提示：</strong>小程序链接需在微信内打开，点击对应按钮可获取跳转指引。<br>
         <strong>加群提示：</strong>若二维码失效，可点击上方微信复制按钮添加对应微信申请入群。
     </div>
-
     <script>
         const CONFIG = {
             WECHAT_WENZHOU: "kdd_0577",
@@ -573,7 +586,6 @@
         let enableAutoRandom = false;
         let isWeChat = /MicroMessenger/i.test(navigator.userAgent);
         let lastClickTime = 0;
-
         function setTheme(mainColor,lightColor,domItem){
             document.documentElement.style.setProperty('--main',mainColor);
             document.documentElement.style.setProperty('--light',lightColor);
@@ -589,12 +601,10 @@
                 els.themeDropdown.classList.remove('show');
             })
         })
-
         els.themeToggleBtn.addEventListener('click', function (e) {
             e.stopPropagation();
             els.themeDropdown.classList.toggle('show');
         });
-
         document.addEventListener('click', function (e) {
             if (!els.themeToggleBtn.contains(e.target) &&
                 !els.themeDropdown.contains(e.target) &&
@@ -603,7 +613,6 @@
                 els.themeDropdown.classList.remove('show');
             }
         });
-
         function initTheme(){
             let main = localStorage.getItem("themeMain");
             let light = localStorage.getItem("themeLight");
@@ -615,7 +624,6 @@
                 })
             }
         }
-
         function throttle(fn, delay = 100) {
             let last = 0;
             return function (...args) {
@@ -704,15 +712,20 @@
             return copy;
         }
         const originRandItems = Array.from(els.packageGroup.querySelectorAll('.rand-item'));
+        // fixed‑top：龙创星联；fixed‑bottom：易优、号卡屋、大鑫卡业，都不参与随机打乱
+        const fixedTopItem = Array.from(els.packageGroup.querySelectorAll('.fixed-top'));
         const fixedItems = Array.from(els.packageGroup.querySelectorAll('.fixed-bottom'));
+
         function randomPackageList() {
             const shuffledRand = shuffleArray(originRandItems);
             els.packageGroup.innerHTML = '';
+            fixedTopItem.forEach(el => els.packageGroup.appendChild(el));
             shuffledRand.forEach(el => els.packageGroup.appendChild(el));
             fixedItems.forEach(el => els.packageGroup.appendChild(el));
         }
         function restoreOriginOrder() {
             els.packageGroup.innerHTML = '';
+            fixedTopItem.forEach(el => els.packageGroup.appendChild(el));
             originRandItems.forEach(el => els.packageGroup.appendChild(el));
             fixedItems.forEach(el => els.packageGroup.appendChild(el));
         }
