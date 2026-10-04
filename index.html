@@ -31,6 +31,23 @@
             line-height: 1.55;
             -webkit-tap-highlight-color: transparent;
         }
+        /* ==========新增公告横幅+访问统计样式========== */
+        .notice-banner{
+            background: linear-gradient(90deg,#2989c4,#54ace0);
+            color:#ffffff;
+            padding:12px 16px;
+            border-radius:12px;
+            text-align:center;
+            margin-bottom:16px;
+            font-size:14px;
+            box-shadow:0 2px 10px rgba(41,137,196,0.2);
+        }
+        .visit-stat{
+            text-align:right;
+            font-size:12px;
+            color:#667788;
+            margin:-10px 4px 12px 0;
+        }
         .back-top {
             position: fixed;
             bottom: 24px;
@@ -265,6 +282,7 @@
             background: #fdf2f8;
             border-color: #f0e6ee;
             color: #9c27b0;
+            cursor:pointer;
         }
         .mini-program:hover {
             background: #fef7fb;
@@ -410,6 +428,12 @@
             body {
                 background-color: #121720;
             }
+            .notice-banner{
+                background: linear-gradient(90deg,#194e74,#296b94);
+            }
+            .visit-stat{
+                color:#a0b4cc;
+            }
             .link-item, .tips, .qrcode-card {
                 background: #1e2633;
                 color: #e2e8f0;
@@ -459,6 +483,12 @@
     </style>
 </head>
 <body>
+    <!-- 公告横幅，修改内部文字 -->
+    <div class="notice-banner">
+        ⚠️温馨提示：本页面仅渠道导航，公域请勿直接分发链接；办理前请仔细阅读各平台合约，「目前“宝时信”、“大鑫卡业”、“号卡屋”无套餐。」
+    </div>
+    <div class="visit-stat">页面访问：<span id="visitCount">0</span></div>
+
     <div class="toast" id="toast">正在打开链接...</div>
     <button class="back-top" id="backTop" aria-label="返回顶部">↑</button>
     <div class="header">
@@ -539,6 +569,14 @@
             <a href="https://svip.yunjuka.cn/index?k=Vzgzc2I2ZUN0YjA9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="号卡研究所平台">号卡研究所</a>
             <a href="https://h5.gantanhao.com/owhV" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="卡业联盟平台">卡业联盟</a>
             <a href="https://hk.usim.vip/s/IUfTWBfu" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="爱卡号卡商城">爱卡</a>
+            <!-- 新增6个渠道 -->
+            <a href="https://agenthk.aswulian.com/#/?ApiKey=2W3IEOKJO7" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="艾尚云号卡">艾尚云号卡</a>
+            <a href="https://hk.123haoka.cn/index?k=Y0diTDB6L01Ec2s9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="号卡宇宙">号卡宇宙</a>
+            <a href="https://api.haokay.cn/h5?code=Fhka3qAI" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="号卡云">号卡云</a>
+            <a href="http://m.wywlhk.cn/index?k=dklYeDg3SjFjb2c9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="琬玥号卡">琬玥号卡</a>
+            <a href="https://hk.enetpush.com/s/3VgbCxMa" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="亿网联盟">亿网联盟</a>
+            <a href="https://bsx.jfys.cn/s/FqZmhkS0" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="宝时信">宝时信</a>
+
             <a href="https://sim.loonginno.cn/h5/index?shop_id=MTAxNTk3&tab=1&shua=1" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer" title="龙创星联平台">龙创星联</a>
             <a href="https://hk5.kyaowang.cn/shop#/?promoCode=pHexRyhy&indexFirstGroup=2" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer" title="号卡屋平台">号卡屋</a>
             <a href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer" title="大鑫卡业平台">大鑫卡业</a>
@@ -550,7 +588,7 @@
             <a href="http://a.189.cn/IBbVib" class="link-item single-link" target="_blank" rel="noopener noreferrer" title="电信官方查单撤单入口">电信查单撤单</a>
             <a href="https://m.10010.com/myorder" class="link-item single-link" target="_blank" rel="noopener noreferrer" title="联通官方查单、传三证、催发货、撤单入口">联通查单/传三证/催发货/撤单</a>
             <a href="https://dev.coc.10086.cn/coc/web/coc2020/cardqueryorder/" class="link-item single-link" target="_blank" rel="noopener noreferrer" title="移动官方查单撤单入口">移动查单撤单</a>
-            <a href="javascript:void(0);" class="link-item single-link mini-program" title="广电营业厅小程序查单">广电查单撤单（小程序）</a>
+            <div class="link-item single-link mini-program" title="广电营业厅小程序查单">广电查单撤单（小程序）</div>
         </div>
     </div>
     <div class="section">
@@ -598,7 +636,6 @@
             </div>
         </div>
     </div>
-
     <div class="tips">
         <strong>发货时效提示：</strong>下单后运营商24‑48小时完成审核发货，最长48小时；超过48小时大概率无法出卡，大多是运营商风控拦截或者证件审核失败，您可以更换套餐重新下单。<br>
         <strong>催发货指引：</strong>只需等待运营商处理即可，若客户比较着急，可直接更换套餐重新下单试试。<br>
@@ -623,12 +660,22 @@
             miniProgramBtn: document.querySelector('.mini-program'),
             themeToggleBtn: document.getElementById('themeToggleBtn'),
             themeDropdown: document.getElementById('themeDropdown'),
-            themeItems: document.querySelectorAll('.theme-item')
+            themeItems: document.querySelectorAll('.theme-item'),
+            visitCountEl: document.getElementById('visitCount')
         }
         let currentWechatType = "wenzhou";
         let enableAutoRandom = false;
         let isWeChat = /MicroMessenger/i.test(navigator.userAgent);
         let lastClickTime = 0;
+
+        // =========访问统计本地计数=========
+        (function(){
+            let cnt = parseInt(localStorage.getItem("pageVisitCount")||"0");
+            cnt++;
+            localStorage.setItem("pageVisitCount",String(cnt));
+            els.visitCountEl.innerText = cnt;
+        })();
+
         function setTheme(mainColor,lightColor,domItem){
             document.documentElement.style.setProperty('--main',mainColor);
             document.documentElement.style.setProperty('--light',lightColor);
@@ -649,10 +696,7 @@
             els.themeDropdown.classList.toggle('show');
         });
         document.addEventListener('click', function (e) {
-            if (!els.themeToggleBtn.contains(e.target) &&
-                !els.themeDropdown.contains(e.target) &&
-                !els.randToggleBtn.contains(e.target) &&
-                !els.resetSettingBtn.contains(e.target)) {
+            if (!els.themeDropdown.contains(e.target) && !els.themeToggleBtn.contains(e.target)) {
                 els.themeDropdown.classList.remove('show');
             }
         });
