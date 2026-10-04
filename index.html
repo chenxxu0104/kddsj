@@ -8,6 +8,18 @@
     <meta name="keywords" content="流量卡办理,联通电信移动广电,号卡代理,一证五户查询">
     <meta name="description" content="卡多多世界‑流量卡业务导航平台，提供各大运营商办卡入口、查单撤单、一证五户查询，温州可上门办卡">
     <title>卡多多世界 | 流量卡业务工具导航</title>
+    <!-- 百度统计 -->
+    <script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?b149e59ae3e7b614433c076636d6d5e4";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+    <!-- 不蒜子统计（页面展示UV、PV，后端去重） -->
+    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <style>
         * {
             margin: 0;
@@ -487,8 +499,10 @@
     <div class="notice-banner">
         ⚠️温馨提示：本页面仅渠道导航，公域请勿直接分发链接；办理前请仔细阅读套餐详情，「目前“宝时信”、“大鑫卡业”、“号卡屋”无套餐。」
     </div>
-    <div class="visit-stat">页面访问：<span id="visitCount">0</span></div>
-
+    <!-- 页面展示统计：独立访客UV / 总浏览PV -->
+    <div class="visit-stat">
+        独立访客：<span id="busuanzi_value_site_uv"></span> | 总浏览：<span id="busuanzi_value_site_pv"></span>
+    </div>
     <div class="toast" id="toast">正在打开链接...</div>
     <button class="back-top" id="backTop" aria-label="返回顶部">↑</button>
     <div class="header">
@@ -576,7 +590,6 @@
             <a href="http://m.wywlhk.cn/index?k=dklYeDg3SjFjb2c9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="琬玥号卡">琬玥号卡</a>
             <a href="https://hk.enetpush.com/s/3VgbCxMa" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="亿网联盟">亿网联盟</a>
             <a href="https://bsx.jfys.cn/s/FqZmhkS0" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="宝时信">宝时信</a>
-
             <a href="https://sim.loonginno.cn/h5/index?shop_id=MTAxNTk3&tab=1&shua=1" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer" title="龙创星联平台">龙创星联</a>
             <a href="https://hk5.kyaowang.cn/shop#/?promoCode=pHexRyhy&indexFirstGroup=2" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer" title="号卡屋平台">号卡屋</a>
             <a href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer" title="大鑫卡业平台">大鑫卡业</a>
@@ -660,21 +673,12 @@
             miniProgramBtn: document.querySelector('.mini-program'),
             themeToggleBtn: document.getElementById('themeToggleBtn'),
             themeDropdown: document.getElementById('themeDropdown'),
-            themeItems: document.querySelectorAll('.theme-item'),
-            visitCountEl: document.getElementById('visitCount')
+            themeItems: document.querySelectorAll('.theme-item')
         }
         let currentWechatType = "wenzhou";
         let enableAutoRandom = false;
         let isWeChat = /MicroMessenger/i.test(navigator.userAgent);
         let lastClickTime = 0;
-
-        // =========访问统计本地计数=========
-        (function(){
-            let cnt = parseInt(localStorage.getItem("pageVisitCount")||"0");
-            cnt++;
-            localStorage.setItem("pageVisitCount",String(cnt));
-            els.visitCountEl.innerText = cnt;
-        })();
 
         function setTheme(mainColor,lightColor,domItem){
             document.documentElement.style.setProperty('--main',mainColor);
