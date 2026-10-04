@@ -18,8 +18,6 @@ var _hmt = _hmt || [];
   s.parentNode.insertBefore(hm, s);
 })();
 </script>
-    <!-- 不蒜子统计（页面展示UV、PV，后端去重） -->
-    <script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
     <style>
         * {
             margin: 0;
@@ -97,16 +95,16 @@ var _hmt = _hmt || [];
             border: 1px solid var(--main);
             background: #fff;
             color: var(--main);
-            font-size: 14px;
+            font-size:14px;
             cursor: pointer;
-            transition: 0.2s ease;
+            transition:0.2s ease;
             display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            min-height: 38px;
+            align-items:center;
+            gap:6px;
+            min-height:38px;
             box-sizing: border-box;
-            position: relative;
-            z-index: 30;
+            position:relative;
+            z-index:30;
         }
         .rand-toggle-btn.active {
             background: var(--main);
@@ -124,44 +122,44 @@ var _hmt = _hmt || [];
             background: #ffffff;
             border-radius: 16px;
             box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-            border: 1px solid #e9eff6;
-            padding: 8px;
+            border:1px solid #e9eff6;
+            padding:8px;
             display: none;
             flex-direction: column;
-            gap: 6px;
-            z-index: 100;
+            gap:6px;
+            z-index:100;
         }
         .theme-dropdown-inline.show{
             display:flex;
         }
         .theme-item {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 9px 10px;
-            border-radius: 12px;
-            font-size: 13px;
-            color: #333;
-            cursor: pointer;
-            transition: 0.18s ease;
+            display:flex;
+            align-items:center;
+            gap:8px;
+            padding:9px 10px;
+            border-radius:12px;
+            font-size:13px;
+            color:#333;
+            cursor:pointer;
+            transition:0.18s ease;
         }
         .theme-item:hover {
-            background: #f5f8fa;
+            background:#f5f8fa;
         }
         .theme-item.active {
-            background: #eaf4ff;
-            color: var(--main);
-            font-weight: 500;
+            background:#eaf4ff;
+            color:var(--main);
+            font-weight:500;
         }
         .theme-dot {
-            width: 18px;
-            height: 18px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--main) 0%, var(--light) 100%);
-            flex-shrink: 0;
+            width:18px;
+            height:18px;
+            border-radius:50%;
+            background:linear-gradient(135deg, var(--main) 0%, var(--light) 100%);
+            flex-shrink:0;
         }
         .theme-text {
-            white-space: nowrap;
+            white-space:nowrap;
         }
         @keyframes pulse {
             0% { transform: scale(1); }
@@ -501,7 +499,7 @@ var _hmt = _hmt || [];
     </div>
     <!-- 页面展示统计：独立访客UV / 总浏览PV -->
     <div class="visit-stat">
-        独立访客：<span id="busuanzi_value_site_uv"></span> | 总浏览：<span id="busuanzi_value_site_pv"></span>
+        独立访客：<span id="busuanzi_value_site_uv">--</span> | 总浏览：<span id="busuanzi_value_site_pv">--</span>
     </div>
     <div class="toast" id="toast">正在打开链接...</div>
     <button class="back-top" id="backTop" aria-label="返回顶部">↑</button>
@@ -574,7 +572,7 @@ var _hmt = _hmt || [];
             <a href="https://h5.app.yuxuantongxin.com/#/?shop_id=6606&sell_id=6606&t=1785497196" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="号码家园平台">号码家园</a>
             <a href="https://my.86hk.vip/#/pages/micro_store/index?agent_id=51be22bae7d74a422210db56129c38e0" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="号易平台">号易</a>
             <a href="http://h5.vip12300.cn/index?k=U2NKL3VYSlN3bGs9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="林夕号卡平台">林夕</a>
-            <a href="https://hongtuo66.cn/s/9BVCEuTp" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="宏拓号卡平台">宏拓通信</a>
+            <a href="https://hongtuo66.cn/s/9BVCEuTp" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="宏拓通信">宏拓通信</a>
             <a href="http://ka.dandanhou.net/index?k=bjlGQzRpU21QV0U9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="卡多多平台">卡多多</a>
             <a href="https://ym.ksjhaoka.com/?s=NcAB9sD5590792" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="卡世界平台">卡世界</a>
             <a href="https://app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="朽月通信平台">朽月</a>
@@ -679,7 +677,6 @@ var _hmt = _hmt || [];
         let enableAutoRandom = false;
         let isWeChat = /MicroMessenger/i.test(navigator.userAgent);
         let lastClickTime = 0;
-
         function setTheme(mainColor,lightColor,domItem){
             document.documentElement.style.setProperty('--main',mainColor);
             document.documentElement.style.setProperty('--light',lightColor);
@@ -860,5 +857,7 @@ var _hmt = _hmt || [];
             }
         };
     </script>
+    <!-- 不蒜子统计脚本移到页面底部，备用CDN，DOM渲染完后加载，初始显示--占位 -->
+    <script async src="https://cdn.jsdelivr.net/gh/ibruce/busuanzi@master/busuanzi.pure.mini.js"></script>
 </body>
 </html>
