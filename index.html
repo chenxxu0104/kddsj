@@ -8,16 +8,18 @@
     <meta name="keywords" content="流量卡办理,联通电信移动广电,号卡代理,一证五户查询">
     <meta name="description" content="卡多多世界‑流量卡业务导航平台，提供各大运营商办卡入口、查单撤单、一证五户查询，温州可上门办卡">
     <title>卡多多世界 | 流量卡业务工具导航</title>
+
     <!-- 百度统计 -->
     <script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "https://hm.baidu.com/hm.js?b149e59ae3e7b614433c076636d6d5e4";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
+        var _hmt = _hmt || [];
+        (function() {
+            var hm = document.createElement("script");
+            hm.src = "https://hm.baidu.com/hm.js?b149e59ae3e7b614433c076636d6d5e4";
+            var s = document.getElementsByTagName("script")[0];
+            s.parentNode.insertBefore(hm, s);
+        })();
+    </script>
+
     <style>
         * {
             margin: 0;
@@ -41,7 +43,6 @@ var _hmt = _hmt || [];
             line-height: 1.55;
             -webkit-tap-highlight-color: transparent;
         }
-        /* ==========新增公告横幅+访问统计样式========== */
         .notice-banner{
             background: linear-gradient(90deg,#2989c4,#54ace0);
             color:#ffffff;
@@ -51,12 +52,6 @@ var _hmt = _hmt || [];
             margin-bottom:16px;
             font-size:14px;
             box-shadow:0 2px 10px rgba(41,137,196,0.2);
-        }
-        .visit-stat{
-            text-align:right;
-            font-size:12px;
-            color:#667788;
-            margin:-10px 4px 12px 0;
         }
         .back-top {
             position: fixed;
@@ -95,16 +90,16 @@ var _hmt = _hmt || [];
             border: 1px solid var(--main);
             background: #fff;
             color: var(--main);
-            font-size:14px;
+            font-size: 14px;
             cursor: pointer;
-            transition:0.2s ease;
+            transition: 0.2s ease;
             display: inline-flex;
-            align-items:center;
-            gap:6px;
-            min-height:38px;
+            align-items: center;
+            gap: 6px;
+            min-height: 38px;
             box-sizing: border-box;
-            position:relative;
-            z-index:30;
+            position: relative;
+            z-index: 30;
         }
         .rand-toggle-btn.active {
             background: var(--main);
@@ -122,44 +117,44 @@ var _hmt = _hmt || [];
             background: #ffffff;
             border-radius: 16px;
             box-shadow: 0 4px 18px rgba(0,0,0,0.08);
-            border:1px solid #e9eff6;
-            padding:8px;
+            border: 1px solid #e9eff6;
+            padding: 8px;
             display: none;
             flex-direction: column;
-            gap:6px;
-            z-index:100;
+            gap: 6px;
+            z-index: 100;
         }
         .theme-dropdown-inline.show{
             display:flex;
         }
         .theme-item {
-            display:flex;
-            align-items:center;
-            gap:8px;
-            padding:9px 10px;
-            border-radius:12px;
-            font-size:13px;
-            color:#333;
-            cursor:pointer;
-            transition:0.18s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            padding: 9px 10px;
+            border-radius: 12px;
+            font-size: 13px;
+            color: #333;
+            cursor: pointer;
+            transition: 0.18s ease;
         }
         .theme-item:hover {
-            background:#f5f8fa;
+            background: #f5f8fa;
         }
         .theme-item.active {
-            background:#eaf4ff;
-            color:var(--main);
-            font-weight:500;
+            background: #eaf4ff;
+            color: var(--main);
+            font-weight: 500;
         }
         .theme-dot {
-            width:18px;
-            height:18px;
-            border-radius:50%;
-            background:linear-gradient(135deg, var(--main) 0%, var(--light) 100%);
-            flex-shrink:0;
+            width: 18px;
+            height: 18px;
+            border-radius: 50%;
+            background: linear-gradient(135deg, var(--main) 0%, var(--light) 100%);
+            flex-shrink: 0;
         }
         .theme-text {
-            white-space:nowrap;
+            white-space: nowrap;
         }
         @keyframes pulse {
             0% { transform: scale(1); }
@@ -346,7 +341,6 @@ var _hmt = _hmt || [];
             color: #718096;
             line-height: 1.65;
         }
-        /* 联系我们 二维码网格 */
         .qrcode-grid{
             display:grid;
             grid-template-columns: repeat(2,1fr);
@@ -441,9 +435,6 @@ var _hmt = _hmt || [];
             .notice-banner{
                 background: linear-gradient(90deg,#194e74,#296b94);
             }
-            .visit-stat{
-                color:#a0b4cc;
-            }
             .link-item, .tips, .qrcode-card {
                 background: #1e2633;
                 color: #e2e8f0;
@@ -493,40 +484,42 @@ var _hmt = _hmt || [];
     </style>
 </head>
 <body>
-    <!-- 公告横幅，修改内部文字 -->
     <div class="notice-banner">
         ⚠️温馨提示：本页面仅渠道导航，公域请勿直接分发链接；办理前请仔细阅读套餐详情，「目前“宝时信”、“大鑫卡业”、“号卡屋”无套餐。」
     </div>
-    <!-- 页面展示统计：独立访客UV / 总浏览PV -->
-    <div class="visit-stat">
-        独立访客：<span id="busuanzi_value_site_uv">--</span> | 总浏览：<span id="busuanzi_value_site_pv">--</span>
-    </div>
+
     <div class="toast" id="toast">正在打开链接...</div>
     <button class="back-top" id="backTop" aria-label="返回顶部">↑</button>
+
     <div class="header">
         <div class="brand-name">卡多多世界</div>
         <div class="header-slogan">一次领卡 一生守候</div>
-        
+
         <div class="local-service">
             温州移动、联通、电信、广电流量卡免费开卡，温州范围内上门办理
         </div>
+
         <div class="wechat-info" id="wechatInfo">
             <span id="wechatLabel">温州微信：</span>
             <span id="wechatAccount">kdd_0577</span>
             <button class="wechat-copy-btn">复制</button>
             <button class="wechat-switch-btn">切换微信</button>
         </div>
+
         <a href="https://work.weixin.qq.com/kfid/kfc6fff05dc0082e1c6" class="work-wechat-link" target="_blank" rel="noopener noreferrer">📞 客服</a>
-        
+
         <div class="nav-title">流量卡业务工具导航</div>
         <div class="nav-subtitle">发货时效 & 查单撤单指引</div>
     </div>
+
     <div class="section">
         <h2 class="section-title">套餐办理入口</h2>
+
         <div class="rand-control-wrap">
             <button class="rand-toggle-btn" id="randToggleBtn">🔀 随机</button>
             <button class="reset-setting-btn" id="resetSettingBtn">↺ 重置</button>
             <button class="theme-toggle-inline" id="themeToggleBtn">🎨 主题</button>
+
             <div class="theme-dropdown-inline" id="themeDropdown">
                 <div class="theme-item active" data-main="#2989c4" data-light="#54ace0">
                     <span class="theme-dot"></span>
@@ -562,6 +555,7 @@ var _hmt = _hmt || [];
                 </div>
             </div>
         </div>
+
         <div class="link-group" id="packageGroup">
             <a href="https://m.172.org.cn/ProductEn/Index/77cad8f3af288738" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="172号卡平台">172</a>
             <a href="https://yc.chenyutongxin.com/index?k=RnhtbkxIN0FYd1U9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="宸宇号卡平台">宸宇</a>
@@ -572,7 +566,7 @@ var _hmt = _hmt || [];
             <a href="https://h5.app.yuxuantongxin.com/#/?shop_id=6606&sell_id=6606&t=1785497196" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="号码家园平台">号码家园</a>
             <a href="https://my.86hk.vip/#/pages/micro_store/index?agent_id=51be22bae7d74a422210db56129c38e0" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="号易平台">号易</a>
             <a href="http://h5.vip12300.cn/index?k=U2NKL3VYSlN3bGs9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="林夕号卡平台">林夕</a>
-            <a href="https://hongtuo66.cn/s/9BVCEuTp" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="宏拓通信">宏拓通信</a>
+            <a href="https://hongtuo66.cn/s/9BVCEuTp" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="宏拓号卡平台">宏拓通信</a>
             <a href="http://ka.dandanhou.net/index?k=bjlGQzRpU21QV0U9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="卡多多平台">卡多多</a>
             <a href="https://ym.ksjhaoka.com/?s=NcAB9sD5590792" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="卡世界平台">卡世界</a>
             <a href="https://app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="朽月通信平台">朽月</a>
@@ -581,18 +575,20 @@ var _hmt = _hmt || [];
             <a href="https://svip.yunjuka.cn/index?k=Vzgzc2I2ZUN0YjA9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="号卡研究所平台">号卡研究所</a>
             <a href="https://h5.gantanhao.com/owhV" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="卡业联盟平台">卡业联盟</a>
             <a href="https://hk.usim.vip/s/IUfTWBfu" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="爱卡号卡商城">爱卡</a>
-            <!-- 新增6个渠道 -->
+
             <a href="https://agenthk.aswulian.com/#/?ApiKey=2W3IEOKJO7" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="艾尚云号卡">艾尚云号卡</a>
             <a href="https://hk.123haoka.cn/index?k=Y0diTDB6L01Ec2s9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="号卡宇宙">号卡宇宙</a>
             <a href="https://api.haokay.cn/h5?code=Fhka3qAI" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="号卡云">号卡云</a>
             <a href="http://m.wywlhk.cn/index?k=dklYeDg3SjFjb2c9" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="琬玥号卡">琬玥号卡</a>
             <a href="https://hk.enetpush.com/s/3VgbCxMa" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="亿网联盟">亿网联盟</a>
             <a href="https://bsx.jfys.cn/s/FqZmhkS0" class="link-item rand-item" target="_blank" rel="noopener noreferrer" title="宝时信">宝时信</a>
+
             <a href="https://sim.loonginno.cn/h5/index?shop_id=MTAxNTk3&tab=1&shua=1" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer" title="龙创星联平台">龙创星联</a>
             <a href="https://hk5.kyaowang.cn/shop#/?promoCode=pHexRyhy&indexFirstGroup=2" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer" title="号卡屋平台">号卡屋</a>
             <a href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" class="link-item fixed-bottom single-link highlight" target="_blank" rel="noopener noreferrer" title="大鑫卡业平台">大鑫卡业</a>
         </div>
     </div>
+
     <div class="section">
         <h2 class="section-title">运营商查单撤单</h2>
         <div class="link-group">
@@ -602,12 +598,14 @@ var _hmt = _hmt || [];
             <div class="link-item single-link mini-program" title="广电营业厅小程序查单">广电查单撤单（小程序）</div>
         </div>
     </div>
+
     <div class="section">
         <h2 class="section-title">一证五户查询</h2>
         <div class="link-group">
             <a href="https://getsimnum.caict.ac.cn/#/" class="link-item single-link" target="_blank" rel="noopener noreferrer" title="工信部官方一证五户查询入口">一证五户查询入口</a>
         </div>
     </div>
+
     <div class="section">
         <h2 class="section-title">加入卡多多「茶水间」交流群</h2>
         <div class="group-qrcode">
@@ -621,7 +619,7 @@ var _hmt = _hmt || [];
             </div>
         </div>
     </div>
-    <!-- 新增【联系我们】区块 -->
+
     <div class="section">
         <h2 class="section-title">联系我们</h2>
         <div class="qrcode-grid">
@@ -647,17 +645,20 @@ var _hmt = _hmt || [];
             </div>
         </div>
     </div>
+
     <div class="tips">
         <strong>发货时效提示：</strong>下单后运营商24‑48小时完成审核发货，最长48小时；超过48小时大概率无法出卡，大多是运营商风控拦截或者证件审核失败，您可以更换套餐重新下单。<br>
         <strong>催发货指引：</strong>只需等待运营商处理即可，若客户比较着急，可直接更换套餐重新下单试试。<br>
         <strong>使用提示：</strong>小程序链接需在微信内打开，点击对应按钮可获取跳转指引。<br>
         <strong>加群提示：</strong>若二维码失效，可点击上方微信复制按钮添加对应微信申请入群。
     </div>
+
     <script>
         const CONFIG = {
             WECHAT_WENZHOU: "kdd_0577",
             WECHAT_NATIONAL: "chenxxu0104"
-        }
+        };
+
         const els = {
             toast: document.getElementById('toast'),
             backTopBtn: document.getElementById('backTop'),
@@ -672,46 +673,53 @@ var _hmt = _hmt || [];
             themeToggleBtn: document.getElementById('themeToggleBtn'),
             themeDropdown: document.getElementById('themeDropdown'),
             themeItems: document.querySelectorAll('.theme-item')
-        }
+        };
+
         let currentWechatType = "wenzhou";
         let enableAutoRandom = false;
         let isWeChat = /MicroMessenger/i.test(navigator.userAgent);
         let lastClickTime = 0;
-        function setTheme(mainColor,lightColor,domItem){
-            document.documentElement.style.setProperty('--main',mainColor);
-            document.documentElement.style.setProperty('--light',lightColor);
-            els.themeItems.forEach(item=>item.classList.remove('active'));
+
+        function setTheme(mainColor, lightColor, domItem) {
+            document.documentElement.style.setProperty('--main', mainColor);
+            document.documentElement.style.setProperty('--light', lightColor);
+            els.themeItems.forEach(item => item.classList.remove('active'));
             domItem.classList.add('active');
-            localStorage.setItem('themeMain',mainColor);
-            localStorage.setItem('themeLight',lightColor);
+            localStorage.setItem('themeMain', mainColor);
+            localStorage.setItem('themeLight', lightColor);
         }
-        els.themeItems.forEach(item=>{
-            item.addEventListener('click',()=>{
-                setTheme(item.dataset.main,item.dataset.light,item);
-                showToast("主题切换成功",1500);
+
+        els.themeItems.forEach(item => {
+            item.addEventListener('click', () => {
+                setTheme(item.dataset.main, item.dataset.light, item);
+                showToast("主题切换成功", 1500);
                 els.themeDropdown.classList.remove('show');
-            })
-        })
+            });
+        });
+
         els.themeToggleBtn.addEventListener('click', function (e) {
             e.stopPropagation();
             els.themeDropdown.classList.toggle('show');
         });
+
         document.addEventListener('click', function (e) {
             if (!els.themeDropdown.contains(e.target) && !els.themeToggleBtn.contains(e.target)) {
                 els.themeDropdown.classList.remove('show');
             }
         });
-        function initTheme(){
+
+        function initTheme() {
             let main = localStorage.getItem("themeMain");
             let light = localStorage.getItem("themeLight");
-            if(main&&light){
-                els.themeItems.forEach(item=>{
-                    if(item.dataset.main === main){
-                        setTheme(main,light,item);
+            if (main && light) {
+                els.themeItems.forEach(item => {
+                    if (item.dataset.main === main) {
+                        setTheme(main, light, item);
                     }
-                })
+                });
             }
         }
+
         function throttle(fn, delay = 100) {
             let last = 0;
             return function (...args) {
@@ -720,8 +728,9 @@ var _hmt = _hmt || [];
                     last = now;
                     fn.apply(this, args);
                 }
-            }
+            };
         }
+
         function getLocalStorage(key) {
             try {
                 return localStorage.getItem(key);
@@ -729,11 +738,13 @@ var _hmt = _hmt || [];
                 return null;
             }
         }
+
         function setLocalStorage(key, val) {
             try {
                 localStorage.setItem(key, val);
-            } catch (err) { }
+            } catch (err) {}
         }
+
         function refreshRandButtonUI() {
             if (enableAutoRandom) {
                 els.randToggleBtn.textContent = "🔀 关闭随机";
@@ -743,6 +754,7 @@ var _hmt = _hmt || [];
                 els.randToggleBtn.classList.remove("active");
             }
         }
+
         function showToast(text, time = 2000) {
             const now = Date.now();
             if (now - lastClickTime < 600) return;
@@ -753,6 +765,7 @@ var _hmt = _hmt || [];
                 els.toast.style.display = 'none';
             }, time);
         }
+
         function copyWechat() {
             const text = els.wechatAccount.innerText;
             if (navigator.clipboard && window.isSecureContext) {
@@ -763,6 +776,7 @@ var _hmt = _hmt || [];
                 fallbackCopy(text);
             }
         }
+
         function fallbackCopy(text) {
             const textarea = document.createElement('textarea');
             textarea.value = text;
@@ -772,6 +786,7 @@ var _hmt = _hmt || [];
             document.body.removeChild(textarea);
             showToast('微信已复制 ✅', 1500);
         }
+
         function switchWechat() {
             if (currentWechatType === "wenzhou") {
                 els.wechatAccount.textContent = CONFIG.WECHAT_NATIONAL;
@@ -784,6 +799,7 @@ var _hmt = _hmt || [];
             }
             showToast("已切换微信账号 ✅", 1500);
         }
+
         function showMiniProgramTip() {
             if (isWeChat) {
                 showToast('复制文字：广电营业厅，搜索小程序', 3000);
@@ -791,6 +807,7 @@ var _hmt = _hmt || [];
                 showToast('请在微信打开：广电营业厅', 3000);
             }
         }
+
         function shuffleArray(arr) {
             const copy = [...arr];
             for (let i = copy.length - 1; i > 0; i--) {
@@ -799,30 +816,36 @@ var _hmt = _hmt || [];
             }
             return copy;
         }
+
         const originRandItems = Array.from(els.packageGroup.querySelectorAll('.rand-item'));
         const fixedItems = Array.from(els.packageGroup.querySelectorAll('.fixed-bottom'));
+
         function randomPackageList() {
             const shuffledRand = shuffleArray(originRandItems);
             els.packageGroup.innerHTML = '';
             shuffledRand.forEach(el => els.packageGroup.appendChild(el));
             fixedItems.forEach(el => els.packageGroup.appendChild(el));
         }
+
         function restoreOriginOrder() {
             els.packageGroup.innerHTML = '';
             originRandItems.forEach(el => els.packageGroup.appendChild(el));
             fixedItems.forEach(el => els.packageGroup.appendChild(el));
         }
+
         function resetAllSetting() {
             enableAutoRandom = false;
             setLocalStorage("linkRandomMode", "0");
             restoreOriginOrder();
             refreshRandButtonUI();
-            showToast("配置重置完成",1500);
+            showToast("配置重置完成", 1500);
         }
+
         els.copyBtn.addEventListener('click', copyWechat);
         els.switchBtn.addEventListener('click', switchWechat);
         els.miniProgramBtn.addEventListener('click', showMiniProgramTip);
         els.resetSettingBtn.addEventListener('click', resetAllSetting);
+
         els.randToggleBtn.addEventListener('click', () => {
             enableAutoRandom = !enableAutoRandom;
             setLocalStorage("linkRandomMode", enableAutoRandom ? "1" : "0");
@@ -834,10 +857,12 @@ var _hmt = _hmt || [];
                 restoreOriginOrder();
                 showToast("已关闭随机排序，固定原始顺序", 2200);
             }
-        })
+        });
+
         els.backTopBtn.addEventListener('click', () => {
             window.scrollTo({ top: 0, behavior: 'smooth' });
-        })
+        });
+
         window.addEventListener('scroll', throttle(() => {
             if (window.scrollY > 300) {
                 els.backTopBtn.classList.add('show');
@@ -845,6 +870,7 @@ var _hmt = _hmt || [];
                 els.backTopBtn.classList.remove('show');
             }
         }));
+
         window.onload = function () {
             initTheme();
             const localState = getLocalStorage("linkRandomMode");
@@ -857,7 +883,5 @@ var _hmt = _hmt || [];
             }
         };
     </script>
-    <!-- 不蒜子统计脚本移到页面底部，备用CDN，DOM渲染完后加载，初始显示--占位 -->
-    <script async src="https://cdn.jsdelivr.net/gh/ibruce/busuanzi@master/busuanzi.pure.mini.js"></script>
 </body>
 </html>
