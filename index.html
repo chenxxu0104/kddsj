@@ -123,19 +123,14 @@
   }
   .card{
     position:relative;display:flex;flex-direction:column;gap:6px;
-    padding:18px 18px 16px;border-radius:var(--radius);
+    padding:16px 14px 12px;border-radius:var(--radius);
     background:var(--card);border:1px solid var(--card-line);
     text-decoration:none;color:var(--ink);
     transition:transform .2s,border-color .2s,box-shadow .2s;
   }
   .card:hover{transform:translateY(-3px);border-color:rgba(201,162,75,.45);box-shadow:0 14px 34px rgba(0,0,0,.35)}
-  .card .name{font-size:16px;font-weight:600}
-  .card .go{
-    margin-top:12px;font-size:12px;color:var(--gold);
-    display:inline-flex;align-items:center;gap:6px;
-  }
-  .card .go svg{width:12px;height:12px;transition:transform .2s}
-  .card:hover .go svg{transform:translateX(3px)}
+  .card-logo{width:76px;height:76px;object-fit:cover;margin:0 auto 2px;display:block;border-radius:50%;overflow:hidden;background:var(--card);box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .card-num{font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.12em;text-align:center}
   .card-hot{
     border-color:rgba(201,162,75,.55);
     background:linear-gradient(180deg,rgba(201,162,75,.13),rgba(18,29,54,.94));
@@ -150,6 +145,7 @@
   .card-icon{flex:none;width:30px;height:30px;margin:0 auto 2px;color:var(--gold);
     display:flex;align-items:center;justify-content:center}
   .card-icon svg{width:30px;height:30px}
+
 
   /* ===== 服务说明 ===== */
   .notice{
@@ -343,15 +339,51 @@
   .tips-img-title{font-size:13px;color:var(--gold);letter-spacing:.06em;margin-bottom:12px}
   .tips-img img{width:100%;height:auto;display:block;border-radius:10px}
 
+  /* ===== 入口按钮（联系我们 / 号卡下单） ===== */
+  .entry-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:720px;margin:0 auto}
+  .entry-btn{
+    position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;
+    padding:34px 22px;border-radius:18px;text-decoration:none;color:#fff;cursor:pointer;
+    background:linear-gradient(160deg,rgba(30,46,84,.85),rgba(16,26,50,.9));
+    border:1px solid var(--card-line);transition:transform .2s,border-color .2s,box-shadow .2s;
+  }
+  .entry-btn:hover{transform:translateY(-4px);border-color:rgba(201,162,75,.5);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+  .entry-btn .eb-ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(201,162,75,.12);border:1px solid rgba(201,162,75,.35);color:var(--gold)}
+  .entry-btn .eb-ic svg{width:26px;height:26px}
+  .entry-btn h3{font-family:"Noto Serif SC",serif;font-size:19px;font-weight:700;letter-spacing:.1em;margin:0}
+  .entry-btn p{font-size:13px;color:var(--ink-3);margin:0;letter-spacing:.04em}
+  .entry-btn .eb-go{margin-top:6px;font-size:13px;color:var(--gold);letter-spacing:.06em}
+
+  /* ===== 静态内容浮层（联系我们 / 号卡下单） ===== */
+  .panel-overlay{
+    position:fixed;inset:0;z-index:105;display:none;align-items:flex-start;justify-content:center;
+    padding:20px;background:rgba(5,10,22,.78);backdrop-filter:blur(4px);overflow-y:auto;
+  }
+  .panel-overlay.open{display:flex}
+  .panel-overlay-box{
+    width:min(860px,96vw);margin:auto;background:#0E1730;
+    border:1px solid rgba(201,162,75,.35);border-radius:16px;
+    box-shadow:0 30px 80px rgba(0,0,0,.5);overflow:hidden;
+  }
+  .panel-head{
+    position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;
+    padding:16px 22px;border-bottom:1px solid var(--card-line);background:#0E1730;z-index:2;
+  }
+  .panel-head .ph-title{font-size:17px;font-weight:700;color:var(--gold);letter-spacing:.1em}
+  .panel-body{padding:26px 24px 30px;max-height:76vh;overflow-y:auto}
+  @media (max-width:680px){
+    .entry-grid{grid-template-columns:1fr;gap:14px;max-width:420px}
+    .panel-overlay{padding:0;align-items:stretch}
+    .panel-overlay-box{width:100vw;min-height:100dvh;border-radius:0;border:0}
+    .panel-body{max-height:none}
+  }
+
   @media (max-width:900px){.grid{grid-template-columns:repeat(3,1fr)}}
   @media (max-width:680px){
     .grid{grid-template-columns:repeat(2,1fr)}
-    .card{flex-direction:row;align-items:center;padding:13px 14px;gap:9px}
-    .card .name{font-size:14px;font-weight:600;white-space:nowrap;overflow:hidden;text-overflow:ellipsis;flex:1;min-width:0}
-    .card .go{margin-top:0;font-size:0;flex:none}
-    .card-icon{margin:0;width:22px;height:22px}
-    .card-icon svg{width:22px;height:22px}
-    .card .go svg{width:16px;height:16px}
+    .card{flex-direction:row;align-items:center;padding:13px 14px;gap:10px}
+    .card-logo{width:46px;height:46px;margin:0;flex:none}
+    .card-num{font-size:14px;font-weight:700;letter-spacing:.08em;text-align:left;flex:1;min-width:0}
     .service-grid{grid-template-columns:1fr}
     .qr-grid{grid-template-columns:repeat(3,1fr);gap:10px}
     .qr-card{padding:12px 8px 12px}
@@ -365,7 +397,8 @@
   }
   @media (max-width:360px){
     .card{padding:13px 12px}
-    .card .name{font-size:14px}
+    .card-logo{width:40px;height:40px}
+    .card-num{font-size:13px}
   }
   @media (prefers-reduced-motion:reduce){
     *{transition:none!important;animation:none!important}
@@ -386,163 +419,70 @@
     <p class="hero-desc">汇聚多家正规号卡平台，选套餐、下单、查单一站式服务。全国发货，号卡统一由运营商认证与配送。</p>
   </header>
 
-  <!-- ===== 视图：联系我们 ===== -->
-  <section class="sec" id="contact">
+  <!-- ===== 入口按钮 ===== -->
+  <section class="sec" id="entries" style="padding-top:8px">
     <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">加入我们</span>
-        <h2>联系我们</h2>
-        <div class="line"></div>
-      </div>
-
-      <a class="cs-entry" href="https://work.weixin.qq.com/kfid/kfc6fff05dc0082e1c6" target="_blank" rel="noopener">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-6.2l-4.5 3.6c-.4.3-1 .06-1-.5V17H4a2 2 0 0 1-2-2V6Z"/></svg></span>
-        企业微信客服 · 在线咨询
-        <span class="arrow">→</span>
-      </a>
-
-      <div class="qr-grid">
-        <div class="qr-card">
-          <div class="qr-img-box"><img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/WdYobGHn9oQscYxGZVicxzNJnRb" alt="企业微信客服二维码"></div>
-          <div class="qr-label">企业微信 · 客服</div>
-          <div class="qr-sub">陈贤旭 · 浙江电信客户经理</div>
-        </div>
-        <div class="qr-card">
-          <div class="qr-img-box"><img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/ETssbj8uZoMILax9heXcPViSnwg" alt="企业微信卡多多世界二维码"></div>
-          <div class="qr-label">企业微信 · 卡多多世界</div>
-          <div class="qr-sub">流量卡测评官 · 欢迎办卡</div>
-        </div>
-        <div class="qr-card">
-          <div class="qr-img-box"><img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RKRybeX3Hoz6n2xudj1cs4ipnbg" alt="客户服务群二维码"></div>
-          <div class="qr-label">客户服务群</div>
-          <div class="qr-sub">号卡办理临时群 · 扫码加入</div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== 视图：号卡平台 ===== -->
-  <section class="sec" id="platforms">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">合作平台</span>
-        <h2>号卡下单入口</h2>
-        <div class="line"></div>
-      </div>
-      <div class="tips-entry-wrap">
-        <button id="tipsBtn" class="tips-btn">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 2 21h20L12 3Z"/><path d="M12 10v4M12 17h.01"/></svg>
-          查看重要提示
+      <div class="entry-grid">
+        <button class="entry-btn" id="openContact">
+          <span class="eb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-6.2l-4.5 3.6c-.4.3-1 .06-1-.5V17H4a2 2 0 0 1-2-2V6Z"/></svg></span>
+          <h3>联系我们</h3>
+          <p>企业微信客服 · 扫码办卡</p>
+          <span class="eb-go">点击进入 →</span>
+        </button>
+        <button class="entry-btn" id="openPlatform">
+          <span class="eb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
+          <h3>号卡下单入口</h3>
+          <p>26 家正规平台 · 任选套餐</p>
+          <span class="eb-go">点击进入 →</span>
         </button>
       </div>
-      <div class="grid">
-        <a class="card card-hot" href="https://hk.usim.vip/shop#/?promoCode=IUfTWBfu&amp;indexFirstGroup=2" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="hot-badge">推荐</span><span class="name">爱卡通信</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card card-hot" href="https://agenthk.aswulian.com/#/?ApiKey=2W3IEOKJO7" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="hot-badge">推荐</span><span class="name">爱尚云网</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card card-hot" href="https://tui.haozhuan.vip/#/pages/micro_store/index?agent_id=51be22bae7d74a422210db56129c38e0" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="hot-badge">推荐</span><span class="name">号易号卡</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card card-hot" href="https://lm3.cn/owhV" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="hot-badge">推荐</span><span class="name">卡业联盟</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card card-hot" href="https://hk.enetpush.com/s/3VgbCxMa" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="hot-badge">推荐</span><span class="name">亿网联盟</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card card-hot" href="https://hongtuo66.cn/shop#/?promoCode=9BVCEuTp&amp;indexFirstGroup=2" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="hot-badge">推荐</span><span class="name">宏拓通信</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card card-hot" href="https://sim.loonginno.cn/h5/index?shop_id=MTAxNTk3&amp;tab=1" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="hot-badge">推荐</span><span class="name">龙创号卡</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card card-hot" href="https://lingqu.87haoka.cn/shop#/?promoCode=jgcjTJXe&amp;indexFirstGroup=2" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="hot-badge">推荐</span><span class="name">翼卡云</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card card-hot" href="https://hk.euhaoka.cn/index?k=eFZheStSYVFFUVk9" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="hot-badge">推荐</span><span class="name">易优号卡</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="https://zy.zhen-yue.cn/shop/77cad8f3af288738" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="name">172号卡</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="https://yc.chenyutongxin.com/index?k=RnhtbkxIN0FYd1U9" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="name">宸宇号卡</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="https://haoka.kakatx.com/web/#/?token=MjA2NjU0fDE3OTE0NzE1MTU2MzdoYW9rYTY2Ng" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="name">共创号卡</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="https://www.haokaxinyao.com/#/pages/sales_index/my_store?mall_id=k9n576LJ%2FWBl470WgzQghw%3D%3D" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="name">浩卡联盟</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="https://h5.app.yuxuantongxin.com/#/?shop_id=6606&amp;sell_id=6606&amp;t=1791472118" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="name">号码家园</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="https://h5.vip-mi.com/index?k=U2NKL3VYSlN3bGs9" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="name">林夕号卡</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="http://ka.dandanhou.net/index?k=bjlGQzRpU21QV0U9" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="name">卡多多</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="https://app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="name">朽月号卡</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="http://55555.wang/index?k=K3EzdlYwNk5wWDQ9" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="name">五湖通信</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="https://svip.yunjuka.cn/index?k=Vzgzc2I2ZUN0YjA9" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="name">号卡研究所</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="https://bsx.jfys.cn/s/FqZmhkS0" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="name">宝时信</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="https://sznxwl.com/s/5rp1e21C" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="name">轻仙号卡</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="https://hk.123haoka.cn/index?k=Y0diTDB6L01Ec2s9" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="name">号卡宇宙</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="https://api.haokay.cn/h5?code=Fhka3qAI" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="name">号卡云</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="http://m.wywlhk.cn/index?k=dklYeDg3SjFjb2c9" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="name">琬玥号卡</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="name">大鑫卡业</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-        <a class="card" href="https://hk5.kyaowang.cn/s/pHexRyhy" target="_blank" rel="noopener"><span class="card-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3.5" y="4" width="17" height="16" rx="3"/><path d="M8.5 4v4H4M15.5 4v4H20"/><rect x="9" y="11" width="6" height="6" rx="1"/></svg></span>
-          <span class="name">号卡屋</span>
-          <span class="go">进入下单 <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4"><path d="M5 12h14M13 6l6 6-6 6"/></svg></span>
-        </a>
-      </div>
     </div>
   </section>
+  <!-- ===== 号卡下单浮层 ===== -->
+  <div class="panel-overlay" id="platformOverlay" role="dialog" aria-modal="true">
+    <div class="panel-overlay-box">
+      <div class="panel-head">
+        <span class="ph-title">号卡下单入口</span>
+        <button id="platformClose" class="embed-close" aria-label="关闭">×</button>
+      </div>
+      <div class="panel-body">
+        <div class="tips-entry-wrap">
+          <button id="tipsBtn" class="tips-btn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 3 2 21h20L12 3Z"/><path d="M12 10v4M12 17h.01"/></svg>
+            查看重要提示
+          </button>
+        </div>
+        <div class="grid">
+        <a class="card card-hot" href="https://haoka.kakatx.com/web/#/?token=MjA2NjU0fDE3OTE0NzE1MTU2MzdoYW9rYTY2Ng" target="_blank" rel="noopener"><span class="hot-badge">推荐</span><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/TUSEb2DwxolN5dx50GucDsugnUe" alt="共创号卡"><span class="card-num">01</span></a>
+        <a class="card card-hot" href="https://lingqu.87haoka.cn/shop#/?promoCode=jgcjTJXe&amp;indexFirstGroup=2" target="_blank" rel="noopener"><span class="hot-badge">推荐</span><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/ZN7Mbj9njoZ3e0xsXmacyYtSnWc" alt="翼卡云"><span class="card-num">02</span></a>
+        <a class="card card-hot" href="https://yc.chenyutongxin.com/index?k=RnhtbkxIN0FYd1U9" target="_blank" rel="noopener"><span class="hot-badge">推荐</span><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/QRZ5bfmWwonF4AxGjBscGI9ynmt" alt="宸宇号卡"><span class="card-num">03</span></a>
+        <a class="card card-hot" href="https://hongtuo66.cn/shop#/?promoCode=9BVCEuTp&amp;indexFirstGroup=2" target="_blank" rel="noopener"><span class="hot-badge">推荐</span><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/BuwnbMa19oAzYWxmkZ5ctlMxnhf" alt="宏拓通信"><span class="card-num">04</span></a>
+        <a class="card card-hot" href="https://hk.usim.vip/shop#/?promoCode=IUfTWBfu&amp;indexFirstGroup=2" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/CfCubEnsRoRuAPxuFzqc6Q4AnFd" alt="爱卡通信"><span class="card-num">05</span></a>
+        <a class="card card-hot" href="https://agenthk.aswulian.com/#/?ApiKey=2W3IEOKJO7" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RgcxbOcKNo4PGCxPtegcivQvnOe" alt="爱尚云网"><span class="card-num">06</span></a>
+        <a class="card card-hot" href="https://tui.haozhuan.vip/#/pages/micro_store/index?agent_id=51be22bae7d74a422210db56129c38e0" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/TPO9bLBN2osrHsxciEQczFann8b" alt="号易号卡"><span class="card-num">07</span></a>
+        <a class="card card-hot" href="https://lm3.cn/owhV" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/N8hNbXYfNo6gPfxTWiCcwlyznsg" alt="卡业联盟"><span class="card-num">08</span></a>
+        <a class="card card-hot" href="https://hk.enetpush.com/s/3VgbCxMa" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/LCDwbbQMooX5grx9kwIcfXrVnpB" alt="亿网联盟"><span class="card-num">09</span></a>
+        <a class="card card-hot" href="https://sim.loonginno.cn/h5/index?shop_id=MTAxNTk3&amp;tab=1" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/O9HFbYiJGoOohbx6WROcXETGnLh" alt="龙创号卡"><span class="card-num">10</span></a>
+        <a class="card card-hot" href="https://hk.euhaoka.cn/index?k=eFZheStSYVFFUVk9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/GQJobOxnSoUAilxeI05cpt0Hnse" alt="易优号卡"><span class="card-num">11</span></a>
+        <a class="card card-hot" href="https://zy.zhen-yue.cn/shop/77cad8f3af288738" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/NqjZbbfRfoTQvpxOgdDc16lwnwd" alt="172号卡"><span class="card-num">12</span></a>
+        <a class="card card-hot" href="https://www.haokaxinyao.com/#/pages/sales_index/my_store?mall_id=k9n576LJ%2FWBl470WgzQghw%3D%3D" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/CvnabZDDaoTHrNxbeEIc60trnob" alt="浩卡联盟"><span class="card-num">13</span></a>
+        <a class="card card-hot" href="https://h5.app.yuxuantongxin.com/#/?shop_id=6606&amp;sell_id=6606&amp;t=1791472118" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/EUjKb4JKFo5lR4xYpCqctFJhnzc" alt="号码家园"><span class="card-num">14</span></a>
+        <a class="card card-hot" href="https://h5.vip-mi.com/index?k=U2NKL3VYSlN3bGs9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/S3DkbCyQmoNgDRxPHuocbIWWnVd" alt="林夕号卡"><span class="card-num">15</span></a>
+        <a class="card card-hot" href="http://ka.dandanhou.net/index?k=bjlGQzRpU21QV0U9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/KSl0bYHe4oVNXUx2Q66coXgmnLh" alt="卡多多"><span class="card-num">16</span></a>
+        <a class="card card-hot" href="https://app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Q9ALb8Tx1ooj2PxuYkycboC7nkf" alt="朽月号卡"><span class="card-num">17</span></a>
+        <a class="card card-hot" href="http://55555.wang/index?k=K3EzdlYwNk5wWDQ9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/PkiwbXthNoY0LMx7egFcxTn0nCn" alt="五湖通信"><span class="card-num">18</span></a>
+        <a class="card card-hot" href="https://svip.yunjuka.cn/index?k=Vzgzc2I2ZUN0YjA9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/FNvVbWY6loGmIsx2rMtc6tjOnxg" alt="号卡研究所"><span class="card-num">19</span></a>
+        <a class="card card-hot" href="https://bsx.jfys.cn/s/FqZmhkS0" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/VvWrbShbjo8e1hxbjxWcfOTEnHd" alt="宝时信"><span class="card-num">20</span></a>
+        <a class="card card-hot" href="https://sznxwl.com/s/5rp1e21C" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Q8OPbRxhToxwqRxXAXiczvzInUc" alt="轻仙号卡"><span class="card-num">21</span></a>
+        <a class="card card-hot" href="https://hk.123haoka.cn/index?k=Y0diTDB6L01Ec2s9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/LmUdb67JBoj9hDxUPH3cdq3MnmY" alt="号卡宇宙"><span class="card-num">22</span></a>
+        <a class="card card-hot" href="https://api.haokay.cn/h5?code=Fhka3qAI" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RxWTbNmYLoiLLnx9brIcAr6Enef" alt="号卡云"><span class="card-num">23</span></a>
+        <a class="card card-hot" href="http://m.wywlhk.cn/index?k=dklYeDg3SjFjb2c9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/CpalbAhR1oB2SFxgZOJcRP02nAe" alt="琬玥号卡"><span class="card-num">24</span></a>
+        <a class="card card-hot" href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/PO4BbvHNYoi9a2xuZZjcdAemnHf" alt="大鑫卡业"><span class="card-num">25</span></a>
+        <a class="card card-hot" href="https://hk5.kyaowang.cn/s/pHexRyhy" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/My5obzokboDBpCxNkI2cYLyznth" alt="号卡屋"><span class="card-num">26</span></a>
+        </div>
+      </div>
+    </div>
+  </div>
 
   <!-- ===== 视图：服务说明 ===== -->
   <section class="sec" id="service">
@@ -607,6 +547,40 @@
 <button id="bgm-toggle" class="bgm-btn" title="播放背景音乐" aria-label="播放背景音乐">
   <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6Z"/></svg>
 </button>
+
+<!-- ===== 联系我们浮层 ===== -->
+<div class="panel-overlay" id="contactOverlay" role="dialog" aria-modal="true">
+  <div class="panel-overlay-box">
+    <div class="panel-head">
+      <span class="ph-title">联系我们</span>
+      <button id="contactClose" class="embed-close" aria-label="关闭">×</button>
+    </div>
+    <div class="panel-body">
+      <a class="cs-entry" href="https://work.weixin.qq.com/kfid/kfc6fff05dc0082e1c6" target="_blank" rel="noopener">
+        <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-6.2l-4.5 3.6c-.4.3-1 .06-1-.5V17H4a2 2 0 0 1-2-2V6Z"/></svg></span>
+        企业微信客服 · 在线咨询
+        <span class="arrow">→</span>
+      </a>
+      <div class="qr-grid">
+        <div class="qr-card">
+          <div class="qr-img-box"><img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/WdYobGHn9oQscYxGZVicxzNJnRb" alt="企业微信客服二维码"></div>
+          <div class="qr-label">企业微信 · 客服</div>
+          <div class="qr-sub">陈贤旭 · 浙江电信客户经理</div>
+        </div>
+        <div class="qr-card">
+          <div class="qr-img-box"><img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/ETssbj8uZoMILax9heXcPViSnwg" alt="企业微信卡多多世界二维码"></div>
+          <div class="qr-label">企业微信 · 卡多多世界</div>
+          <div class="qr-sub">流量卡测评官 · 欢迎办卡</div>
+        </div>
+        <div class="qr-card">
+          <div class="qr-img-box"><img src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RKRybeX3Hoz6n2xudj1cs4ipnbg" alt="客户服务群二维码"></div>
+          <div class="qr-label">客户服务群</div>
+          <div class="qr-sub">号卡办理临时群 · 扫码加入</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
 
 <!-- ===== 内嵌办理浮层 ===== -->
 <div class="embed-overlay" id="embedOverlay" role="dialog" aria-modal="true">
@@ -709,9 +683,9 @@
     }
     document.querySelectorAll('.card').forEach(function(card){
       card.addEventListener('click',function(e){
-        var href=card.getAttribute('href'), nm=card.querySelector('.name');
+        var href=card.getAttribute('href'), lg=card.querySelector('.card-logo'), nm=lg?lg.getAttribute('alt'):'';
         e.preventDefault();
-        openEmbed(href, nm?nm.textContent:'');
+        openEmbed(href, nm?nm:'');
       });
     });
     if(embedClose){
@@ -725,13 +699,27 @@
         tipsClose=document.getElementById('tipsClose');
     function closeTips(){ tipsOverlay.classList.remove('open'); document.body.style.overflow=''; }
     if(tipsBtn && tipsOverlay){
-      tipsBtn.addEventListener('click',function(){
+      tipsBtn.addEventListener('click',function(e){
+        e.stopPropagation();
         tipsOverlay.classList.add('open'); document.body.style.overflow='hidden';
       });
       if(tipsClose) tipsClose.addEventListener('click',closeTips);
       tipsOverlay.addEventListener('click',function(e){ if(e.target===tipsOverlay) closeTips(); });
       document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeTips(); });
     }
+
+    // ===== 联系我们 / 号卡下单 浮层 =====
+    function bindPanel(btnId, overlayId, closeId){
+      var o=document.getElementById(overlayId), b=document.getElementById(btnId), c=document.getElementById(closeId);
+      function open(){ o.classList.add('open'); document.body.style.overflow='hidden'; }
+      function close(){ o.classList.remove('open'); document.body.style.overflow=''; }
+      if(b) b.addEventListener('click',open);
+      if(c) c.addEventListener('click',close);
+      if(o) o.addEventListener('click',function(e){ if(e.target===o) close(); });
+      document.addEventListener('keydown',function(e){ if(e.key==='Escape') close(); });
+    }
+    bindPanel('openContact','contactOverlay','contactClose');
+    bindPanel('openPlatform','platformOverlay','platformClose');
   })();
 </script>
 </body>
