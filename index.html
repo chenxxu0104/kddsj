@@ -340,7 +340,7 @@
   .tips-img img{width:100%;height:auto;display:block;border-radius:10px}
 
   /* ===== 入口按钮（联系我们 / 号卡下单） ===== */
-  .entry-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px;max-width:720px;margin:0 auto}
+  .entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:960px;margin:0 auto}
   .entry-btn{
     position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;
     padding:34px 22px;border-radius:18px;text-decoration:none;color:#fff;cursor:pointer;
@@ -435,6 +435,12 @@
           <p>26 家正规平台 · 任选套餐</p>
           <span class="eb-go">点击进入 →</span>
         </button>
+        <button class="entry-btn" id="openService">
+          <span class="eb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20M6 13h3M6 16h6"/></svg></span>
+          <h3>发货与查单</h3>
+          <p>电信联通移动广电 · 订单查询</p>
+          <span class="eb-go">点击进入 →</span>
+        </button>
       </div>
     </div>
   </section>
@@ -484,55 +490,55 @@
     </div>
   </div>
 
-  <!-- ===== 视图：服务说明 ===== -->
-  <section class="sec" id="service">
-    <div class="wrap">
-      <div class="sec-head">
-        <span class="eyebrow">服务须知</span>
-        <h2>发货与查单</h2>
-        <div class="line"></div>
+  <!-- ===== 发货与查单浮层 ===== -->
+  <div class="panel-overlay" id="serviceOverlay" role="dialog" aria-modal="true">
+    <div class="panel-overlay-box">
+      <div class="panel-head">
+        <span class="ph-title">发货与查单</span>
+        <button id="serviceClose" class="embed-close" aria-label="关闭">×</button>
       </div>
-
-      <div class="notice">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></span>
-        <div>
-          <h3>发货时效说明</h3>
-          <p>正常发货时效为 <b>48 小时</b>。如超过 48 小时仍未发货，一般就无法发出了，可能是运营商拦截或证件信息审核不通过，建议更换其他套餐重新下单。</p>
+      <div class="panel-body">
+        <div class="notice">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 8v4M12 16h.01"/></svg></span>
+          <div>
+            <h3>发货时效说明</h3>
+            <p>正常发货时效为 <b>48 小时</b>。如超过 48 小时仍未发货，一般就无法发出了，可能是运营商拦截或证件信息审核不通过，建议更换其他套餐重新下单。</p>
+          </div>
         </div>
-      </div>
-      <div class="notice">
-        <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
-        <div>
-          <h3>催发货提示</h3>
-          <p>催发货只需等待运营商处理即可。若比较着急，可更换一个套餐重新下单试试。</p>
+        <div class="notice">
+          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg></span>
+          <div>
+            <h3>催发货提示</h3>
+            <p>催发货只需等待运营商处理即可。若比较着急，可更换一个套餐重新下单试试。</p>
+          </div>
         </div>
-      </div>
 
-      <div class="service-grid">
-        <a class="s-item" href="http://a.189.cn/IBbVib" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20M6 13h3M6 16h6"/></svg></span>
-          <div><h4>电信查单 / 撤单</h4><p>中国电信订单查询</p><span class="ln">a.189.cn/IBbVib</span></div>
-        </a>
-        <a class="s-item" href="https://m.10010.com/myorder" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20M6 13h3M6 16h6"/></svg></span>
-          <div><h4>联通查单 / 传三证 / 催发货 / 撤单</h4><p>中国联通订单管理</p><span class="ln">m.10010.com/myorder</span></div>
-        </a>
-        <a class="s-item" href="https://dev.coc.10086.cn/coc/web/coc2020/cardqueryorder/" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20M6 13h3M6 16h6"/></svg></span>
-          <div><h4>移动查单 / 撤单</h4><p>中国移动订单查询</p><span class="ln">dev.coc.10086.cn</span></div>
-        </a>
-        <a class="s-item" href="https://shouji.10099.com.cn/list/" target="_blank" rel="noopener">
-          <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20M6 13h3M6 16h6"/></svg></span>
-          <div><h4>广电适配查询</h4><p>中国广电号卡适配</p><span class="ln">shouji.10099.com.cn</span></div>
+        <div class="service-grid">
+          <a class="s-item" href="http://a.189.cn/IBbVib" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20M6 13h3M6 16h6"/></svg></span>
+            <div><h4>电信查单 / 撤单</h4><p>中国电信订单查询</p><span class="ln">a.189.cn/IBbVib</span></div>
+          </a>
+          <a class="s-item" href="https://m.10010.com/myorder" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20M6 13h3M6 16h6"/></svg></span>
+            <div><h4>联通查单 / 传三证 / 催发货 / 撤单</h4><p>中国联通订单管理</p><span class="ln">m.10010.com/myorder</span></div>
+          </a>
+          <a class="s-item" href="https://dev.coc.10086.cn/coc/web/coc2020/cardqueryorder/" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20M6 13h3M6 16h6"/></svg></span>
+            <div><h4>移动查单 / 撤单</h4><p>中国移动订单查询</p><span class="ln">dev.coc.10086.cn</span></div>
+          </a>
+          <a class="s-item" href="https://shouji.10099.com.cn/list/" target="_blank" rel="noopener">
+            <span class="ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20M6 13h3M6 16h6"/></svg></span>
+            <div><h4>广电适配查询</h4><p>中国广电号卡适配</p><span class="ln">shouji.10099.com.cn</span></div>
+          </a>
+        </div>
+
+        <a class="onefive" href="https://getsimnum.caict.ac.cn/m/#/" target="_blank" rel="noopener">
+          <div class="t">一证五户查询<span>查询名下已办理的手机号数量，办理新卡前可先自查</span></div>
+          <span class="btn">进入查询 →</span>
         </a>
       </div>
-
-      <a class="onefive" href="https://getsimnum.caict.ac.cn/m/#/" target="_blank" rel="noopener">
-        <div class="t">一证五户查询<span>查询名下已办理的手机号数量，办理新卡前可先自查</span></div>
-        <span class="btn">进入查询 →</span>
-      </a>
     </div>
-  </section>
+  </div>
 
   <!-- ===== 视图：Footer ===== -->
   <footer>
@@ -604,7 +610,7 @@
       <button id="tipsClose" class="embed-close" aria-label="关闭">×</button>
     </div>
     <ol class="tips-list">
-      <li>办理号卡请务必本人实名，一张身份证最多办理5张同个运营商电话卡</li>
+      <li>办理号卡请务必本人实名，一张身份证最多办理5张运营商电话卡</li>
       <li>下单后运营商会进行实名审核，审核失败将无法发货，可更换套餐重试。</li>
       <li>需要本人人脸激活，不可出租、出售、出借他人使用。</li>
       <li>下单后务必联系我们进行报单，方便完成对接，有利于更快的发货。</li>
@@ -720,6 +726,7 @@
     }
     bindPanel('openContact','contactOverlay','contactClose');
     bindPanel('openPlatform','platformOverlay','platformClose');
+    bindPanel('openService','serviceOverlay','serviceClose');
   })();
 </script>
 </body>
