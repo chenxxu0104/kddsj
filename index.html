@@ -31,7 +31,7 @@
     -webkit-font-smoothing:antialiased;
     overflow-x:hidden;
   }
-  .wrap{max-width:1120px;margin:0 auto;padding:0 24px}
+  .wrap{max-width:1240px;margin:0 auto;padding:0 24px}
 
   /* ===== 背景氛围 ===== */
   .bg-grid{
@@ -52,7 +52,7 @@
   .content{position:relative;z-index:1}
 
   /* ===== Hero ===== */
-  .hero{padding:96px 0 72px;text-align:center}
+  .hero{padding:56px 0 36px;text-align:center}
   .badge{
     display:inline-flex;align-items:center;gap:10px;
     font-size:13px;letter-spacing:.28em;color:var(--gold);
@@ -74,7 +74,7 @@
   }
   .hero-sub em{font-style:normal;color:var(--gold);font-weight:600}
   .mascot-thumb{
-    width:clamp(120px,16vw,190px);height:auto;margin:34px auto 0;display:block;
+    width:clamp(100px,12vw,150px);height:auto;margin:20px auto 0;display:block;
     filter:drop-shadow(0 18px 34px rgba(0,0,0,.38));
   }
   .hero-desc{
@@ -187,6 +187,32 @@
   }
   .onefive:hover .btn{background:var(--gold-soft)}
 
+  /* ===== 号卡资讯 ===== */
+  .news-item{
+    border:1px solid var(--card-line);border-radius:14px;
+    background:rgba(255,255,255,.03);margin-bottom:14px;overflow:hidden;
+    transition:border-color .2s;
+  }
+  .news-item:hover{border-color:rgba(201,162,75,.45)}
+  .news-title-row{
+    width:100%;display:flex;align-items:center;gap:12px;padding:16px 18px;
+    background:none;border:none;cursor:pointer;color:var(--ink);text-align:left;
+  }
+  .news-tag{
+    flex-shrink:0;font-size:12px;color:#1a1f3a;background:var(--gold);
+    padding:3px 10px;border-radius:6px;font-weight:700;letter-spacing:.05em;
+  }
+  .news-title{font-size:15px;font-weight:600;line-height:1.5;flex:1}
+  .news-arrow{color:var(--gold);font-size:14px;transition:transform .25s}
+  .news-item.open .news-arrow{transform:rotate(180deg)}
+  .news-content{max-height:0;overflow:hidden;transition:max-height .35s ease}
+  .news-item.open .news-content{max-height:1200px}
+  .news-content{padding:0 18px}
+  .news-item.open .news-content{padding:0 18px 20px}
+  .news-content p{font-size:13.5px;color:var(--ink-3);line-height:1.85;margin:0 0 10px}
+  .news-content h4{font-size:14.5px;color:var(--gold);margin:14px 0 8px;font-weight:700;letter-spacing:.03em}
+  .news-note{font-size:12px;color:#8a8fae;margin-top:14px!important}
+
   /* ===== 联系我们 ===== */
   .cs-entry{
     display:flex;align-items:center;justify-content:center;gap:12px;
@@ -241,8 +267,8 @@
   .toast.show{opacity:1;transform:translate(-50%,0)}
 
   /* ===== 背景音乐按钮 ===== */
+  .bgm-wrap{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;gap:10px;align-items:center}
   .bgm-btn{
-    position:fixed;right:20px;bottom:20px;z-index:60;
     width:46px;height:46px;border-radius:50%;
     background:rgba(18,29,54,.92);border:1px solid rgba(201,162,75,.45);
     color:var(--gold);display:flex;align-items:center;justify-content:center;cursor:pointer;
@@ -250,6 +276,8 @@
   }
   .bgm-btn:hover{opacity:1;transform:scale(1.07)}
   .bgm-btn svg{width:22px;height:22px}
+  .bgm-next-btn{width:38px;height:38px;opacity:.55}
+  .bgm-next-btn svg{width:18px;height:18px}
   .bgm-btn.playing{opacity:1;border-color:var(--gold)}
   .bgm-btn.playing svg{animation:bgmspin 5s linear infinite}
   @keyframes bgmspin{to{transform:rotate(360deg)}}
@@ -340,7 +368,30 @@
   .tips-img img{width:100%;height:auto;display:block;border-radius:10px}
 
   /* ===== 入口按钮（联系我们 / 号卡下单） ===== */
-  .entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;max-width:960px;margin:0 auto}
+  .entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1240px;margin:0 auto}
+
+  /* ===== 资讯区块（页面直显） ===== */
+  .news-sec-head{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:18px}
+  .news-sec-title{font-family:"Noto Serif SC",serif;font-size:20px;font-weight:700;letter-spacing:.08em;color:#fff;text-align:center}
+  .news-more{background:none;border:none;color:var(--gold);font-size:14px;cursor:pointer;letter-spacing:.04em}
+  .news-more:hover{text-decoration:underline}
+  .news-cards{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+  .news-card{
+      display:flex;gap:12px;align-items:flex-start;text-align:left;
+      padding:16px 15px;border-radius:14px;cursor:pointer;
+      background:linear-gradient(160deg,rgba(30,46,84,.7),rgba(16,26,50,.8));
+      border:1px solid var(--card-line);transition:transform .2s,border-color .2s;
+    }
+  .news-card:hover{transform:translateY(-3px);border-color:rgba(201,162,75,.5)}
+  .news-card .nc-icon{
+      flex-shrink:0;width:34px;height:34px;border-radius:10px;font-size:17px;
+      display:flex;align-items:center;justify-content:center;
+      background:rgba(201,162,75,.14);border:1px solid rgba(201,162,75,.3);line-height:1;
+    }
+  .news-card .nc-body h4{font-size:14.5px;font-weight:700;color:#fff;margin:0 0 5px;line-height:1.4}
+  .news-card .nc-body p{font-size:12px;color:var(--ink-3);margin:0;line-height:1.6;
+      display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+
   .entry-btn{
     position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;
     padding:34px 22px;border-radius:18px;text-decoration:none;color:#fff;cursor:pointer;
@@ -353,6 +404,19 @@
   .entry-btn h3{font-family:"Noto Serif SC",serif;font-size:19px;font-weight:700;letter-spacing:.1em;margin:0}
   .entry-btn p{font-size:13px;color:var(--ink-3);margin:0;letter-spacing:.04em}
   .entry-btn .eb-go{margin-top:6px;font-size:13px;color:var(--gold);letter-spacing:.06em}
+  /* 第一行：号卡资讯横幅，左缩略图右文字 */
+  .entry-btn.span-row{
+    flex-direction:row;align-items:center;text-align:left;gap:18px;
+    padding:16px 22px;
+  }
+  .entry-btn.span-row .eb-thumb{
+    flex-shrink:0;width:96px;height:60px;border-radius:10px;object-fit:cover;
+    border:1px solid var(--card-line);display:block;
+  }
+  .entry-btn.span-row .eb-txt{flex:1;display:flex;flex-direction:column;gap:3px}
+  .entry-btn.span-row h3{font-size:18px}
+  .entry-btn.span-row p{margin:0}
+  .entry-btn.span-row .eb-go{margin-top:0;margin-left:auto;flex-shrink:0}
 
   /* ===== 静态内容浮层（联系我们 / 号卡下单） ===== */
   .panel-overlay{
@@ -372,7 +436,8 @@
   .panel-head .ph-title{font-size:17px;font-weight:700;color:var(--gold);letter-spacing:.1em}
   .panel-body{padding:26px 24px 30px;max-height:76vh;overflow-y:auto}
   @media (max-width:680px){
-    .entry-grid{grid-template-columns:1fr;gap:14px;max-width:420px}
+    .entry-grid{grid-template-columns:repeat(3,1fr);gap:10px;max-width:420px}
+    .news-cards{grid-template-columns:1fr;gap:10px}
     .panel-overlay{padding:0;align-items:stretch}
     .panel-overlay-box{width:100vw;min-height:100dvh;border-radius:0;border:0}
     .panel-body{max-height:none}
@@ -418,6 +483,46 @@
     <img class="mascot-thumb" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/SbXMbQQheofWvuxA7Jacyixengg" alt="号卡吉祥物">
     <p class="hero-desc">汇聚多家正规号卡平台，选套餐、下单、查单一站式服务。全国发货，号卡统一由运营商认证与配送。</p>
   </header>
+
+  <!-- ===== 资讯区块（页面直显） ===== -->
+  <section class="sec" id="newsSection" style="padding-bottom:8px">
+    <div class="wrap">
+      <div class="news-sec-head">
+        <span class="news-sec-title">网站资讯</span>
+        <button id="openNewsAll" class="news-more">查看全部 →</button>
+      </div>
+      <div class="news-cards">
+        <button class="news-card" data-open="news">
+          <span class="nc-icon">📄</span>
+          <div class="nc-body">
+            <h4>2026线上流量卡办理模式深度解析</h4>
+            <p>两种模式并存：本地直办插卡激活；跨省需先激活首充、配合IP校验、前置预存、转寄…</p>
+          </div>
+        </button>
+        <button class="news-card" data-open="news">
+          <span class="nc-icon">🔒</span>
+          <div class="nc-body">
+            <h4>手机卡被"局停"怎么回事？</h4>
+            <p>异地使用、频繁换设备、热点挂机、流量异常等触发风控，附合规用卡指南与解封步骤…</p>
+          </div>
+        </button>
+        <button class="news-card" data-open="news">
+          <span class="nc-icon">💰</span>
+          <div class="nc-body">
+            <h4>为什么有"原套餐"和"优惠套餐"？</h4>
+            <p>原套餐是官方保底资费，优惠套餐是新用户折扣，叠加后实现低价大流量…</p>
+          </div>
+        </button>
+        <button class="news-card" data-open="news">
+          <span class="nc-icon">📡</span>
+          <div class="nc-body">
+            <h4>别再问"哪张卡信号最好"了</h4>
+            <p>信号由你当地基站覆盖决定，跟卡和套餐无关，2步选对运营商…</p>
+          </div>
+        </button>
+      </div>
+    </div>
+  </section>
 
   <!-- ===== 入口按钮 ===== -->
   <section class="sec" id="entries" style="padding-top:8px">
@@ -540,6 +645,107 @@
     </div>
   </div>
 
+  <!-- ===== 号卡资讯浮层 ===== -->
+  <div class="panel-overlay" id="newsOverlay" role="dialog" aria-modal="true">
+    <div class="panel-overlay-box">
+      <div class="panel-head">
+        <span class="ph-title">网站资讯</span>
+        <button id="newsClose" class="embed-close" aria-label="关闭">×</button>
+      </div>
+      <div class="panel-body">
+        <div class="news-item open" data-news="0">
+          <button class="news-title-row">
+            <span class="news-tag">科普</span>
+            <span class="news-title">2026线上流量卡办理模式深度解析</span>
+            <span class="news-arrow">▾</span>
+          </button>
+          <div class="news-content">
+            <p>在工信部号卡属地化监管、反诈升级、运营商落实跨省禁售、各省独立运营等多重政策下，线上流量卡的办理流程已明显变化。当前行业呈现<strong>本地办理、跨省办理两种模式并存</strong>的格局。</p>
+            <h4>一、传统办卡模式并未退出，但仅限本地</h4>
+            <p>过去"直接下单、全国发货、插卡激活"的模式依然存在：线上直接下单、快递到家、自行激活。但有明显限制：绝大多数仅限本省/本地办理，收货地须为归属地，部分要求开卡员上门或专人视频核验激活。简单说：<strong>老模式还在，仅限本地；跨省办理才需走新流程。</strong></p>
+            <h4>二、跨省办理：先激活首充，再发货</h4>
+            <p>在"收货地=归属地=激活地"的监管要求下，跨省办外省优惠套餐需先开户激活、完成首充生效、制卡后转寄送达。这是当前支持异地用户办理优惠套餐的主流合规方式。</p>
+            <h4>三、改IP激活：属地套餐下的系统校验</h4>
+            <p>各省独立运营、属地套餐独立放款，运营商激活系统会通过IP、WiFi、位置做属地校验，因此需配合改IP满足校验规则。该步骤仅用于激活环节，激活后全国通用、流量全国可用。</p>
+            <h4>四、前置预存话费：优惠套餐生效的硬性条件</h4>
+            <p>预存并非额外收费，而是：套餐开通门槛（不预存无法享受优惠）、账户启动资金（抵扣月租/流量/通话）、风控手段（防批量开户、占号、养卡）。预存话费全部进入本号码账户，可正常查询使用。</p>
+            <h4>五、开卡费、服务费：行业合规运营的成本</h4>
+            <p>线上办卡已不止是商品售卖，而是一整套含实名核验、后台开户、套餐配置、激活协助、转寄、售后维护的服务。开卡费与服务费用于覆盖人工、系统、对接、物流中转等实际成本，是订单顺利处理、卡品稳定落地的必要支撑。</p>
+            <h4>六、转寄：跨省配送的标准物流方式</h4>
+            <p>受政策与运营商限制，异地号卡无法从归属地直邮用户，行业普遍采用"归属地仓库收件 → 中转校验 → 二次转寄 → 送达用户"，符合物流监管与属地发货要求，是跨省办卡最稳定的配送方式。</p>
+            <h4>七、行业总结</h4>
+            <p>两种模式并存：① 本地办理可直接下单、邮寄到家、插卡激活，但仅限本省；② 跨省办理需先激活首充、配合IP校验、前置预存、转寄。这些变化并非渠道随意更改，而是<strong>监管收紧、属地化落地、运营商风控升级</strong>共同推动的结果，目的都是在合规前提下让用户稳定使用高性价比流量套餐。</p>
+            <p class="news-note">以上基于2026年运营商监管政策与行业实践整理，供用户参考了解办理模式。</p>
+          </div>
+        </div>
+
+        <div class="news-item" data-news="1">
+          <button class="news-title-row">
+            <span class="news-tag">科普</span>
+            <span class="news-title">手机卡被"局停"怎么回事？常见原因+合规用卡指南</span>
+            <span class="news-arrow">▾</span>
+          </button>
+          <div class="news-content">
+            <p>很多用户正常用卡，突然被<strong>局停</strong>、限制呼出、暂停上网——不是卡坏了，也不是欠费，大多是触发了通信风控。</p>
+            <h4>一、什么是局停</h4>
+            <p>局停=运营商<strong>被动保护性停机</strong>。账户不欠费、卡片正常，但系统风控预警，临时限制通话、流量、短信，需本人二次实名、人脸核验才能解封。</p>
+            <h4>二、触发局停的核心原因</h4>
+            <p>① 异地跨省使用：号码归属地和长期使用地不一致，跨省市漫游、异地长期插卡，极易触发；② 设备更换频繁：频繁换手机、换卡槽、插拔卡；③ 热点违规高频：长时间开热点、插路由器/随身WiFi当宽带24小时挂机；④ 流量消耗异常：短时间超大流量爆发、深夜批量跑流量；⑤ 反诈合规排查：高危地区、新办号码、短期频繁操作会被随机抽检；⑥ 长期静默后突然启用：号码长时间闲置突然大量用流量。</p>
+            <h4>三、日常合规用卡，远离局停</h4>
+            <p>尽量一机一卡，不频繁换设备、换卡槽；热点少量应急用，不长期共享、不插路由挂机；流量匀速使用，避免短时间狂刷；新卡平稳养卡，刚激活少折腾、少切换网络；不批量注册、不群发短信、不违规外呼；收到核验提示及时完成人脸、二次实名。</p>
+            <h4>四、不小心被局停怎么办</h4>
+            <p>无需慌张，不是永久封卡。按提示完成本人人脸二次核验，规范使用习惯避免再触碰风控红线，解封后正常轻度使用几天即可恢复稳定。</p>
+            <h4>五、简单总结</h4>
+            <p>局停不是人为乱封，是<strong>合规风控+使用行为异常</strong>导致。只要规范用卡、温和养号、不违规共享，就能稳稳长期用卡，避免停机麻烦。</p>
+            <p class="news-note">以上基于通信行业反诈风控规则与运营商局停机制整理，供用户了解合规用卡要求。</p>
+          </div>
+        </div>
+
+        <div class="news-item" data-news="2">
+          <button class="news-title-row">
+            <span class="news-tag">科普</span>
+            <span class="news-title">为什么有"原套餐"和"优惠套餐"？</span>
+            <span class="news-arrow">▾</span>
+          </button>
+          <div class="news-content">
+            <p>很多人办流量卡时会疑惑：同一张卡，为什么会出现原套餐和优惠套餐两个价格？其实这不是套路，本质是「<strong>基础资费 + 优惠折扣</strong>」的组合。</p>
+            <h4>一、什么是原套餐</h4>
+            <p>原套餐是这张卡的<strong>官方保底资费</strong>，是运营商公开的基础套餐：包含固定的月租、基础流量（通常很少），是卡片自带的"官方原价"。它的核心作用只有一个——优惠到期后若不再参与优惠活动，就按原套餐正常收费。</p>
+            <h4>二、什么是优惠套餐</h4>
+            <p>优惠套餐是线上渠道专属的促销活动，相当于运营商给新用户的<strong>折扣价</strong>：需要按要求激活、首充（常见如首充100元），在原套餐基础上叠加大量通用流量、进行月租减免或返赠。</p>
+            <p>例子：原套餐39元=30G定向，叠加优惠后29元=30G定向+155G全国通用。</p>
+            <h4>三、为什么低价套餐只能在线上办理</h4>
+            <p>① 成本更低：线上办卡没有门店租金、人工、物料成本，省下的钱让利给用户；② 区域定向促销：大部分超大流量低价套餐是各省运营商为冲业绩单独推出的政策，线下营业厅一般不同步、不主动宣传。</p>
+            <h4>四、总结</h4>
+            <p>原套餐=卡的官方底价；优惠套餐=新用户专属折扣+额外流量。线上看到的"29元大流量卡"，几乎都是「原套餐+优惠活动」组合而成。只要有优惠、续约清晰，就是正常、靠谱的正规流量卡，并不是坑。</p>
+            <p class="news-note">以上基于运营商现行规则整理，帮助理解套餐结构，具体优惠以办理页面为准。</p>
+          </div>
+        </div>
+
+        <div class="news-item" data-news="3">
+          <button class="news-title-row">
+            <span class="news-tag">科普</span>
+            <span class="news-title">别再问"哪张卡信号最好"了！决定信号的核心只有1个</span>
+            <span class="news-arrow">▾</span>
+          </button>
+          <div class="news-content">
+            <p>信号强不强、网速稳不稳，跟"卡本身"、"套餐内容"<strong>真没直接关系</strong>。真正起决定作用的，只有一个东西——你所在位置的<strong>运营商基站覆盖</strong>。</p>
+            <h4>一、决定信号的核心：只有1个因素</h4>
+            <p>不是卡、不是套餐，而是你所在位置的<strong>运营商基站覆盖</strong>。家/公司/学校附近移动基站多→移动卡就稳；联通基站覆盖强→联通卡顺畅；电信基站密度高→电信卡自然快。</p>
+            <p>同一张卡、同一个套餐，市区可能是满格5G，走进偏远乡镇可能就变2G/无服务——不是卡变差了，是基站覆盖范围变了。</p>
+            <h4>二、为什么同一地方，有人信号好有人信号差</h4>
+            <p>① 运营商覆盖本来就不同：你用移动、他用联通，覆盖差异客观存在；② 物理环境会"吃掉"信号：楼层高低、墙体厚度、电梯/地下室/金属隔断都会影响；③ 同一栋楼位置不同差别巨大：窗边信号强、卫生间/角落信号弱很常见。这些都和套餐价格、流量多少没有半毛钱关系。</p>
+            <h4>三、想选对运营商？用这2步就够准</h4>
+            <p>第1步 看身边人：同事、家人、同学里哪家运营商信号最稳定、少掉线，就优先办哪家；第2步 看常驻地点：在你最常待的3个地方（家里、公司/学校、常去的商场/地铁站）分别看信号格，哪家满格不掉线就选哪家。</p>
+            <h4>四、一句话总结</h4>
+            <p>套餐管的是：多少钱、多少流量、多少通话；基站管的是：信号好不好、网速稳不稳。没有"信号最好的神卡"，只有"最适合你当地基站覆盖"的卡。</p>
+            <p class="news-note">以上基于通信基站覆盖原理与运营商网络特性整理，供用户选择运营商参考。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ===== 视图：Footer ===== -->
   <footer>
     <div class="brand">网盈科技 <span>WANGYING</span></div>
@@ -549,10 +755,15 @@
 
 <div class="toast" id="toast"></div>
 
-<audio id="bgm" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RLsJb8xdgo5VYnx0usKcNQkznSe" loop preload="auto" autoplay></audio>
-<button id="bgm-toggle" class="bgm-btn" title="播放背景音乐" aria-label="播放背景音乐">
-  <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6Z"/></svg>
-</button>
+<audio id="bgm" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/PZJQbU4cootoGaxlr1Vc50IynMg" loop preload="auto" autoplay></audio>
+<div class="bgm-wrap">
+  <button id="bgm-next" class="bgm-btn bgm-next-btn" title="切歌" aria-label="切歌">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6 18l8.5-6L6 6v12zM16 6v12h2V6h-2z"/></svg>
+  </button>
+  <button id="bgm-toggle" class="bgm-btn" title="播放背景音乐" aria-label="播放背景音乐">
+    <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 3v10.55A4 4 0 1 0 14 17V7h4V3h-6Z"/></svg>
+  </button>
+</div>
 
 <!-- ===== 联系我们浮层 ===== -->
 <div class="panel-overlay" id="contactOverlay" role="dialog" aria-modal="true">
@@ -669,6 +880,22 @@
           bgm.pause();bgmBtn.classList.remove('playing');bgmBtn.title='播放背景音乐';
         }
       });
+      // 切歌
+      var bgmList=[
+        'https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/PZJQbU4cootoGaxlr1Vc50IynMg',
+        'https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/BP6SbF5QwoHrdmxTIoicq3cKnEv'
+      ];
+      var bgmIdx=0;
+      var bgmNext=document.getElementById('bgm-next');
+      if(bgmNext){
+        bgmNext.addEventListener('click',function(){
+          bgmIdx=(bgmIdx+1)%bgmList.length;
+          bgm.src=bgmList[bgmIdx];
+          bgm.play().then(function(){
+            bgmBtn.classList.add('playing');bgmBtn.title='暂停背景音乐';
+          }).catch(function(){});
+        });
+      }
     }
 
     // ===== 内嵌办理浮层 =====
@@ -727,6 +954,21 @@
     bindPanel('openContact','contactOverlay','contactClose');
     bindPanel('openPlatform','platformOverlay','platformClose');
     bindPanel('openService','serviceOverlay','serviceClose');
+    bindPanel('openNewsAll','newsOverlay','newsClose');
+    // 资讯卡片点击打开浮层
+    document.querySelectorAll('.news-card').forEach(c=>{
+      c.addEventListener('click',()=>{
+        var o=document.getElementById('newsOverlay');
+        o.classList.add('open');document.body.style.overflow='hidden';
+      });
+    });
+
+    /* 资讯条目展开/收起 */
+    document.querySelectorAll('.news-item').forEach(item=>{
+      item.querySelector('.news-title-row').addEventListener('click',()=>{
+        item.classList.toggle('open');
+      });
+    });
   })();
 </script>
 </body>
