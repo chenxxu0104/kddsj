@@ -368,6 +368,18 @@
   .tips-img img{width:100%;height:auto;display:block;border-radius:10px}
 
   /* ===== 入口按钮（联系我们 / 号卡下单） ===== */
+  /* ===== 报单警示横幅 ===== */
+  .warn-banner{
+    display:flex;align-items:center;gap:12px;justify-content:center;
+    padding:14px 20px;border-radius:14px;text-align:center;
+    background:linear-gradient(135deg,rgba(180,30,40,.9),rgba(140,20,30,.9));
+    border:1px solid rgba(255,200,80,.5);
+    box-shadow:0 6px 20px rgba(180,30,40,.25);
+  }
+  .warn-banner .wb-icon{font-size:22px;color:#ffd700;flex-shrink:0}
+  .warn-banner .wb-text{font-size:15px;font-weight:600;color:#fff;letter-spacing:.04em}
+  .warn-banner .wb-text em{color:#ffd700;font-style:normal}
+
   .entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1240px;margin:0 auto}
 
   /* ===== 资讯区块（页面直显） ===== */
@@ -520,6 +532,16 @@
             <p>信号由你当地基站覆盖决定，跟卡和套餐无关，2步选对运营商…</p>
           </div>
         </button>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== 报单警示横幅 ===== -->
+  <section class="sec" style="padding:0 0 12px">
+    <div class="wrap">
+      <div class="warn-banner">
+        <span class="wb-icon">⚠</span>
+        <span class="wb-text">下单后请第一时间联系客服报单！<em>未报单的优惠包后期掉包，概不受理。</em></span>
       </div>
     </div>
   </section>
