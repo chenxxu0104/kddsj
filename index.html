@@ -4,6 +4,11 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>网盈科技 · 专注号卡服务通讯</title>
+<meta name="description" content="汇聚26家正规号卡平台，选套餐、下单、查单一站式服务。全国发货，号卡统一由运营商认证与配送。">
+<meta property="og:title" content="网盈科技 · 专注号卡服务通讯">
+<meta property="og:description" content="汇聚26家正规号卡平台，选套餐、下单、查单一站式服务。全国发货，号卡统一由运营商认证与配送。">
+<meta property="og:image" content="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/SbXMbQQheofWvuxA7Jacyixengg">
+<meta property="og:type" content="website">
 <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A1120'/%3E%3Ctext x='32' y='44' font-size='36' font-family='Arial' font-weight='700' fill='%23C9A24B' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap">
 <style>
@@ -256,6 +261,12 @@
   footer .brand{font-family:"Noto Serif SC",serif;font-size:18px;font-weight:700;letter-spacing:.14em}
   footer .brand span{color:var(--gold)}
   footer p{color:var(--ink-3);font-size:13px;margin-top:8px}
+  .footer-kf{
+    display:inline-block;margin-top:14px;padding:8px 22px;border-radius:20px;
+    background:rgba(201,162,75,.14);border:1px solid rgba(201,162,75,.4);
+    color:var(--gold);font-size:13px;letter-spacing:.06em;text-decoration:none;
+  }
+  .footer-kf:hover{background:rgba(201,162,75,.24)}
 
   /* ===== Toast ===== */
   .toast{
@@ -312,6 +323,18 @@
     cursor:pointer;display:flex;align-items:center;justify-content:center;
   }
   .embed-close:hover{color:#fff;border-color:rgba(229,83,60,.55)}
+  .embed-loading{
+    position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+    background:#0E1730;z-index:5;gap:16px;
+  }
+  .embed-loading.hidden{display:none}
+  .spinner{
+    width:40px;height:40px;border-radius:50%;
+    border:3px solid rgba(201,162,75,.2);border-top-color:var(--gold);
+    animation:spin 0.8s linear infinite;
+  }
+  @keyframes spin{to{transform:rotate(360deg)}}
+  .embed-loading p{color:var(--ink-2);font-size:14px;margin:0}
   .embed-frame{flex:1;width:100%;border:0;background:#fff}
   @media (max-width:680px){
     .embed-overlay{padding:0}
@@ -379,6 +402,12 @@
   .warn-banner .wb-icon{font-size:22px;color:#ffd700;flex-shrink:0}
   .warn-banner .wb-text{font-size:15px;font-weight:600;color:#fff;letter-spacing:.04em}
   .warn-banner .wb-text em{color:#ffd700;font-style:normal}
+  .wb-tips-btn{
+    flex-shrink:0;padding:6px 14px;border-radius:8px;cursor:pointer;
+    background:rgba(255,215,0,.18);border:1px solid rgba(255,215,0,.5);
+    color:#ffd700;font-size:13px;font-weight:600;letter-spacing:.04em;white-space:nowrap;
+  }
+  .wb-tips-btn:hover{background:rgba(255,215,0,.3)}
 
   .entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1240px;margin:0 auto}
 
@@ -542,6 +571,7 @@
       <div class="warn-banner">
         <span class="wb-icon">⚠</span>
         <span class="wb-text">下单后请第一时间联系客服报单！<em>未报单的优惠包后期掉包，概不受理。</em></span>
+        <button id="tipsBtnMain" class="wb-tips-btn" title="查看重要提示">重要提示</button>
       </div>
     </div>
   </section>
@@ -772,6 +802,7 @@
   <footer>
     <div class="brand">网盈科技 <span>WANGYING</span></div>
     <p>专注号卡服务 · 通讯 · 全国发货</p>
+    <a class="footer-kf" href="https://work.weixin.qq.com/kfid/kfc6fff05dc0082e1c6" target="_blank" rel="noopener">联系客服咨询</a>
   </footer>
 </div>
 
@@ -830,6 +861,10 @@
         <a id="embedOpen" class="embed-open" href="#" target="_blank" rel="noopener">外部打开</a>
         <button id="embedClose" class="embed-close" aria-label="关闭">×</button>
       </div>
+    </div>
+    <div class="embed-loading" id="embedLoading">
+      <div class="spinner"></div>
+      <p>正在加载办理页面…</p>
     </div>
     <iframe id="embedFrame" class="embed-frame" src="about:blank" title="号卡办理" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals allow-downloads"></iframe>
   </div>
@@ -924,7 +959,9 @@
     var overlay=document.getElementById('embedOverlay'), frame=document.getElementById('embedFrame'),
         embedName=document.getElementById('embedName'), embedOpen=document.getElementById('embedOpen'),
         embedClose=document.getElementById('embedClose');
+    var embedLoading=document.getElementById('embedLoading');
     function openEmbed(href,name){
+      if(embedLoading) embedLoading.classList.remove('hidden');
       frame.setAttribute('src',href);
       embedName.textContent='· '+name;
       embedOpen.setAttribute('href',href);
@@ -936,6 +973,9 @@
       frame.setAttribute('src','about:blank');
       document.body.style.overflow='';
     }
+    frame.addEventListener('load',function(){
+      if(embedLoading) embedLoading.classList.add('hidden');
+    });
     document.querySelectorAll('.card').forEach(function(card){
       card.addEventListener('click',function(e){
         var href=card.getAttribute('href'), lg=card.querySelector('.card-logo'), nm=lg?lg.getAttribute('alt'):'';
@@ -951,13 +991,15 @@
 
     // ===== 重要提示弹窗 =====
     var tipsOverlay=document.getElementById('tipsOverlay'), tipsBtn=document.getElementById('tipsBtn'),
-        tipsClose=document.getElementById('tipsClose');
+        tipsBtnMain=document.getElementById('tipsBtnMain'), tipsClose=document.getElementById('tipsClose');
+    function openTips(e){
+      if(e) e.stopPropagation();
+      tipsOverlay.classList.add('open'); document.body.style.overflow='hidden';
+    }
     function closeTips(){ tipsOverlay.classList.remove('open'); document.body.style.overflow=''; }
-    if(tipsBtn && tipsOverlay){
-      tipsBtn.addEventListener('click',function(e){
-        e.stopPropagation();
-        tipsOverlay.classList.add('open'); document.body.style.overflow='hidden';
-      });
+    if(tipsOverlay){
+      if(tipsBtn) tipsBtn.addEventListener('click',openTips);
+      if(tipsBtnMain) tipsBtnMain.addEventListener('click',openTips);
       if(tipsClose) tipsClose.addEventListener('click',closeTips);
       tipsOverlay.addEventListener('click',function(e){ if(e.target===tipsOverlay) closeTips(); });
       document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeTips(); });
