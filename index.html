@@ -267,6 +267,9 @@
     color:var(--gold);font-size:13px;letter-spacing:.06em;text-decoration:none;
   }
   .footer-kf:hover{background:rgba(201,162,75,.24)}
+  .footer-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:14px}
+  .footer-share{background:transparent;border:1px solid var(--card-line);color:var(--ink-2);cursor:pointer}
+  .footer-share:hover{border-color:rgba(201,162,75,.5);color:var(--gold);background:rgba(201,162,75,.1)}
 
   /* ===== Toast ===== */
   .toast{
@@ -802,7 +805,10 @@
   <footer>
     <div class="brand">网盈科技 <span>WANGYING</span></div>
     <p>专注号卡服务 · 通讯 · 全国发货</p>
-    <a class="footer-kf" href="https://work.weixin.qq.com/kfid/kfc6fff05dc0082e1c6" target="_blank" rel="noopener">联系客服咨询</a>
+    <div class="footer-actions">
+      <a class="footer-kf" href="https://work.weixin.qq.com/kfid/kfc6fff05dc0082e1c6" target="_blank" rel="noopener">联系客服咨询</a>
+      <button id="shareBtn" class="footer-kf footer-share">分享给好友</button>
+    </div>
   </footer>
 </div>
 
@@ -902,6 +908,24 @@
       if(navigator.clipboard&&window.isSecureContext){
         navigator.clipboard.writeText(wx).then(function(){show('微信号 '+wx+' 已复制')}).catch(function(){fallback(wx)});
       }else{fallback(wx)}
+    }
+    // 一键分享
+    var shareBtn=document.getElementById('shareBtn');
+    if(shareBtn){
+      shareBtn.addEventListener('click',function(){
+        var url=window.location.href, title='网盈科技 · 专注号卡服务通讯';
+        if(navigator.share){
+          navigator.share({title:title, url:url}).catch(function(){});
+        }else{
+          if(navigator.clipboard&&window.isSecureContext){
+            navigator.clipboard.writeText(url).then(function(){show('链接已复制，快去微信粘贴给好友吧')}).catch(function(){show('复制失败，请手动复制地址栏链接')});
+          }else{
+            var ta=document.createElement('textarea');ta.value=url;document.body.appendChild(ta);ta.select();
+            try{document.execCommand('copy');show('链接已复制，快去微信粘贴给好友吧')}catch(e){show('复制失败，请手动复制地址栏链接')}
+            document.body.removeChild(ta);
+          }
+        }
+      });
     }
     function fallback(wx){
       var ta=document.createElement('textarea');
