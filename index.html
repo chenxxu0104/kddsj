@@ -57,33 +57,33 @@
   .content{position:relative;z-index:1}
 
   /* ===== Hero ===== */
-  .hero{padding:36px 0 20px;text-align:center}
+  .hero{padding:100px 0 60px;text-align:center}
   .badge{
     display:inline-flex;align-items:center;gap:10px;
-    font-size:13px;letter-spacing:.28em;color:var(--gold);
-    padding:9px 20px;border:1px solid rgba(201,162,75,.35);
+    font-size:14px;letter-spacing:.3em;color:var(--gold);
+    padding:12px 28px;border:1px solid rgba(201,162,75,.35);
     border-radius:999px;background:var(--gold-soft);
-    margin-bottom:34px;
+    margin-bottom:48px;
   }
-  .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+  .badge .dot{width:7px;height:7px;border-radius:50%;background:var(--gold)}
   h1{
     font-family:"Noto Serif SC",serif;
-    font-size:clamp(44px,9vw,84px);
+    font-size:clamp(60px,13vw,120px);
     font-weight:900;letter-spacing:.04em;line-height:1.12;
     background:linear-gradient(180deg,#ffffff 20%,#c9d4ea 90%);
     -webkit-background-clip:text;background-clip:text;color:transparent;
   }
   .hero-sub{
-    margin-top:22px;font-size:clamp(17px,2.6vw,22px);color:var(--ink);
-    font-weight:500;letter-spacing:.18em;
+    margin-top:32px;font-size:clamp(22px,3.5vw,30px);color:var(--ink);
+    font-weight:500;letter-spacing:.2em;
   }
   .hero-sub em{font-style:normal;color:var(--gold);font-weight:600}
   .mascot-thumb{
-    width:clamp(100px,12vw,150px);height:auto;margin:20px auto 0;display:block;
-    filter:drop-shadow(0 18px 34px rgba(0,0,0,.38));
+    width:clamp(140px,14vw,190px);height:auto;margin:32px auto 0;display:block;
+    filter:drop-shadow(0 28px 54px rgba(0,0,0,.6));
   }
   .hero-desc{
-    margin:18px auto 0;max-width:560px;color:var(--ink-2);font-size:15px;
+    margin:28px auto 0;max-width:680px;color:var(--ink-2);font-size:17px;
   }
   .wechat{
     margin-top:44px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
@@ -106,7 +106,7 @@
   .wechat-card .copy{font-size:12px;color:var(--gold);margin-left:auto;flex:none}
 
   /* ===== 区块标题 ===== */
-  .sec{padding:36px 0}
+  .sec{padding:20px 0}
   .sec-head{margin-bottom:40px;text-align:center}
   .eyebrow{
     display:inline-block;font-size:12px;letter-spacing:.34em;color:var(--gold);
@@ -419,20 +419,16 @@
   .news-sec-title{font-family:"Noto Serif SC",serif;font-size:20px;font-weight:700;letter-spacing:.08em;color:#fff;text-align:center}
   .news-more{background:none;border:none;color:var(--gold);font-size:14px;cursor:pointer;letter-spacing:.04em}
   .news-more:hover{text-decoration:underline}
-  .news-carousel{display:flex;align-items:center;gap:8px}
+  .news-carousel{display:flex;align-items:stretch;gap:10px}
   .nc-viewport{flex:1;overflow:hidden}
-  .nc-track{display:flex;gap:14px;transition:transform .4s ease}
-  .nc-arrow{
-    flex-shrink:0;width:34px;height:34px;border-radius:50%;cursor:pointer;
-    background:rgba(201,162,75,.12);border:1px solid rgba(201,162,75,.35);
-    color:var(--gold);font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;
-  }
+  .nc-track{display:flex;gap:16px;transition:transform .4s ease}
+  .nc-arrow{display:none}
   .nc-arrow:hover{background:rgba(201,162,75,.25)}
-  .nc-dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
+  .nc-dots{display:flex;justify-content:center;gap:6px;margin-top:14px}
   .nc-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .2s}
   .nc-dot.active{background:var(--gold);width:18px;border-radius:3px}
   .news-card{
-      flex:0 0 calc((100% - 28px)/3);
+      flex:0 0 calc((100% - 32px)/3);
       display:flex;gap:10px;align-items:flex-start;text-align:left;
       padding:12px 12px;border-radius:12px;cursor:pointer;
       background:linear-gradient(160deg,rgba(30,46,84,.7),rgba(16,26,50,.8));
@@ -444,17 +440,22 @@
       display:flex;align-items:center;justify-content:center;
       background:rgba(201,162,75,.14);border:1px solid rgba(201,162,75,.3);line-height:1;
     }
-  .news-card .nc-body h4{font-size:13.5px;font-weight:700;color:#fff;margin:0 0 3px;line-height:1.4}
-  .news-card .nc-body p{font-size:11.5px;color:var(--ink-3);margin:0;line-height:1.5;
+  .news-card .nc-body h4{font-size:13px;font-weight:700;color:#fff;margin:0 0 4px;line-height:1.4;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .nc-tag{
+    font-size:9px;font-weight:600;padding:2px 7px;border-radius:999px;
+    background:rgba(201,162,75,.18);color:var(--gold);border:1px solid rgba(201,162,75,.35);
+  }
+  .news-card .nc-body p{font-size:11px;color:var(--ink-3);margin:0;line-height:1.5;
       display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
   .entry-btn{
-    position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;
-    padding:34px 22px;border-radius:18px;text-decoration:none;color:#fff;cursor:pointer;
+    position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;
+    padding:22px 18px;border-radius:16px;text-decoration:none;color:#fff;cursor:pointer;
     background:linear-gradient(160deg,rgba(30,46,84,.85),rgba(16,26,50,.9));
     border:1px solid var(--card-line);transition:transform .2s,border-color .2s,box-shadow .2s;
+    box-shadow:0 8px 24px rgba(0,0,0,.25);
   }
-  .entry-btn:hover{transform:translateY(-4px);border-color:rgba(201,162,75,.5);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+  .entry-btn:hover{transform:translateY(-4px);border-color:rgba(201,162,75,.5);box-shadow:0 20px 44px rgba(0,0,0,.4)}
   .entry-btn .eb-ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(201,162,75,.12);border:1px solid rgba(201,162,75,.35);color:var(--gold)}
   .entry-btn .eb-ic svg{width:26px;height:26px}
   .entry-btn h3{font-family:"Noto Serif SC",serif;font-size:19px;font-weight:700;letter-spacing:.1em;margin:0}
@@ -515,7 +516,7 @@
     .qr-sub{display:none}
     .hero{padding:40px 0 24px}
     .mascot-thumb{width:90px;margin-top:16px}
-    .sec{padding:28px 0}
+    .sec{padding:20px 0}
     .sec-head{margin-bottom:30px}
   }
   @media (max-width:360px){
@@ -543,7 +544,7 @@
   </header>
 
   <!-- ===== 资讯区块（页面直显） ===== -->
-  <section class="sec" id="newsSection" style="padding-bottom:8px">
+  <section class="sec" id="newsSection" style="padding:30px 0 8px">
     <div class="wrap">
       <div class="news-sec-head">
         <span class="news-sec-title">网站资讯</span>
@@ -556,42 +557,42 @@
         <button class="news-card" data-open="news" data-news="0">
           <span class="nc-icon">📄</span>
           <div class="nc-body">
-            <h4>2026线上流量卡办理模式深度解析</h4>
+            <h4><span class="nc-tag">科普</span>2026线上流量卡办理模式深度解析</h4>
             <p>两种模式并存：本地直办插卡激活；跨省需先激活首充、配合IP校验、前置预存、转寄…</p>
           </div>
         </button>
         <button class="news-card" data-open="news" data-news="1">
           <span class="nc-icon">🔒</span>
           <div class="nc-body">
-            <h4>手机卡被"局停"怎么回事？</h4>
+            <h4><span class="nc-tag">避坑</span>手机卡被"局停"怎么回事？</h4>
             <p>异地使用、频繁换设备、热点挂机、流量异常等触发风控，附合规用卡指南与解封步骤…</p>
           </div>
         </button>
         <button class="news-card" data-open="news" data-news="2">
           <span class="nc-icon">💰</span>
           <div class="nc-body">
-            <h4>为什么有"原套餐"和"优惠套餐"？</h4>
+            <h4><span class="nc-tag">科普</span>为什么有"原套餐"和"优惠套餐"？</h4>
             <p>原套餐是官方保底资费，优惠套餐是新用户折扣，叠加后实现低价大流量…</p>
           </div>
         </button>
         <button class="news-card" data-open="news" data-news="3">
           <span class="nc-icon">📡</span>
           <div class="nc-body">
-            <h4>别再问"哪张卡信号最好"了</h4>
+            <h4><span class="nc-tag">科普</span>别再问"哪张卡信号最好"了</h4>
             <p>信号由你当地基站覆盖决定，跟卡和套餐无关，2步选对运营商…</p>
           </div>
         </button>
         <button class="news-card" data-open="news" data-news="4">
           <span class="nc-icon">📋</span>
           <div class="nc-body">
-            <h4>办卡一直审核不通过？原因全解析</h4>
+            <h4><span class="nc-tag">避坑</span>办卡一直审核不通过？原因全解析</h4>
             <p>证件异常、人脸不过、地址问题、黑名单…五大类原因一次说清，附自查建议…</p>
           </div>
         </button>
         <button class="news-card" data-open="news" data-news="5">
           <span class="nc-icon">💳</span>
           <div class="nc-body">
-            <h4>首充不是套路，是统一激活规则</h4>
+            <h4><span class="nc-tag">科普</span>首充不是套路，是统一激活规则</h4>
             <p>首充金额100%是你自己的话费，不是额外收费，3个常见误区一次澄清…</p>
           </div>
         </button>
@@ -615,7 +616,7 @@
   </section>
 
   <!-- ===== 入口按钮 ===== -->
-  <section class="sec" id="entries" style="padding-top:8px">
+  <section class="sec" id="entries" style="padding-top:16px">
     <div class="wrap">
       <div class="entry-grid">
         <button class="entry-btn" id="openContact">
