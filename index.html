@@ -57,33 +57,33 @@
   .content{position:relative;z-index:1}
 
   /* ===== Hero ===== */
-  .hero{padding:60px 0 40px;text-align:center}
+  .hero{padding:36px 0 20px;text-align:center}
   .badge{
     display:inline-flex;align-items:center;gap:10px;
     font-size:13px;letter-spacing:.28em;color:var(--gold);
-    padding:10px 24px;border:1px solid rgba(201,162,75,.35);
+    padding:9px 20px;border:1px solid rgba(201,162,75,.35);
     border-radius:999px;background:var(--gold-soft);
-    margin-bottom:32px;
+    margin-bottom:34px;
   }
   .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
   h1{
     font-family:"Noto Serif SC",serif;
-    font-size:clamp(48px,9vw,82px);
+    font-size:clamp(44px,9vw,84px);
     font-weight:900;letter-spacing:.04em;line-height:1.12;
     background:linear-gradient(180deg,#ffffff 20%,#c9d4ea 90%);
     -webkit-background-clip:text;background-clip:text;color:transparent;
   }
   .hero-sub{
-    margin-top:18px;font-size:clamp(17px,2.6vw,22px);color:var(--ink);
+    margin-top:22px;font-size:clamp(17px,2.6vw,22px);color:var(--ink);
     font-weight:500;letter-spacing:.18em;
   }
   .hero-sub em{font-style:normal;color:var(--gold);font-weight:600}
   .mascot-thumb{
-    width:clamp(100px,10vw,130px);height:auto;margin:18px auto 0;display:block;
-    filter:drop-shadow(0 20px 40px rgba(0,0,0,.45));
+    width:clamp(100px,12vw,150px);height:auto;margin:20px auto 0;display:block;
+    filter:drop-shadow(0 18px 34px rgba(0,0,0,.38));
   }
   .hero-desc{
-    margin:16px auto 0;max-width:580px;color:var(--ink-2);font-size:14px;
+    margin:18px auto 0;max-width:560px;color:var(--ink-2);font-size:15px;
   }
   .wechat{
     margin-top:44px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
@@ -106,7 +106,7 @@
   .wechat-card .copy{font-size:12px;color:var(--gold);margin-left:auto;flex:none}
 
   /* ===== 区块标题 ===== */
-  .sec{padding:20px 0}
+  .sec{padding:36px 0}
   .sec-head{margin-bottom:40px;text-align:center}
   .eyebrow{
     display:inline-block;font-size:12px;letter-spacing:.34em;color:var(--gold);
@@ -134,7 +134,7 @@
     transition:transform .2s,border-color .2s,box-shadow .2s;
   }
   .card:hover{transform:translateY(-3px);border-color:rgba(201,162,75,.45);box-shadow:0 14px 34px rgba(0,0,0,.35)}
-  .card-logo{width:76px;height:76px;object-fit:cover;margin:0 auto 2px;display:block;border-radius:50%;overflow:hidden;background:#fff;box-shadow:0 4px 14px rgba(0,0,0,.35)}
+  .card-logo{width:76px;height:76px;object-fit:cover;margin:0 auto 2px;display:block;border-radius:50%;overflow:hidden;background:var(--card);box-shadow:0 4px 14px rgba(0,0,0,.35)}
   .card-num{font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.12em;text-align:center}
   .card-hot{
     border-color:rgba(201,162,75,.55);
@@ -281,7 +281,7 @@
   .toast.show{opacity:1;transform:translate(-50%,0)}
 
   /* ===== 背景音乐按钮 ===== */
-  .bgm-wrap{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;gap:8px;align-items:center}
+  .bgm-wrap{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;gap:10px;align-items:center}
   .bgm-btn{
     width:46px;height:46px;border-radius:50%;
     background:rgba(18,29,54,.92);border:1px solid rgba(201,162,75,.45);
@@ -419,46 +419,44 @@
   .news-sec-title{font-family:"Noto Serif SC",serif;font-size:20px;font-weight:700;letter-spacing:.08em;color:#fff;text-align:center}
   .news-more{background:none;border:none;color:var(--gold);font-size:14px;cursor:pointer;letter-spacing:.04em}
   .news-more:hover{text-decoration:underline}
-  .news-carousel{display:flex;align-items:stretch;gap:10px}
+  .news-carousel{display:flex;align-items:center;gap:8px}
   .nc-viewport{flex:1;overflow:hidden}
-  .nc-track{display:flex;gap:16px;transition:transform .4s ease}
-  .nc-arrow{display:none}
+  .nc-track{display:flex;gap:14px;transition:transform .4s ease}
+  .nc-arrow{
+    flex-shrink:0;width:34px;height:34px;border-radius:50%;cursor:pointer;
+    background:rgba(201,162,75,.12);border:1px solid rgba(201,162,75,.35);
+    color:var(--gold);font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;
+  }
   .nc-arrow:hover{background:rgba(201,162,75,.25)}
-  .nc-dots{display:flex;justify-content:center;gap:6px;margin-top:14px}
+  .nc-dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
   .nc-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .2s}
   .nc-dot.active{background:var(--gold);width:18px;border-radius:3px}
   .news-card{
-      flex:0 0 calc((100% - 32px)/3);
-      display:flex;gap:12px;align-items:flex-start;text-align:left;
-      padding:16px 14px;border-radius:12px;cursor:pointer;
+      flex:0 0 calc((100% - 28px)/3);
+      display:flex;gap:10px;align-items:flex-start;text-align:left;
+      padding:12px 12px;border-radius:12px;cursor:pointer;
       background:linear-gradient(160deg,rgba(30,46,84,.7),rgba(16,26,50,.8));
       border:1px solid var(--card-line);transition:transform .2s,border-color .2s;
     }
   .news-card:hover{transform:translateY(-2px);border-color:rgba(201,162,75,.5)}
   .news-card .nc-icon{
-      flex-shrink:0;width:34px;height:34px;border-radius:8px;font-size:16px;
+      flex-shrink:0;width:30px;height:30px;border-radius:8px;font-size:15px;
       display:flex;align-items:center;justify-content:center;
       background:rgba(201,162,75,.14);border:1px solid rgba(201,162,75,.3);line-height:1;
     }
-  .news-card .nc-body h4{font-size:13.5px;font-weight:700;color:#fff;margin:0 0 5px;line-height:1.4;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
-  .nc-tag{
-    font-size:9px;font-weight:600;padding:2px 7px;border-radius:999px;
-    background:rgba(201,162,75,.18);color:var(--gold);border:1px solid rgba(201,162,75,.35);
-  }
-  .news-card .nc-body p{font-size:11.5px;color:var(--ink-3);margin:0;line-height:1.6;
-      display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
+  .news-card .nc-body h4{font-size:13.5px;font-weight:700;color:#fff;margin:0 0 3px;line-height:1.4}
+  .news-card .nc-body p{font-size:11.5px;color:var(--ink-3);margin:0;line-height:1.5;
+      display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
 
   .entry-btn{
-    position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;
-    padding:22px 18px;border-radius:16px;text-decoration:none;color:#fff;cursor:pointer;
+    position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;
+    padding:34px 22px;border-radius:18px;text-decoration:none;color:#fff;cursor:pointer;
     background:linear-gradient(160deg,rgba(30,46,84,.85),rgba(16,26,50,.9));
     border:1px solid var(--card-line);transition:transform .2s,border-color .2s,box-shadow .2s;
-    box-shadow:0 8px 24px rgba(0,0,0,.25);
   }
-  .entry-btn:hover{transform:translateY(-4px);border-color:rgba(201,162,75,.5);box-shadow:0 20px 44px rgba(0,0,0,.4)}
-  .entry-btn .eb-ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(201,162,75,.12);border:1px solid rgba(201,162,75,.35);color:var(--gold);flex:none}
+  .entry-btn:hover{transform:translateY(-4px);border-color:rgba(201,162,75,.5);box-shadow:0 18px 40px rgba(0,0,0,.35)}
+  .entry-btn .eb-ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(201,162,75,.12);border:1px solid rgba(201,162,75,.35);color:var(--gold)}
   .entry-btn .eb-ic svg{width:26px;height:26px}
-  .entry-btn .eb-txt{display:contents}
   .entry-btn h3{font-family:"Noto Serif SC",serif;font-size:19px;font-weight:700;letter-spacing:.1em;margin:0}
   .entry-btn p{font-size:13px;color:var(--ink-3);margin:0;letter-spacing:.04em}
   .entry-btn .eb-go{margin-top:6px;font-size:13px;color:var(--gold);letter-spacing:.06em}
@@ -494,19 +492,7 @@
   .panel-head .ph-title{font-size:17px;font-weight:700;color:var(--gold);letter-spacing:.1em}
   .panel-body{padding:26px 24px 30px;max-height:76vh;overflow-y:auto}
   @media (max-width:680px){
-    .entry-grid{grid-template-columns:1fr;gap:10px;max-width:none}
-    .entry-btn{flex-direction:row;align-items:center;text-align:left;gap:12px;padding:14px 16px}
-    .entry-btn .eb-ic{width:44px;height:44px;border-radius:12px}
-    .entry-btn .eb-ic svg{width:22px;height:22px}
-    .entry-btn .eb-txt{display:flex;flex-direction:column;gap:3px;flex:1;min-width:0}
-    .entry-btn h3{font-size:16px;letter-spacing:.06em}
-    .entry-btn p{font-size:12px;white-space:normal}
-    .entry-btn .eb-go{margin-top:0;flex:none;font-size:12px}
-    .bgm-wrap{right:10px;bottom:10px;gap:6px}
-    .bgm-btn{width:34px;height:34px;opacity:.6}
-    .bgm-btn svg{width:16px;height:16px}
-    .bgm-next-btn{width:30px;height:30px}
-    .bgm-next-btn svg{width:14px;height:14px}
+    .entry-grid{grid-template-columns:repeat(3,1fr);gap:10px;max-width:420px}
     .news-cards{grid-template-columns:1fr;gap:10px}
     .news-card{flex:0 0 100%}
     .nc-arrow{display:none}
@@ -529,7 +515,7 @@
     .qr-sub{display:none}
     .hero{padding:40px 0 24px}
     .mascot-thumb{width:90px;margin-top:16px}
-    .sec{padding:20px 0}
+    .sec{padding:28px 0}
     .sec-head{margin-bottom:30px}
   }
   @media (max-width:360px){
@@ -557,7 +543,7 @@
   </header>
 
   <!-- ===== 资讯区块（页面直显） ===== -->
-  <section class="sec" id="newsSection" style="padding:30px 0 8px">
+  <section class="sec" id="newsSection" style="padding-bottom:8px">
     <div class="wrap">
       <div class="news-sec-head">
         <span class="news-sec-title">网站资讯</span>
@@ -570,42 +556,42 @@
         <button class="news-card" data-open="news" data-news="0">
           <span class="nc-icon">📄</span>
           <div class="nc-body">
-            <h4><span class="nc-tag">科普</span>2026线上流量卡办理模式深度解析</h4>
+            <h4>2026线上流量卡办理模式深度解析</h4>
             <p>两种模式并存：本地直办插卡激活；跨省需先激活首充、配合IP校验、前置预存、转寄…</p>
           </div>
         </button>
         <button class="news-card" data-open="news" data-news="1">
           <span class="nc-icon">🔒</span>
           <div class="nc-body">
-            <h4><span class="nc-tag">避坑</span>手机卡被"局停"怎么回事？</h4>
+            <h4>手机卡被"局停"怎么回事？</h4>
             <p>异地使用、频繁换设备、热点挂机、流量异常等触发风控，附合规用卡指南与解封步骤…</p>
           </div>
         </button>
         <button class="news-card" data-open="news" data-news="2">
           <span class="nc-icon">💰</span>
           <div class="nc-body">
-            <h4><span class="nc-tag">科普</span>为什么有"原套餐"和"优惠套餐"？</h4>
+            <h4>为什么有"原套餐"和"优惠套餐"？</h4>
             <p>原套餐是官方保底资费，优惠套餐是新用户折扣，叠加后实现低价大流量…</p>
           </div>
         </button>
         <button class="news-card" data-open="news" data-news="3">
           <span class="nc-icon">📡</span>
           <div class="nc-body">
-            <h4><span class="nc-tag">科普</span>别再问"哪张卡信号最好"了</h4>
+            <h4>别再问"哪张卡信号最好"了</h4>
             <p>信号由你当地基站覆盖决定，跟卡和套餐无关，2步选对运营商…</p>
           </div>
         </button>
         <button class="news-card" data-open="news" data-news="4">
           <span class="nc-icon">📋</span>
           <div class="nc-body">
-            <h4><span class="nc-tag">避坑</span>办卡一直审核不通过？原因全解析</h4>
+            <h4>办卡一直审核不通过？原因全解析</h4>
             <p>证件异常、人脸不过、地址问题、黑名单…五大类原因一次说清，附自查建议…</p>
           </div>
         </button>
         <button class="news-card" data-open="news" data-news="5">
           <span class="nc-icon">💳</span>
           <div class="nc-body">
-            <h4><span class="nc-tag">科普</span>首充不是套路，是统一激活规则</h4>
+            <h4>首充不是套路，是统一激活规则</h4>
             <p>首充金额100%是你自己的话费，不是额外收费，3个常见误区一次澄清…</p>
           </div>
         </button>
@@ -629,22 +615,25 @@
   </section>
 
   <!-- ===== 入口按钮 ===== -->
-  <section class="sec" id="entries" style="padding-top:24px">
+  <section class="sec" id="entries" style="padding-top:8px">
     <div class="wrap">
       <div class="entry-grid">
         <button class="entry-btn" id="openContact">
           <span class="eb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-6.2l-4.5 3.6c-.4.3-1 .06-1-.5V17H4a2 2 0 0 1-2-2V6Z"/></svg></span>
-          <span class="eb-txt"><h3>联系我们</h3><p>企业微信客服 · 扫码办卡</p></span>
+          <h3>联系我们</h3>
+          <p>企业微信客服 · 扫码办卡</p>
           <span class="eb-go">点击进入 →</span>
         </button>
         <button class="entry-btn" id="openPlatform">
           <span class="eb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
-          <span class="eb-txt"><h3>号卡下单入口</h3><p>30 家正规平台 · 任选套餐</p></span>
+          <h3>号卡下单入口</h3>
+          <p>30 家正规平台 · 任选套餐</p>
           <span class="eb-go">点击进入 →</span>
         </button>
         <button class="entry-btn" id="openService">
           <span class="eb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20M6 13h3M6 16h6"/></svg></span>
-          <span class="eb-txt"><h3>发货与查单</h3><p>电信联通移动广电 · 订单查询</p></span>
+          <h3>发货与查单</h3>
+          <p>电信联通移动广电 · 订单查询</p>
           <span class="eb-go">点击进入 →</span>
         </button>
       </div>
@@ -666,38 +655,36 @@
         </div>
         <div class="grid">
         
-        
-        
-        <a class="card" href="https://agenthk.aswulian.com/#/?ApiKey=2W3IEOKJO7" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RgcxbOcKNo4PGCxPtegcivQvnOe" alt="爱尚云网"><span class="card-num">01</span></a>
-        <a class="card" href="https://haoka.kakatx.com/web/#/?token=MjA2NjU0fDE3OTE0NzE1MTU2MzdoYW9rYTY2Ng" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/TUSEb2DwxolN5dx50GucDsugnUe" alt="共创号卡"><span class="card-num">02</span></a>
-        <a class="card" href="https://yc.chenyutongxin.com/index?k=RnhtbkxIN0FYd1U9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/QRZ5bfmWwonF4AxGjBscGI9ynmt" alt="宸宇号卡"><span class="card-num">03</span></a>
-        <a class="card" href="https://hongtuo66.cn/shop#/?promoCode=9BVCEuTp&amp;indexFirstGroup=2" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/BuwnbMa19oAzYWxmkZ5ctlMxnhf" alt="宏拓通信"><span class="card-num">04</span></a>
-        <a class="card" href="https://h5.vip-mi.com/index?k=U2NKL3VYSlN3bGs9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/S3DkbCyQmoNgDRxPHuocbIWWnVd" alt="林夕号卡"><span class="card-num">05</span></a>
-        <a class="card" href="https://hk.euhaoka.cn/index?k=eFZheStSYVFFUVk9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/GQJobOxnSoUAilxeI05cpt0Hnse" alt="易优号卡"><span class="card-num">06</span></a>
-        <a class="card" href="https://h5.155.ink/h5/index?shop_id=MTAyMzM2&tab=1" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/DdUGbv7uwo9CgyxIhwUcPRUpnxh" alt="极光号卡"><span class="card-num">07</span></a>
-        <a class="card" href="https://api.haokay.cn/h5?code=Fhka3qAI" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RxWTbNmYLoiLLnx9brIcAr6Enef" alt="号卡云"><span class="card-num">08</span></a>
-        <a class="card" href="https://tui.haozhuan.vip/#/pages/micro_store/index?agent_id=51be22bae7d74a422210db56129c38e0" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/TPO9bLBN2osrHsxciEQczFann8b" alt="号易号卡"><span class="card-num">09</span></a>
-        <a class="card" href="https://www.haokaxinyao.com/#/pages/sales_index/my_store?mall_id=k9n576LJ%2FWBl470WgzQghw%3D%3D" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/CvnabZDDaoTHrNxbeEIc60trnob" alt="浩卡联盟"><span class="card-num">10</span></a>
-        <a class="card" href="https://zy.zhen-yue.cn/shop/77cad8f3af288738" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/NqjZbbfRfoTQvpxOgdDc16lwnwd" alt="172号卡"><span class="card-num">11</span></a>
-        <a class="card" href="http://ka.dandanhou.net/index?k=bjlGQzRpU21QV0U9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/KSl0bYHe4oVNXUx2Q66coXgmnLh" alt="卡多多"><span class="card-num">12</span></a>
-        <a class="card" href="https://sim.loonginno.cn/h5/index?shop_id=MTAxNTk3&amp;tab=1" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/O9HFbYiJGoOohbx6WROcXETGnLh" alt="龙创号卡"><span class="card-num">13</span></a>
-        <a class="card" href="https://hk5.kyaowang.cn/s/pHexRyhy" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/My5obzokboDBpCxNkI2cYLyznth" alt="号卡屋"><span class="card-num">14</span></a>
-        <a class="card" href="http://ka.10010tx.cn/index?k=VUl2aEdHZGVKckE9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/WwSnbU884o9HzOxC9Q6ckOaMnvb" alt="星尘号卡"><span class="card-num">15</span></a>
-        <a class="card" href="https://hk.123haoka.cn/index?k=Y0diTDB6L01Ec2s9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/LmUdb67JBoj9hDxUPH3cdq3MnmY" alt="号卡宇宙"><span class="card-num">16</span></a>
-        <a class="card" href="https://app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Q9ALb8Tx1ooj2PxuYkycboC7nkf" alt="朽月号卡"><span class="card-num">17</span></a>
-        <a class="card" href="https://kk.sviphk.cn/index?k=SDY3Uzh4cUZhdlE9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RjNObgYmDo4Q4Ox6d5CcUE8anLd" alt="夏沐号卡"><span class="card-num">18</span></a>
-        <a class="card" href="https://lingqu.87haoka.cn/shop#/?promoCode=jgcjTJXe&amp;indexFirstGroup=2" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/ZN7Mbj9njoZ3e0xsXmacyYtSnWc" alt="翼卡云"><span class="card-num">19</span></a>
-        <a class="card" href="https://h5.app.yuxuantongxin.com/#/?shop_id=6606&amp;sell_id=6606&amp;t=1791472118" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/EUjKb4JKFo5lR4xYpCqctFJhnzc" alt="号码家园"><span class="card-num">20</span></a>
-        <a class="card" href="https://svip.yunjuka.cn/index?k=Vzgzc2I2ZUN0YjA9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/FNvVbWY6loGmIsx2rMtc6tjOnxg" alt="号卡研究所"><span class="card-num">21</span></a>
-        <a class="card" href="http://55555.wang/index?k=K3EzdlYwNk5wWDQ9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/PkiwbXthNoY0LMx7egFcxTn0nCn" alt="五湖通信"><span class="card-num">22</span></a>
-        <a class="card" href="https://h5.szkytx.cn/haoka/?u=60194984" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Fgy3bTsU8oAFrXxYSfJc870Dn2d" alt="卡盈号卡"><span class="card-num">23</span></a>
-        <a class="card" href="https://hk.usim.vip/shop#/?promoCode=IUfTWBfu&amp;indexFirstGroup=2" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/CfCubEnsRoRuAPxuFzqc6Q4AnFd" alt="爱卡通信"><span class="card-num">24</span></a>
-        <a class="card" href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/PO4BbvHNYoi9a2xuZZjcdAemnHf" alt="大鑫卡业"><span class="card-num">25</span></a>
-        <a class="card" href="https://lm3.cn/owhV" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/N8hNbXYfNo6gPfxTWiCcwlyznsg" alt="卡业联盟"><span class="card-num">26</span></a>
-        <a class="card" href="https://hk.enetpush.com/s/3VgbCxMa" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/LCDwbbQMooX5grx9kwIcfXrVnpB" alt="亿网联盟"><span class="card-num">27</span></a>
-        <a class="card" href="http://m.wywlhk.cn/index?k=dklYeDg3SjFjb2c9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/CpalbAhR1oB2SFxgZOJcRP02nAe" alt="琬玥号卡"><span class="card-num">28</span></a>
-        <a class="card" href="https://sznxwl.com/s/5rp1e21C" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Q8OPbRxhToxwqRxXAXiczvzInUc" alt="轻仙号卡"><span class="card-num">29</span></a>
-        <a class="card" href="https://bsx.jfys.cn/s/FqZmhkS0" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/VvWrbShbjo8e1hxbjxWcfOTEnHd" alt="宝时信"><span class="card-num">30</span></a>
+        <a class="card" href="https://bsx.jfys.cn/s/FqZmhkS0" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/VvWrbShbjo8e1hxbjxWcfOTEnHd" alt="宝时信"><span class="card-num">01</span></a>
+        <a class="card" href="https://h5.vip-mi.com/index?k=U2NKL3VYSlN3bGs9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/S3DkbCyQmoNgDRxPHuocbIWWnVd" alt="林夕号卡"><span class="card-num">02</span></a>
+        <a class="card" href="https://hk.euhaoka.cn/index?k=eFZheStSYVFFUVk9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/GQJobOxnSoUAilxeI05cpt0Hnse" alt="易优号卡"><span class="card-num">03</span></a>
+        <a class="card" href="https://h5.155.ink/h5/index?shop_id=MTAyMzM2&tab=1" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/DdUGbv7uwo9CgyxIhwUcPRUpnxh" alt="极光号卡"><span class="card-num">04</span></a>
+        <a class="card" href="https://api.haokay.cn/h5?code=Fhka3qAI" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RxWTbNmYLoiLLnx9brIcAr6Enef" alt="号卡云"><span class="card-num">05</span></a>
+        <a class="card" href="https://tui.haozhuan.vip/#/pages/micro_store/index?agent_id=51be22bae7d74a422210db56129c38e0" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/TPO9bLBN2osrHsxciEQczFann8b" alt="号易号卡"><span class="card-num">06</span></a>
+        <a class="card" href="https://agenthk.aswulian.com/#/?ApiKey=2W3IEOKJO7" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RgcxbOcKNo4PGCxPtegcivQvnOe" alt="爱尚云网"><span class="card-num">07</span></a>
+        <a class="card" href="https://www.haokaxinyao.com/#/pages/sales_index/my_store?mall_id=k9n576LJ%2FWBl470WgzQghw%3D%3D" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/CvnabZDDaoTHrNxbeEIc60trnob" alt="浩卡联盟"><span class="card-num">08</span></a>
+        <a class="card" href="https://zy.zhen-yue.cn/shop/77cad8f3af288738" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/NqjZbbfRfoTQvpxOgdDc16lwnwd" alt="172号卡"><span class="card-num">09</span></a>
+        <a class="card" href="http://ka.dandanhou.net/index?k=bjlGQzRpU21QV0U9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/KSl0bYHe4oVNXUx2Q66coXgmnLh" alt="卡多多"><span class="card-num">10</span></a>
+        <a class="card" href="https://sim.loonginno.cn/h5/index?shop_id=MTAxNTk3&amp;tab=1" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/O9HFbYiJGoOohbx6WROcXETGnLh" alt="龙创号卡"><span class="card-num">11</span></a>
+        <a class="card" href="https://hk5.kyaowang.cn/s/pHexRyhy" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/My5obzokboDBpCxNkI2cYLyznth" alt="号卡屋"><span class="card-num">12</span></a>
+        <a class="card" href="http://ka.10010tx.cn/index?k=VUl2aEdHZGVKckE9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/WwSnbU884o9HzOxC9Q6ckOaMnvb" alt="星尘号卡"><span class="card-num">13</span></a>
+        <a class="card" href="https://hk.123haoka.cn/index?k=Y0diTDB6L01Ec2s9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/LmUdb67JBoj9hDxUPH3cdq3MnmY" alt="号卡宇宙"><span class="card-num">14</span></a>
+        <a class="card" href="https://app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Q9ALb8Tx1ooj2PxuYkycboC7nkf" alt="朽月号卡"><span class="card-num">15</span></a>
+        <a class="card" href="https://kk.sviphk.cn/index?k=SDY3Uzh4cUZhdlE9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RjNObgYmDo4Q4Ox6d5CcUE8anLd" alt="夏沐号卡"><span class="card-num">16</span></a>
+        <a class="card" href="https://lingqu.87haoka.cn/shop#/?promoCode=jgcjTJXe&amp;indexFirstGroup=2" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/ZN7Mbj9njoZ3e0xsXmacyYtSnWc" alt="翼卡云"><span class="card-num">17</span></a>
+        <a class="card" href="https://h5.app.yuxuantongxin.com/#/?shop_id=6606&amp;sell_id=6606&amp;t=1791472118" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/EUjKb4JKFo5lR4xYpCqctFJhnzc" alt="号码家园"><span class="card-num">18</span></a>
+        <a class="card" href="https://svip.yunjuka.cn/index?k=Vzgzc2I2ZUN0YjA9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/FNvVbWY6loGmIsx2rMtc6tjOnxg" alt="号卡研究所"><span class="card-num">19</span></a>
+        <a class="card" href="https://yc.chenyutongxin.com/index?k=RnhtbkxIN0FYd1U9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/QRZ5bfmWwonF4AxGjBscGI9ynmt" alt="宸宇号卡"><span class="card-num">20</span></a>
+        <a class="card" href="http://55555.wang/index?k=K3EzdlYwNk5wWDQ9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/PkiwbXthNoY0LMx7egFcxTn0nCn" alt="五湖通信"><span class="card-num">21</span></a>
+        <a class="card" href="https://h5.szkytx.cn/haoka/?u=60194984" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Fgy3bTsU8oAFrXxYSfJc870Dn2d" alt="卡盈号卡"><span class="card-num">22</span></a>
+        <a class="card" href="https://hk.usim.vip/shop#/?promoCode=IUfTWBfu&amp;indexFirstGroup=2" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/CfCubEnsRoRuAPxuFzqc6Q4AnFd" alt="爱卡通信"><span class="card-num">23</span></a>
+        <a class="card" href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/PO4BbvHNYoi9a2xuZZjcdAemnHf" alt="大鑫卡业"><span class="card-num">24</span></a>
+        <a class="card" href="https://lm3.cn/owhV" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/N8hNbXYfNo6gPfxTWiCcwlyznsg" alt="卡业联盟"><span class="card-num">25</span></a>
+        <a class="card" href="https://hk.enetpush.com/s/3VgbCxMa" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/LCDwbbQMooX5grx9kwIcfXrVnpB" alt="亿网联盟"><span class="card-num">26</span></a>
+        <a class="card" href="http://m.wywlhk.cn/index?k=dklYeDg3SjFjb2c9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/CpalbAhR1oB2SFxgZOJcRP02nAe" alt="琬玥号卡"><span class="card-num">27</span></a>
+        <a class="card" href="https://haoka.kakatx.com/web/#/?token=MjA2NjU0fDE3OTE0NzE1MTU2MzdoYW9rYTY2Ng" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/TUSEb2DwxolN5dx50GucDsugnUe" alt="共创号卡"><span class="card-num">28</span></a>
+        <a class="card" href="https://hongtuo66.cn/shop#/?promoCode=9BVCEuTp&amp;indexFirstGroup=2" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/BuwnbMa19oAzYWxmkZ5ctlMxnhf" alt="宏拓通信"><span class="card-num">29</span></a>
+        <a class="card" href="https://sznxwl.com/s/5rp1e21C" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Q8OPbRxhToxwqRxXAXiczvzInUc" alt="轻仙号卡"><span class="card-num">30</span></a>
       </div>
       </div>
     </div>
@@ -1167,38 +1154,20 @@
       var maxIndex=Math.ceil(total/perView)-1;
       var cur=0;
       // 生成dots
-      function buildDots(){
-        dotsBox.innerHTML='';
-        for(var i=0;i<=maxIndex;i++){
-          var d=document.createElement('span');
-          d.className='nc-dot'+(i===cur?' active':'');
-          (function(idx){d.addEventListener('click',function(){go(idx)})})(i);
-          dotsBox.appendChild(d);
-        }
+      for(var i=0;i<=maxIndex;i++){
+        var d=document.createElement('span');
+        d.className='nc-dot'+(i===0?' active':'');
+        (function(idx){d.addEventListener('click',function(){go(idx)})})(i);
+        dotsBox.appendChild(d);
       }
-      buildDots();
+      var dots=dotsBox.children;
       function go(idx){
         cur=Math.max(0,Math.min(idx,maxIndex));
-        var first=cur*perView;
-        var target=cards[Math.min(first,total-1)];
-        var offset=target?target.offsetLeft:0;
-        track.style.transform='translateX(-'+offset+'px)';
-        var ds=dotsBox.children;
-        for(var i=0;i<ds.length;i++) ds[i].classList.toggle('active',i===cur);
+        track.style.transform='translateX(-'+(cur*(100/perView))+'%)';
+        for(var i=0;i<dots.length;i++) dots[i].classList.toggle('active',i===cur);
       }
       if(prev) prev.addEventListener('click',function(){go(cur-1)});
       if(next) next.addEventListener('click',function(){go(cur+1)});
-      // 窗口尺寸变化时重算
-      window.addEventListener('resize',function(){
-        var np=window.innerWidth<640?1:3;
-        if(np!==perView){
-          perView=np;
-          maxIndex=Math.ceil(total/perView)-1;
-          cur=Math.min(cur,maxIndex);
-          buildDots();
-          go(cur);
-        }
-      });
       // 自动轮播
       var timer=setInterval(function(){go(cur>=maxIndex?0:cur+1)},4000);
       // 鼠标悬停暂停
