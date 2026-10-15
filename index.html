@@ -9,22 +9,22 @@
 <meta property="og:description" content="汇聚30家正规号卡平台，选套餐、下单、查单一站式服务。全国发货，号卡统一由运营商认证与配送。">
 <meta property="og:image" content="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/SbXMbQQheofWvuxA7Jacyixengg">
 <meta property="og:type" content="website">
-<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A1120'/%3E%3Ctext x='32' y='44' font-size='36' font-family='Arial' font-weight='700' fill='%23C9A24B' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231259D9'/%3E%3Ctext x='32' y='45' font-size='38' font-family='sans-serif' font-weight='700' fill='%23ffffff' text-anchor='middle'%3EW%3C/text%3E%3C/svg%3E">
 <link rel="stylesheet" href="https://miaoda.feishu.cn/fonts/css2?family=Noto+Serif+SC:wght@600;700;900&family=Noto+Sans+SC:wght@300;400;500;600;700&display=swap">
 <style>
   :root{
-    --bg:#0A1120;
-    --bg-2:#0E1730;
-    --card:#121D36;
-    --card-line:rgba(255,255,255,.07);
-    --ink:#F2F5F9;
-    --ink-2:#9AA7BD;
-    --ink-3:#6E7B93;
-    --gold:#C9A24B;
-    --gold-soft:rgba(201,162,75,.14);
-    --blue:#3E7BFA;
-    --danger:#E5533C;
-    --radius:16px;
+    --bg:#FFFFFF;
+    --bg-2:#F6F8FB;
+    --card:#FFFFFF;
+    --card-line:#E5EAF2;
+    --ink:#141C2B;
+    --ink-2:#4A5A73;
+    --ink-3:#8794A8;
+    --brand:#1259D9;
+    --brand-soft:rgba(18,89,217,.07);
+    --blue:#1259D9;
+    --danger:#C8362A;
+    --radius:14px;
   }
   *{margin:0;padding:0;box-sizing:border-box}
   html{scroll-behavior:smooth}
@@ -42,48 +42,35 @@
   .bg-grid{
     position:fixed;inset:0;z-index:0;pointer-events:none;
     background:
-      radial-gradient(1100px 620px at 70% -10%, rgba(62,123,250,.16), transparent 60%),
-      radial-gradient(900px 560px at 0% 18%, rgba(201,162,75,.10), transparent 60%),
-      linear-gradient(180deg,#0A1120 0%, #0B1530 100%);
+      radial-gradient(900px 480px at 78% -8%, rgba(18,89,217,.07), transparent 62%),
+      linear-gradient(180deg,#FFFFFF 0%, #F7F9FC 100%);
   }
   .bg-grid::before{
     content:"";position:absolute;inset:0;
-    background-image:linear-gradient(rgba(255,255,255,.028) 1px,transparent 1px),
-                     linear-gradient(90deg,rgba(255,255,255,.028) 1px,transparent 1px);
-    background-size:56px 56px;
-    -webkit-mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 30%,transparent 75%);
-            mask-image:radial-gradient(ellipse 90% 70% at 50% 0%,#000 30%,transparent 75%);
+    display:none;
   }
   .content{position:relative;z-index:1}
 
   /* ===== Hero ===== */
-  .hero{padding:36px 0 20px;text-align:center}
-  .badge{
-    display:inline-flex;align-items:center;gap:10px;
-    font-size:13px;letter-spacing:.28em;color:var(--gold);
-    padding:9px 20px;border:1px solid rgba(201,162,75,.35);
-    border-radius:999px;background:var(--gold-soft);
-    margin-bottom:34px;
-  }
-  .badge .dot{width:6px;height:6px;border-radius:50%;background:var(--gold)}
+  .hero{padding:60px 0 40px;text-align:center}
+  .badge{display:none}
   h1{
     font-family:"Noto Serif SC",serif;
-    font-size:clamp(44px,9vw,84px);
+    font-size:clamp(48px,9vw,82px);
     font-weight:900;letter-spacing:.04em;line-height:1.12;
-    background:linear-gradient(180deg,#ffffff 20%,#c9d4ea 90%);
-    -webkit-background-clip:text;background-clip:text;color:transparent;
+    color:var(--ink);
   }
   .hero-sub{
-    margin-top:22px;font-size:clamp(17px,2.6vw,22px);color:var(--ink);
+    margin-top:18px;font-size:clamp(17px,2.6vw,22px);color:var(--ink);
     font-weight:500;letter-spacing:.18em;
   }
-  .hero-sub em{font-style:normal;color:var(--gold);font-weight:600}
+  .hero-sub em{font-style:normal;color:var(--brand);font-weight:700}
   .mascot-thumb{
-    width:clamp(100px,12vw,150px);height:auto;margin:20px auto 0;display:block;
-    filter:drop-shadow(0 18px 34px rgba(0,0,0,.38));
+    width:clamp(112px,11vw,146px);height:auto;margin:22px auto 0;display:block;
+    filter:drop-shadow(0 12px 26px rgba(20,50,110,.16));
   }
   .hero-desc{
-    margin:18px auto 0;max-width:560px;color:var(--ink-2);font-size:15px;
+    margin:16px auto 0;max-width:580px;color:var(--ink-2);font-size:14px;
   }
   .wechat{
     margin-top:44px;display:flex;gap:16px;justify-content:center;flex-wrap:wrap;
@@ -94,7 +81,7 @@
     display:flex;align-items:center;gap:14px;cursor:pointer;
     transition:transform .2s,border-color .2s,background .2s;
   }
-  .wechat-card:hover{transform:translateY(-3px);border-color:rgba(201,162,75,.5);background:var(--bg-2)}
+  .wechat-card:hover{transform:translateY(-3px);border-color:rgba(18,89,217,.5);background:var(--bg-2)}
   .wx-icon{
     width:46px;height:46px;flex:none;border-radius:12px;
     background:linear-gradient(135deg,#09B83E,#06C755);color:#fff;
@@ -102,24 +89,18 @@
   }
   .wx-icon svg{width:26px;height:26px}
   .wechat-card .t{font-size:12px;color:var(--ink-3);letter-spacing:.1em}
-  .wechat-card .v{font-size:18px;font-weight:600;font-family:ui-monospace,Menlo,Consolas,monospace;color:#fff}
-  .wechat-card .copy{font-size:12px;color:var(--gold);margin-left:auto;flex:none}
+  .wechat-card .v{font-size:18px;font-weight:600;font-family:ui-monospace,Menlo,Consolas,monospace;color:var(--ink)}
+  .wechat-card .copy{font-size:12px;color:var(--brand);margin-left:auto;flex:none}
 
   /* ===== 区块标题 ===== */
-  .sec{padding:36px 0}
+  .sec{padding:20px 0}
   .sec-head{margin-bottom:40px;text-align:center}
-  .eyebrow{
-    display:inline-block;font-size:12px;letter-spacing:.34em;color:var(--gold);
-    margin-bottom:14px;
-  }
+  .eyebrow{display:none}
   .sec-head h2{
     font-family:"Noto Serif SC",serif;font-size:clamp(28px,5vw,42px);font-weight:700;
     letter-spacing:.05em;
   }
-  .sec-head .line{
-    width:56px;height:2px;margin:20px auto 0;border-radius:2px;
-    background:linear-gradient(90deg,transparent,var(--gold),transparent);
-  }
+  .sec-head .line{display:none}
 
   /* ===== 号卡平台 ===== */
   .grid{
@@ -133,21 +114,21 @@
     text-decoration:none;color:var(--ink);
     transition:transform .2s,border-color .2s,box-shadow .2s;
   }
-  .card:hover{transform:translateY(-3px);border-color:rgba(201,162,75,.45);box-shadow:0 14px 34px rgba(0,0,0,.35)}
-  .card-logo{width:76px;height:76px;object-fit:cover;margin:0 auto 2px;display:block;border-radius:50%;overflow:hidden;background:var(--card);box-shadow:0 4px 14px rgba(0,0,0,.35)}
-  .card-num{font-size:13px;font-weight:700;color:var(--gold);letter-spacing:.12em;text-align:center}
+  .card:hover{transform:translateY(-3px);border-color:rgba(18,89,217,.45);box-shadow:0 12px 28px rgba(20,40,80,.10)}
+  .card-logo{width:76px;height:76px;object-fit:cover;margin:0 auto 2px;display:block;border-radius:50%;overflow:hidden;background:#fff;border:1px solid var(--card-line)}
+  .card-num{font-size:13px;font-weight:700;color:var(--brand);letter-spacing:.12em;text-align:center}
   .card-hot{
-    border-color:rgba(201,162,75,.55);
-    background:linear-gradient(180deg,rgba(201,162,75,.13),rgba(18,29,54,.94));
+    border-color:rgba(18,89,217,.55);
+    background:var(--brand-soft);
   }
-  .card-hot:hover{border-color:var(--gold)}
+  .card-hot:hover{border-color:var(--brand)}
   .hot-badge{
     position:absolute;top:-10px;right:12px;z-index:2;
-    background:linear-gradient(135deg,#E8C368,#C9A24B);
-    color:#0A1120;font-size:11px;font-weight:700;letter-spacing:.1em;
-    padding:3px 11px;border-radius:8px;box-shadow:0 4px 14px rgba(201,162,75,.45);
+    background:var(--brand);
+    color:#FFFFFF;font-size:11px;font-weight:700;letter-spacing:.06em;
+    padding:3px 11px;border-radius:7px;
   }
-  .card-icon{flex:none;width:30px;height:30px;margin:0 auto 2px;color:var(--gold);
+  .card-icon{flex:none;width:30px;height:30px;margin:0 auto 2px;color:var(--brand);
     display:flex;align-items:center;justify-content:center}
   .card-icon svg{width:30px;height:30px}
 
@@ -171,7 +152,7 @@
     display:flex;gap:16px;align-items:flex-start;text-decoration:none;color:var(--ink);
     transition:transform .2s,border-color .2s;
   }
-  .s-item:hover{transform:translateY(-3px);border-color:rgba(62,123,250,.5)}
+  .s-item:hover{transform:translateY(-3px);border-color:rgba(18,89,217,.45)}
   .s-item .ic{width:44px;height:44px;flex:none;border-radius:11px;background:rgba(62,123,250,.14);color:var(--blue);display:flex;align-items:center;justify-content:center}
   .s-item .ic svg{width:23px;height:23px}
   .s-item h4{font-size:15.5px;font-weight:600}
@@ -180,67 +161,67 @@
 
   .onefive{
     margin-top:14px;padding:22px 26px;border-radius:var(--radius);
-    background:var(--card);border:1px dashed rgba(201,162,75,.4);
+    background:var(--card);border:1px dashed rgba(18,89,217,.4);
     display:flex;gap:16px;align-items:center;justify-content:space-between;flex-wrap:wrap;
     text-decoration:none;color:var(--ink);
   }
   .onefive .t{font-size:15.5px;font-weight:600}
   .onefive .t span{display:block;font-size:12.5px;color:var(--ink-3);font-weight:400;margin-top:2px}
   .onefive .btn{
-    font-size:14px;color:var(--gold);border:1px solid rgba(201,162,75,.45);
+    font-size:14px;color:var(--brand);border:1px solid rgba(18,89,217,.45);
     padding:10px 22px;border-radius:10px;transition:background .2s;
   }
-  .onefive:hover .btn{background:var(--gold-soft)}
+  .onefive:hover .btn{background:var(--brand-soft)}
 
   /* ===== 号卡资讯 ===== */
   .news-item{
     border:1px solid var(--card-line);border-radius:14px;
-    background:rgba(255,255,255,.03);margin-bottom:14px;overflow:hidden;
+    background:var(--bg-2);margin-bottom:14px;overflow:hidden;
     transition:border-color .2s;
   }
-  .news-item:hover{border-color:rgba(201,162,75,.45)}
+  .news-item:hover{border-color:rgba(18,89,217,.45)}
   .news-title-row{
     width:100%;display:flex;align-items:center;gap:12px;padding:16px 18px;
     background:none;border:none;cursor:pointer;color:var(--ink);text-align:left;
   }
   .news-tag{
-    flex-shrink:0;font-size:12px;color:#1a1f3a;background:var(--gold);
-    padding:3px 10px;border-radius:6px;font-weight:700;letter-spacing:.05em;
+    flex-shrink:0;font-size:12px;color:#FFFFFF;background:var(--brand);
+    padding:3px 10px;border-radius:6px;font-weight:700;letter-spacing:.04em;
   }
   .news-title{font-size:15px;font-weight:600;line-height:1.5;flex:1}
-  .news-arrow{color:var(--gold);font-size:14px;transition:transform .25s}
+  .news-arrow{color:var(--brand);font-size:14px;transition:transform .25s}
   .news-item.open .news-arrow{transform:rotate(180deg)}
   .news-content{max-height:0;overflow:hidden;transition:max-height .35s ease}
   .news-item.open .news-content{max-height:1200px}
   .news-content{padding:0 18px}
   .news-item.open .news-content{padding:0 18px 20px}
   .news-content p{font-size:13.5px;color:var(--ink-3);line-height:1.85;margin:0 0 10px}
-  .news-content h4{font-size:14.5px;color:var(--gold);margin:14px 0 8px;font-weight:700;letter-spacing:.03em}
+  .news-content h4{font-size:14.5px;color:var(--brand);margin:14px 0 8px;font-weight:700;letter-spacing:.03em}
   .news-note{font-size:12px;color:#8a8fae;margin-top:14px!important}
 
   /* ===== 联系我们 ===== */
   .cs-entry{
     display:flex;align-items:center;justify-content:center;gap:12px;
     max-width:440px;margin:0 auto 42px;padding:20px 26px;border-radius:var(--radius);
-    background:linear-gradient(135deg,rgba(62,123,250,.18),rgba(201,162,75,.10));
-    border:1px solid rgba(62,123,250,.4);text-decoration:none;color:#fff;
+    background:linear-gradient(135deg,rgba(62,123,250,.18),rgba(18,89,217,.10));
+    border:1px solid var(--brand-line,rgba(18,89,217,.35));text-decoration:none;color:var(--brand);
     font-size:16px;font-weight:600;letter-spacing:.06em;
     transition:transform .2s,border-color .2s;
   }
   .cs-entry:hover{transform:translateY(-3px);border-color:rgba(62,123,250,.7)}
-  .cs-entry .ic{width:34px;height:34px;flex:none;color:#fff}
+  .cs-entry .ic{width:34px;height:34px;flex:none;color:var(--brand)}
   .cs-entry .ic svg{width:34px;height:34px}
-  .cs-entry .arrow{margin-left:4px;color:var(--gold)}
+  .cs-entry .arrow{margin-left:4px;color:var(--brand)}
   .qr-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
   .qr-card{
     background:var(--card);border:1px solid var(--card-line);border-radius:var(--radius);
     padding:28px 24px 24px;text-align:center;
     transition:border-color .2s;
   }
-  .qr-card:hover{border-color:rgba(201,162,75,.4)}
+  .qr-card:hover{border-color:rgba(18,89,217,.4)}
   .qr-img-box{
     position:relative;width:100%;aspect-ratio:1;border-radius:12px;overflow:hidden;
-    margin-bottom:16px;background:#0d1628;border:1px solid var(--card-line);
+    margin-bottom:16px;background:#F3F6FA;border:1px solid var(--card-line);
   }
   .qr-img-box img{
     position:absolute;inset:0;width:100%;height:100%;display:block;
@@ -248,63 +229,63 @@
   }
   .qr-placeholder{
     width:100%;aspect-ratio:.46;margin:0 auto 16px;
-    border:2px dashed rgba(201,162,75,.5);border-radius:14px;
+    border:2px dashed rgba(18,89,217,.5);border-radius:14px;
     display:flex;align-items:center;justify-content:center;text-align:center;
-    color:var(--ink-3);font-size:14px;line-height:1.7;background:rgba(255,255,255,.015);
+    color:var(--ink-3);font-size:14px;line-height:1.7;background:var(--bg-2);
   }
-  .qr-placeholder b{color:var(--gold);font-weight:600}
+  .qr-placeholder b{color:var(--brand);font-weight:600}
   .qr-label{font-size:14.5px;font-weight:600;color:var(--ink)}
   .qr-sub{font-size:12.5px;color:var(--ink-3);margin-top:4px}
 
   /* ===== Footer ===== */
   footer{border-top:1px solid var(--card-line);padding:28px 0 36px;text-align:center}
   footer .brand{font-family:"Noto Serif SC",serif;font-size:18px;font-weight:700;letter-spacing:.14em}
-  footer .brand span{color:var(--gold)}
+  footer .brand span{color:var(--brand)}
   footer p{color:var(--ink-3);font-size:13px;margin-top:8px}
   .footer-kf{
     display:inline-block;margin-top:14px;padding:8px 22px;border-radius:20px;
-    background:rgba(201,162,75,.14);border:1px solid rgba(201,162,75,.4);
-    color:var(--gold);font-size:13px;letter-spacing:.06em;text-decoration:none;
+    background:rgba(18,89,217,.14);border:1px solid rgba(18,89,217,.4);
+    color:var(--brand);font-size:13px;letter-spacing:.06em;text-decoration:none;
   }
-  .footer-kf:hover{background:rgba(201,162,75,.24)}
+  .footer-kf:hover{background:rgba(18,89,217,.24)}
   .footer-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:14px}
   .footer-share{background:transparent;border:1px solid var(--card-line);color:var(--ink-2);cursor:pointer}
-  .footer-share:hover{border-color:rgba(201,162,75,.5);color:var(--gold);background:rgba(201,162,75,.1)}
+  .footer-share:hover{border-color:rgba(18,89,217,.5);color:var(--brand);background:rgba(18,89,217,.1)}
 
   /* ===== Toast ===== */
   .toast{
     position:fixed;left:50%;bottom:36px;transform:translate(-50%,20px);
-    background:rgba(18,29,54,.96);color:#fff;padding:12px 22px;border-radius:10px;
-    border:1px solid rgba(201,162,75,.4);font-size:14px;opacity:0;pointer-events:none;
+    background:rgba(20,28,43,.95);color:#fff;padding:12px 22px;border-radius:10px;
+    border:1px solid rgba(18,89,217,.4);font-size:14px;opacity:0;pointer-events:none;
     transition:opacity .3s,transform .3s;z-index:50;
   }
   .toast.show{opacity:1;transform:translate(-50%,0)}
 
   /* ===== 背景音乐按钮 ===== */
-  .bgm-wrap{position:fixed;right:20px;bottom:20px;z-index:60;display:flex;gap:10px;align-items:center}
+  .bgm-wrap{position:fixed;right:16px;bottom:16px;z-index:60;display:flex;gap:8px;align-items:center}
   .bgm-btn{
     width:46px;height:46px;border-radius:50%;
-    background:rgba(18,29,54,.92);border:1px solid rgba(201,162,75,.45);
-    color:var(--gold);display:flex;align-items:center;justify-content:center;cursor:pointer;
+    background:#FFFFFF;border:1px solid rgba(18,89,217,.45);
+    color:var(--brand);display:flex;align-items:center;justify-content:center;cursor:pointer;
     opacity:.72;transition:opacity .3s,transform .2s,border-color .2s;
   }
   .bgm-btn:hover{opacity:1;transform:scale(1.07)}
   .bgm-btn svg{width:22px;height:22px}
   .bgm-next-btn{width:38px;height:38px;opacity:.55}
   .bgm-next-btn svg{width:18px;height:18px}
-  .bgm-btn.playing{opacity:1;border-color:var(--gold)}
+  .bgm-btn.playing{opacity:1;border-color:var(--brand)}
   .bgm-btn.playing svg{animation:bgmspin 5s linear infinite}
   @keyframes bgmspin{to{transform:rotate(360deg)}}
 
   /* ===== 内嵌办理浮层 ===== */
   .embed-overlay{
     position:fixed;inset:0;z-index:100;display:none;align-items:center;justify-content:center;
-    padding:16px;background:rgba(5,10,22,.74);backdrop-filter:blur(4px);
+    padding:16px;background:rgba(15,25,45,.45);backdrop-filter:blur(4px);
   }
   .embed-overlay.open{display:flex}
   .embed-panel{
     width:min(1080px,96vw);height:min(86vh,820px);
-    background:#0E1730;border:1px solid rgba(201,162,75,.35);border-radius:16px;
+    background:#FFFFFF;border:1px solid rgba(18,89,217,.35);border-radius:16px;
     overflow:hidden;display:flex;flex-direction:column;
     box-shadow:0 30px 80px rgba(0,0,0,.5);
   }
@@ -316,24 +297,24 @@
   .embed-title small{color:var(--ink-3);font-weight:400;margin-left:8px;font-size:12px}
   .embed-actions{display:flex;align-items:center;gap:10px}
   .embed-open{
-    font-size:13px;color:var(--gold);border:1px solid rgba(201,162,75,.4);
+    font-size:13px;color:var(--brand);border:1px solid rgba(18,89,217,.4);
     padding:6px 14px;border-radius:8px;text-decoration:none;transition:background .2s;
   }
-  .embed-open:hover{background:var(--gold-soft)}
+  .embed-open:hover{background:var(--brand-soft)}
   .embed-close{
-    width:34px;height:34px;border-radius:9px;background:rgba(255,255,255,.06);
+    width:34px;height:34px;border-radius:9px;background:var(--bg-2);
     border:1px solid var(--card-line);color:var(--ink-2);font-size:20px;line-height:1;
     cursor:pointer;display:flex;align-items:center;justify-content:center;
   }
-  .embed-close:hover{color:#fff;border-color:rgba(229,83,60,.55)}
+  .embed-close:hover{color:var(--danger);border-color:rgba(200,54,42,.5)}
   .embed-loading{
     position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
-    background:#0E1730;z-index:5;gap:16px;
+    background:#FFFFFF;z-index:5;gap:16px;
   }
   .embed-loading.hidden{display:none}
   .spinner{
     width:40px;height:40px;border-radius:50%;
-    border:3px solid rgba(201,162,75,.2);border-top-color:var(--gold);
+    border:3px solid rgba(18,89,217,.2);border-top-color:var(--brand);
     animation:spin 0.8s linear infinite;
   }
   @keyframes spin{to{transform:rotate(360deg)}}
@@ -348,35 +329,35 @@
   .tips-entry-wrap{text-align:center;margin:0 0 34px}
   .tips-btn{
     display:inline-flex;align-items:center;gap:9px;
-    font-size:14px;color:var(--gold);border:1px solid rgba(201,162,75,.5);
-    background:rgba(201,162,75,.08);padding:11px 28px;border-radius:10px;cursor:pointer;
+    font-size:14px;color:var(--brand);border:1px solid rgba(18,89,217,.5);
+    background:rgba(18,89,217,.08);padding:11px 28px;border-radius:10px;cursor:pointer;
     transition:background .2s,transform .2s;letter-spacing:.04em;
   }
-  .tips-btn:hover{background:var(--gold-soft);transform:translateY(-1px)}
+  .tips-btn:hover{background:var(--brand-soft);transform:translateY(-1px)}
   .tips-btn svg{width:17px;height:17px}
 
   /* ===== 实名认证模板 ===== */
   .realname-wrap{
     max-width:540px;margin:0 auto;padding:14px;
     border:1px solid var(--card-line);border-radius:16px;
-    background:linear-gradient(180deg,rgba(255,255,255,.04),rgba(255,255,255,.01));
+    background:var(--bg-2);
   }
   .realname-img{width:100%;height:auto;display:block;border-radius:10px}
   .tips-overlay{
     position:fixed;inset:0;z-index:110;display:none;align-items:center;justify-content:center;
-    padding:20px;background:rgba(5,10,22,.78);backdrop-filter:blur(4px);
+    padding:20px;background:rgba(15,25,45,.45);backdrop-filter:blur(4px);
   }
   .tips-overlay.open{display:flex}
   .tips-panel{
     width:min(460px,92vw);max-height:86vh;overflow-y:auto;
-    background:#0E1730;border:1px solid rgba(201,162,75,.4);
+    background:#FFFFFF;border:1px solid rgba(18,89,217,.4);
     border-radius:16px;box-shadow:0 30px 80px rgba(0,0,0,.5);
   }
   .tips-head{
     display:flex;align-items:center;justify-content:space-between;position:sticky;top:0;
-    padding:16px 20px;border-bottom:1px solid var(--card-line);background:#0E1730;z-index:1;
+    padding:16px 20px;border-bottom:1px solid var(--card-line);background:#FFFFFF;z-index:1;
   }
-  .tips-title{font-size:16px;font-weight:700;color:var(--gold);letter-spacing:.08em}
+  .tips-title{font-size:16px;font-weight:700;color:var(--brand);letter-spacing:.08em}
   .tips-list{padding:24px 26px 6px;margin:0;list-style:none;counter-reset:tips}
   .tips-list li{
     counter-increment:tips;position:relative;padding:0 0 0 36px;
@@ -385,81 +366,83 @@
   .tips-list li:last-child{margin-bottom:0}
   .tips-list li::before{
     content:counter(tips);position:absolute;left:0;top:2px;width:26px;height:26px;
-    border-radius:8px;background:var(--gold-soft);border:1px solid rgba(201,162,75,.4);
-    color:var(--gold);font-size:13px;font-weight:700;
+    border-radius:8px;background:var(--brand-soft);border:1px solid rgba(18,89,217,.4);
+    color:var(--brand);font-size:13px;font-weight:700;
     display:flex;align-items:center;justify-content:center;
   }
   .tips-img{padding:20px 22px 26px}
-  .tips-img-title{font-size:13px;color:var(--gold);letter-spacing:.06em;margin-bottom:12px}
+  .tips-img-title{font-size:13px;color:var(--brand);letter-spacing:.06em;margin-bottom:12px}
   .tips-img img{width:100%;height:auto;display:block;border-radius:10px}
 
   /* ===== 入口按钮（联系我们 / 号卡下单） ===== */
   /* ===== 报单警示横幅 ===== */
   .warn-banner{
-    display:flex;align-items:center;gap:12px;justify-content:center;
-    padding:14px 20px;border-radius:14px;text-align:center;
-    background:linear-gradient(135deg,rgba(180,30,40,.9),rgba(140,20,30,.9));
-    border:1px solid rgba(255,200,80,.5);
-    box-shadow:0 6px 20px rgba(180,30,40,.25);
+    display:flex;align-items:center;gap:12px;justify-content:center;flex-wrap:wrap;
+    padding:13px 18px;border-radius:var(--radius);text-align:center;
+    background:#FDF3F2;border:1px solid #F3CFCB;
   }
-  .warn-banner .wb-icon{font-size:22px;color:#ffd700;flex-shrink:0}
-  .warn-banner .wb-text{font-size:15px;font-weight:600;color:#fff;letter-spacing:.04em}
-  .warn-banner .wb-text em{color:#ffd700;font-style:normal}
+  .warn-banner .wb-icon{color:var(--danger);flex-shrink:0;display:flex}
+  .warn-banner .wb-icon svg{width:18px;height:18px}
+  .warn-banner .wb-text{font-size:14.5px;font-weight:600;color:#8E2A20;letter-spacing:.02em}
+  .warn-banner .wb-text em{color:var(--danger);font-style:normal}
   .wb-tips-btn{
     flex-shrink:0;padding:6px 14px;border-radius:8px;cursor:pointer;
-    background:rgba(255,215,0,.18);border:1px solid rgba(255,215,0,.5);
-    color:#ffd700;font-size:13px;font-weight:600;letter-spacing:.04em;white-space:nowrap;
+    background:#FFFFFF;border:1px solid #E7B4AE;
+    color:var(--danger);font-size:13px;font-weight:600;letter-spacing:.02em;white-space:nowrap;
   }
-  .wb-tips-btn:hover{background:rgba(255,215,0,.3)}
+  .wb-tips-btn:hover{background:#FBEAE8}
 
   .entry-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:1240px;margin:0 auto}
 
   /* ===== 资讯区块（页面直显） ===== */
   .news-sec-head{display:flex;align-items:center;justify-content:center;gap:14px;margin-bottom:18px}
-  .news-sec-title{font-family:"Noto Serif SC",serif;font-size:20px;font-weight:700;letter-spacing:.08em;color:#fff;text-align:center}
-  .news-more{background:none;border:none;color:var(--gold);font-size:14px;cursor:pointer;letter-spacing:.04em}
+  .news-sec-title{font-family:"Noto Serif SC",serif;font-size:20px;font-weight:700;letter-spacing:.08em;color:var(--ink);text-align:center}
+  .news-more{background:none;border:none;color:var(--brand);font-size:14px;cursor:pointer;letter-spacing:.04em}
   .news-more:hover{text-decoration:underline}
-  .news-carousel{display:flex;align-items:center;gap:8px}
+  .news-carousel{display:flex;align-items:stretch;gap:10px}
   .nc-viewport{flex:1;overflow:hidden}
-  .nc-track{display:flex;gap:14px;transition:transform .4s ease}
-  .nc-arrow{
-    flex-shrink:0;width:34px;height:34px;border-radius:50%;cursor:pointer;
-    background:rgba(201,162,75,.12);border:1px solid rgba(201,162,75,.35);
-    color:var(--gold);font-size:20px;line-height:1;display:flex;align-items:center;justify-content:center;
-  }
-  .nc-arrow:hover{background:rgba(201,162,75,.25)}
-  .nc-dots{display:flex;justify-content:center;gap:6px;margin-top:12px}
-  .nc-dot{width:6px;height:6px;border-radius:50%;background:rgba(255,255,255,.2);cursor:pointer;transition:all .2s}
-  .nc-dot.active{background:var(--gold);width:18px;border-radius:3px}
+  .nc-track{display:flex;gap:16px;transition:transform .4s ease}
+  .nc-arrow{display:none}
+  .nc-arrow:hover{background:rgba(18,89,217,.25)}
+  .nc-dots{display:flex;justify-content:center;gap:6px;margin-top:14px}
+  .nc-dot{width:6px;height:6px;border-radius:50%;background:#C9D3E0;cursor:pointer;transition:all .2s}
+  .nc-dot.active{background:var(--brand);width:18px;border-radius:3px}
   .news-card{
-      flex:0 0 calc((100% - 28px)/3);
-      display:flex;gap:10px;align-items:flex-start;text-align:left;
-      padding:12px 12px;border-radius:12px;cursor:pointer;
-      background:linear-gradient(160deg,rgba(30,46,84,.7),rgba(16,26,50,.8));
-      border:1px solid var(--card-line);transition:transform .2s,border-color .2s;
+      flex:0 0 calc((100% - 32px)/3);
+      display:flex;gap:12px;align-items:flex-start;text-align:left;
+      padding:16px 14px;border-radius:12px;cursor:pointer;
+      background:#FFFFFF;
+      border:1px solid var(--card-line);transition:transform .2s,border-color .2s,box-shadow .2s;
     }
-  .news-card:hover{transform:translateY(-2px);border-color:rgba(201,162,75,.5)}
+  .news-card:hover{transform:translateY(-2px);border-color:rgba(18,89,217,.45);box-shadow:0 8px 22px rgba(20,40,80,.07)}
   .news-card .nc-icon{
-      flex-shrink:0;width:30px;height:30px;border-radius:8px;font-size:15px;
-      display:flex;align-items:center;justify-content:center;
-      background:rgba(201,162,75,.14);border:1px solid rgba(201,162,75,.3);line-height:1;
+      flex-shrink:0;width:34px;height:34px;border-radius:9px;
+      display:flex;align-items:center;justify-content:center;line-height:1;
+      background:var(--brand-soft);color:var(--brand);
     }
-  .news-card .nc-body h4{font-size:13.5px;font-weight:700;color:#fff;margin:0 0 3px;line-height:1.4}
-  .news-card .nc-body p{font-size:11.5px;color:var(--ink-3);margin:0;line-height:1.5;
-      display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+  .news-card .nc-icon svg{width:18px;height:18px}
+  .news-card .nc-body h4{font-size:13.5px;font-weight:700;color:var(--ink);margin:0 0 5px;line-height:1.4;display:flex;align-items:center;gap:6px;flex-wrap:wrap}
+  .nc-tag{
+    font-size:9px;font-weight:600;padding:2px 7px;border-radius:999px;
+    background:rgba(18,89,217,.18);color:var(--brand);border:1px solid rgba(18,89,217,.35);
+  }
+  .news-card .nc-body p{font-size:11.5px;color:var(--ink-3);margin:0;line-height:1.6;
+      display:-webkit-box;-webkit-line-clamp:3;-webkit-box-orient:vertical;overflow:hidden}
 
   .entry-btn{
-    position:relative;display:flex;flex-direction:column;align-items:center;gap:10px;
-    padding:34px 22px;border-radius:18px;text-decoration:none;color:#fff;cursor:pointer;
-    background:linear-gradient(160deg,rgba(30,46,84,.85),rgba(16,26,50,.9));
+    position:relative;display:flex;flex-direction:column;align-items:center;gap:8px;
+    padding:22px 18px;border-radius:var(--radius);text-decoration:none;color:var(--ink);cursor:pointer;
+    background:#FFFFFF;
     border:1px solid var(--card-line);transition:transform .2s,border-color .2s,box-shadow .2s;
+    box-shadow:0 2px 10px rgba(20,40,80,.05);
   }
-  .entry-btn:hover{transform:translateY(-4px);border-color:rgba(201,162,75,.5);box-shadow:0 18px 40px rgba(0,0,0,.35)}
-  .entry-btn .eb-ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(201,162,75,.12);border:1px solid rgba(201,162,75,.35);color:var(--gold)}
+  .entry-btn:hover{transform:translateY(-3px);border-color:rgba(18,89,217,.45);box-shadow:0 14px 30px rgba(20,40,80,.10)}
+  .entry-btn .eb-ic{width:52px;height:52px;border-radius:14px;display:flex;align-items:center;justify-content:center;background:rgba(18,89,217,.12);border:1px solid rgba(18,89,217,.35);color:var(--brand);flex:none}
   .entry-btn .eb-ic svg{width:26px;height:26px}
+  .entry-btn .eb-txt{display:contents}
   .entry-btn h3{font-family:"Noto Serif SC",serif;font-size:19px;font-weight:700;letter-spacing:.1em;margin:0}
   .entry-btn p{font-size:13px;color:var(--ink-3);margin:0;letter-spacing:.04em}
-  .entry-btn .eb-go{margin-top:6px;font-size:13px;color:var(--gold);letter-spacing:.06em}
+  .entry-btn .eb-go{margin-top:6px;font-size:13px;color:var(--brand);letter-spacing:.06em}
   /* 第一行：号卡资讯横幅，左缩略图右文字 */
   .entry-btn.span-row{
     flex-direction:row;align-items:center;text-align:left;gap:18px;
@@ -477,22 +460,34 @@
   /* ===== 静态内容浮层（联系我们 / 号卡下单） ===== */
   .panel-overlay{
     position:fixed;inset:0;z-index:105;display:none;align-items:flex-start;justify-content:center;
-    padding:20px;background:rgba(5,10,22,.78);backdrop-filter:blur(4px);overflow-y:auto;
+    padding:20px;background:rgba(15,25,45,.45);backdrop-filter:blur(4px);overflow-y:auto;
   }
   .panel-overlay.open{display:flex}
   .panel-overlay-box{
-    width:min(860px,96vw);margin:auto;background:#0E1730;
-    border:1px solid rgba(201,162,75,.35);border-radius:16px;
+    width:min(860px,96vw);margin:auto;background:#FFFFFF;
+    border:1px solid rgba(18,89,217,.35);border-radius:16px;
     box-shadow:0 30px 80px rgba(0,0,0,.5);overflow:hidden;
   }
   .panel-head{
     position:sticky;top:0;display:flex;align-items:center;justify-content:space-between;
-    padding:16px 22px;border-bottom:1px solid var(--card-line);background:#0E1730;z-index:2;
+    padding:16px 22px;border-bottom:1px solid var(--card-line);background:#FFFFFF;z-index:2;
   }
-  .panel-head .ph-title{font-size:17px;font-weight:700;color:var(--gold);letter-spacing:.1em}
+  .panel-head .ph-title{font-size:17px;font-weight:700;color:var(--brand);letter-spacing:.1em}
   .panel-body{padding:26px 24px 30px;max-height:76vh;overflow-y:auto}
   @media (max-width:680px){
-    .entry-grid{grid-template-columns:repeat(3,1fr);gap:10px;max-width:420px}
+    .entry-grid{grid-template-columns:1fr;gap:10px;max-width:none}
+    .entry-btn{flex-direction:row;align-items:center;text-align:left;gap:12px;padding:14px 16px}
+    .entry-btn .eb-ic{width:44px;height:44px;border-radius:12px}
+    .entry-btn .eb-ic svg{width:22px;height:22px}
+    .entry-btn .eb-txt{display:flex;flex-direction:column;gap:3px;flex:1;min-width:0}
+    .entry-btn h3{font-size:16px;letter-spacing:.06em}
+    .entry-btn p{font-size:12px;white-space:normal}
+    .entry-btn .eb-go{margin-top:0;flex:none;font-size:12px}
+    .bgm-wrap{right:10px;bottom:10px;gap:6px}
+    .bgm-btn{width:34px;height:34px;opacity:.6}
+    .bgm-btn svg{width:16px;height:16px}
+    .bgm-next-btn{width:30px;height:30px}
+    .bgm-next-btn svg{width:14px;height:14px}
     .news-cards{grid-template-columns:1fr;gap:10px}
     .news-card{flex:0 0 100%}
     .nc-arrow{display:none}
@@ -515,7 +510,7 @@
     .qr-sub{display:none}
     .hero{padding:40px 0 24px}
     .mascot-thumb{width:90px;margin-top:16px}
-    .sec{padding:28px 0}
+    .sec{padding:20px 0}
     .sec-head{margin-bottom:30px}
   }
   @media (max-width:360px){
@@ -535,7 +530,6 @@
 
   <!-- ===== 视图：Hero ===== -->
   <header class="hero">
-    <div class="badge"><span class="dot"></span>WANGYING&nbsp;TECH</div>
     <h1>网盈科技</h1>
     <p class="hero-sub">专注<em>号卡服务</em>·通讯</p>
     <img class="mascot-thumb" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/SbXMbQQheofWvuxA7Jacyixengg" alt="号卡吉祥物">
@@ -543,55 +537,55 @@
   </header>
 
   <!-- ===== 资讯区块（页面直显） ===== -->
-  <section class="sec" id="newsSection" style="padding-bottom:8px">
+  <section class="sec" id="newsSection" style="padding:30px 0 8px">
     <div class="wrap">
       <div class="news-sec-head">
         <span class="news-sec-title">网站资讯</span>
-        <button id="openNewsAll" class="news-more">查看全部 →</button>
+        <button id="openNewsAll" class="news-more">查看全部</button>
       </div>
       <div class="news-carousel">
         <button class="nc-arrow nc-prev" id="ncPrev" aria-label="上一组">‹</button>
         <div class="nc-viewport">
           <div class="nc-track" id="ncTrack">
         <button class="news-card" data-open="news" data-news="0">
-          <span class="nc-icon">📄</span>
+          <span class="nc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3H7a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2h10a2 2 0 0 0 2-2V8l-5-5Z"/><path d="M14 3v5h5"/><path d="M9 13h6M9 17h4"/></svg></span>
           <div class="nc-body">
-            <h4>2026线上流量卡办理模式深度解析</h4>
+            <h4><span class="nc-tag">科普</span>2026线上流量卡办理模式深度解析</h4>
             <p>两种模式并存：本地直办插卡激活；跨省需先激活首充、配合IP校验、前置预存、转寄…</p>
           </div>
         </button>
         <button class="news-card" data-open="news" data-news="1">
-          <span class="nc-icon">🔒</span>
+          <span class="nc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span>
           <div class="nc-body">
-            <h4>手机卡被"局停"怎么回事？</h4>
+            <h4><span class="nc-tag">避坑</span>手机卡被"局停"怎么回事？</h4>
             <p>异地使用、频繁换设备、热点挂机、流量异常等触发风控，附合规用卡指南与解封步骤…</p>
           </div>
         </button>
         <button class="news-card" data-open="news" data-news="2">
-          <span class="nc-icon">💰</span>
+          <span class="nc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 12.7 12.7 20.5a2 2 0 0 1-2.8 0L3.5 14.1V3.5H14l6.5 6.4a2 2 0 0 1 0 2.8Z"/><circle cx="7.8" cy="7.8" r="1.4"/></svg></span>
           <div class="nc-body">
-            <h4>为什么有"原套餐"和"优惠套餐"？</h4>
+            <h4><span class="nc-tag">科普</span>为什么有"原套餐"和"优惠套餐"？</h4>
             <p>原套餐是官方保底资费，优惠套餐是新用户折扣，叠加后实现低价大流量…</p>
           </div>
         </button>
         <button class="news-card" data-open="news" data-news="3">
-          <span class="nc-icon">📡</span>
+          <span class="nc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20v-4M10 20v-8M15 20V8M20 20V4"/></svg></span>
           <div class="nc-body">
-            <h4>别再问"哪张卡信号最好"了</h4>
+            <h4><span class="nc-tag">科普</span>别再问"哪张卡信号最好"了</h4>
             <p>信号由你当地基站覆盖决定，跟卡和套餐无关，2步选对运营商…</p>
           </div>
         </button>
         <button class="news-card" data-open="news" data-news="4">
-          <span class="nc-icon">📋</span>
+          <span class="nc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M9 11h6M9 15h4"/></svg></span>
           <div class="nc-body">
-            <h4>办卡一直审核不通过？原因全解析</h4>
+            <h4><span class="nc-tag">避坑</span>办卡一直审核不通过？原因全解析</h4>
             <p>证件异常、人脸不过、地址问题、黑名单…五大类原因一次说清，附自查建议…</p>
           </div>
         </button>
         <button class="news-card" data-open="news" data-news="5">
-          <span class="nc-icon">💳</span>
+          <span class="nc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19"/><path d="M6 14.5h3"/></svg></span>
           <div class="nc-body">
-            <h4>首充不是套路，是统一激活规则</h4>
+            <h4><span class="nc-tag">科普</span>首充不是套路，是统一激活规则</h4>
             <p>首充金额100%是你自己的话费，不是额外收费，3个常见误区一次澄清…</p>
           </div>
         </button>
@@ -607,7 +601,7 @@
   <section class="sec" style="padding:0 0 12px">
     <div class="wrap">
       <div class="warn-banner">
-        <span class="wb-icon">⚠</span>
+        <span class="wb-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3.5 2.5 20.5h19L12 3.5Z"/><path d="M12 10v4M12 17.2h.01"/></svg></span>
         <span class="wb-text">下单后请第一时间联系客服报单！<em>未报单的优惠包后期掉包，概不受理。</em></span>
         <button id="tipsBtnMain" class="wb-tips-btn" title="查看重要提示">重要提示</button>
       </div>
@@ -615,26 +609,20 @@
   </section>
 
   <!-- ===== 入口按钮 ===== -->
-  <section class="sec" id="entries" style="padding-top:8px">
+  <section class="sec" id="entries" style="padding-top:24px">
     <div class="wrap">
       <div class="entry-grid">
         <button class="entry-btn" id="openContact">
           <span class="eb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-6.2l-4.5 3.6c-.4.3-1 .06-1-.5V17H4a2 2 0 0 1-2-2V6Z"/></svg></span>
-          <h3>联系我们</h3>
-          <p>企业微信客服 · 扫码办卡</p>
-          <span class="eb-go">点击进入 →</span>
+          <span class="eb-txt"><h3>联系我们</h3><p>企业微信客服 · 扫码办卡</p></span>
         </button>
         <button class="entry-btn" id="openPlatform">
           <span class="eb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="3" width="7" height="7" rx="1.5"/><rect x="14" y="3" width="7" height="7" rx="1.5"/><rect x="3" y="14" width="7" height="7" rx="1.5"/><rect x="14" y="14" width="7" height="7" rx="1.5"/></svg></span>
-          <h3>号卡下单入口</h3>
-          <p>30 家正规平台 · 任选套餐</p>
-          <span class="eb-go">点击进入 →</span>
+          <span class="eb-txt"><h3>号卡下单入口</h3><p>30 家正规平台 · 任选套餐</p></span>
         </button>
         <button class="entry-btn" id="openService">
           <span class="eb-ic"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="2" y="5" width="20" height="14" rx="2"/><path d="M2 9h20M6 13h3M6 16h6"/></svg></span>
-          <h3>发货与查单</h3>
-          <p>电信联通移动广电 · 订单查询</p>
-          <span class="eb-go">点击进入 →</span>
+          <span class="eb-txt"><h3>发货与查单</h3><p>电信联通移动广电 · 订单查询</p></span>
         </button>
       </div>
     </div>
@@ -655,36 +643,38 @@
         </div>
         <div class="grid">
         
-        <a class="card" href="https://bsx.jfys.cn/s/FqZmhkS0" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/VvWrbShbjo8e1hxbjxWcfOTEnHd" alt="宝时信"><span class="card-num">01</span></a>
-        <a class="card" href="https://h5.vip-mi.com/index?k=U2NKL3VYSlN3bGs9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/S3DkbCyQmoNgDRxPHuocbIWWnVd" alt="林夕号卡"><span class="card-num">02</span></a>
-        <a class="card" href="https://hk.euhaoka.cn/index?k=eFZheStSYVFFUVk9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/GQJobOxnSoUAilxeI05cpt0Hnse" alt="易优号卡"><span class="card-num">03</span></a>
-        <a class="card" href="https://h5.155.ink/h5/index?shop_id=MTAyMzM2&tab=1" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/DdUGbv7uwo9CgyxIhwUcPRUpnxh" alt="极光号卡"><span class="card-num">04</span></a>
-        <a class="card" href="https://api.haokay.cn/h5?code=Fhka3qAI" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RxWTbNmYLoiLLnx9brIcAr6Enef" alt="号卡云"><span class="card-num">05</span></a>
-        <a class="card" href="https://tui.haozhuan.vip/#/pages/micro_store/index?agent_id=51be22bae7d74a422210db56129c38e0" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/TPO9bLBN2osrHsxciEQczFann8b" alt="号易号卡"><span class="card-num">06</span></a>
-        <a class="card" href="https://agenthk.aswulian.com/#/?ApiKey=2W3IEOKJO7" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RgcxbOcKNo4PGCxPtegcivQvnOe" alt="爱尚云网"><span class="card-num">07</span></a>
-        <a class="card" href="https://www.haokaxinyao.com/#/pages/sales_index/my_store?mall_id=k9n576LJ%2FWBl470WgzQghw%3D%3D" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/CvnabZDDaoTHrNxbeEIc60trnob" alt="浩卡联盟"><span class="card-num">08</span></a>
-        <a class="card" href="https://zy.zhen-yue.cn/shop/77cad8f3af288738" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/NqjZbbfRfoTQvpxOgdDc16lwnwd" alt="172号卡"><span class="card-num">09</span></a>
-        <a class="card" href="http://ka.dandanhou.net/index?k=bjlGQzRpU21QV0U9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/KSl0bYHe4oVNXUx2Q66coXgmnLh" alt="卡多多"><span class="card-num">10</span></a>
-        <a class="card" href="https://sim.loonginno.cn/h5/index?shop_id=MTAxNTk3&amp;tab=1" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/O9HFbYiJGoOohbx6WROcXETGnLh" alt="龙创号卡"><span class="card-num">11</span></a>
-        <a class="card" href="https://hk5.kyaowang.cn/s/pHexRyhy" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/My5obzokboDBpCxNkI2cYLyznth" alt="号卡屋"><span class="card-num">12</span></a>
-        <a class="card" href="http://ka.10010tx.cn/index?k=VUl2aEdHZGVKckE9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/WwSnbU884o9HzOxC9Q6ckOaMnvb" alt="星尘号卡"><span class="card-num">13</span></a>
-        <a class="card" href="https://hk.123haoka.cn/index?k=Y0diTDB6L01Ec2s9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/LmUdb67JBoj9hDxUPH3cdq3MnmY" alt="号卡宇宙"><span class="card-num">14</span></a>
-        <a class="card" href="https://app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Q9ALb8Tx1ooj2PxuYkycboC7nkf" alt="朽月号卡"><span class="card-num">15</span></a>
-        <a class="card" href="https://kk.sviphk.cn/index?k=SDY3Uzh4cUZhdlE9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RjNObgYmDo4Q4Ox6d5CcUE8anLd" alt="夏沐号卡"><span class="card-num">16</span></a>
-        <a class="card" href="https://lingqu.87haoka.cn/shop#/?promoCode=jgcjTJXe&amp;indexFirstGroup=2" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/ZN7Mbj9njoZ3e0xsXmacyYtSnWc" alt="翼卡云"><span class="card-num">17</span></a>
-        <a class="card" href="https://h5.app.yuxuantongxin.com/#/?shop_id=6606&amp;sell_id=6606&amp;t=1791472118" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/EUjKb4JKFo5lR4xYpCqctFJhnzc" alt="号码家园"><span class="card-num">18</span></a>
-        <a class="card" href="https://svip.yunjuka.cn/index?k=Vzgzc2I2ZUN0YjA9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/FNvVbWY6loGmIsx2rMtc6tjOnxg" alt="号卡研究所"><span class="card-num">19</span></a>
-        <a class="card" href="https://yc.chenyutongxin.com/index?k=RnhtbkxIN0FYd1U9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/QRZ5bfmWwonF4AxGjBscGI9ynmt" alt="宸宇号卡"><span class="card-num">20</span></a>
-        <a class="card" href="http://55555.wang/index?k=K3EzdlYwNk5wWDQ9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/PkiwbXthNoY0LMx7egFcxTn0nCn" alt="五湖通信"><span class="card-num">21</span></a>
-        <a class="card" href="https://h5.szkytx.cn/haoka/?u=60194984" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Fgy3bTsU8oAFrXxYSfJc870Dn2d" alt="卡盈号卡"><span class="card-num">22</span></a>
-        <a class="card" href="https://hk.usim.vip/shop#/?promoCode=IUfTWBfu&amp;indexFirstGroup=2" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/CfCubEnsRoRuAPxuFzqc6Q4AnFd" alt="爱卡通信"><span class="card-num">23</span></a>
-        <a class="card" href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/PO4BbvHNYoi9a2xuZZjcdAemnHf" alt="大鑫卡业"><span class="card-num">24</span></a>
-        <a class="card" href="https://lm3.cn/owhV" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/N8hNbXYfNo6gPfxTWiCcwlyznsg" alt="卡业联盟"><span class="card-num">25</span></a>
-        <a class="card" href="https://hk.enetpush.com/s/3VgbCxMa" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/LCDwbbQMooX5grx9kwIcfXrVnpB" alt="亿网联盟"><span class="card-num">26</span></a>
-        <a class="card" href="http://m.wywlhk.cn/index?k=dklYeDg3SjFjb2c9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/CpalbAhR1oB2SFxgZOJcRP02nAe" alt="琬玥号卡"><span class="card-num">27</span></a>
-        <a class="card" href="https://haoka.kakatx.com/web/#/?token=MjA2NjU0fDE3OTE0NzE1MTU2MzdoYW9rYTY2Ng" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/TUSEb2DwxolN5dx50GucDsugnUe" alt="共创号卡"><span class="card-num">28</span></a>
-        <a class="card" href="https://hongtuo66.cn/shop#/?promoCode=9BVCEuTp&amp;indexFirstGroup=2" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/BuwnbMa19oAzYWxmkZ5ctlMxnhf" alt="宏拓通信"><span class="card-num">29</span></a>
-        <a class="card" href="https://sznxwl.com/s/5rp1e21C" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Q8OPbRxhToxwqRxXAXiczvzInUc" alt="轻仙号卡"><span class="card-num">30</span></a>
+        
+        
+        <a class="card" href="https://agenthk.aswulian.com/#/?ApiKey=2W3IEOKJO7" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RgcxbOcKNo4PGCxPtegcivQvnOe" alt="爱尚云网"><span class="card-num">01</span></a>
+        <a class="card" href="https://haoka.kakatx.com/web/#/?token=MjA2NjU0fDE3OTE0NzE1MTU2MzdoYW9rYTY2Ng" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/TUSEb2DwxolN5dx50GucDsugnUe" alt="共创号卡"><span class="card-num">02</span></a>
+        <a class="card" href="https://yc.chenyutongxin.com/index?k=RnhtbkxIN0FYd1U9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/QRZ5bfmWwonF4AxGjBscGI9ynmt" alt="宸宇号卡"><span class="card-num">03</span></a>
+        <a class="card" href="https://hongtuo66.cn/shop#/?promoCode=9BVCEuTp&amp;indexFirstGroup=2" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/BuwnbMa19oAzYWxmkZ5ctlMxnhf" alt="宏拓通信"><span class="card-num">04</span></a>
+        <a class="card" href="https://h5.vip-mi.com/index?k=U2NKL3VYSlN3bGs9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/S3DkbCyQmoNgDRxPHuocbIWWnVd" alt="林夕号卡"><span class="card-num">05</span></a>
+        <a class="card" href="https://hk.euhaoka.cn/index?k=eFZheStSYVFFUVk9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/GQJobOxnSoUAilxeI05cpt0Hnse" alt="易优号卡"><span class="card-num">06</span></a>
+        <a class="card" href="https://h5.155.ink/h5/index?shop_id=MTAyMzM2&tab=1" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/DdUGbv7uwo9CgyxIhwUcPRUpnxh" alt="极光号卡"><span class="card-num">07</span></a>
+        <a class="card" href="https://api.haokay.cn/h5?code=Fhka3qAI" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RxWTbNmYLoiLLnx9brIcAr6Enef" alt="号卡云"><span class="card-num">08</span></a>
+        <a class="card" href="https://tui.haozhuan.vip/#/pages/micro_store/index?agent_id=51be22bae7d74a422210db56129c38e0" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/TPO9bLBN2osrHsxciEQczFann8b" alt="号易号卡"><span class="card-num">09</span></a>
+        <a class="card" href="https://www.haokaxinyao.com/#/pages/sales_index/my_store?mall_id=k9n576LJ%2FWBl470WgzQghw%3D%3D" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/CvnabZDDaoTHrNxbeEIc60trnob" alt="浩卡联盟"><span class="card-num">10</span></a>
+        <a class="card" href="https://zy.zhen-yue.cn/shop/77cad8f3af288738" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/NqjZbbfRfoTQvpxOgdDc16lwnwd" alt="172号卡"><span class="card-num">11</span></a>
+        <a class="card" href="http://ka.dandanhou.net/index?k=bjlGQzRpU21QV0U9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/KSl0bYHe4oVNXUx2Q66coXgmnLh" alt="卡多多"><span class="card-num">12</span></a>
+        <a class="card" href="https://sim.loonginno.cn/h5/index?shop_id=MTAxNTk3&amp;tab=1" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/O9HFbYiJGoOohbx6WROcXETGnLh" alt="龙创号卡"><span class="card-num">13</span></a>
+        <a class="card" href="https://hk5.kyaowang.cn/s/pHexRyhy" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/My5obzokboDBpCxNkI2cYLyznth" alt="号卡屋"><span class="card-num">14</span></a>
+        <a class="card" href="http://ka.10010tx.cn/index?k=VUl2aEdHZGVKckE9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/WwSnbU884o9HzOxC9Q6ckOaMnvb" alt="星尘号卡"><span class="card-num">15</span></a>
+        <a class="card" href="https://hk.123haoka.cn/index?k=Y0diTDB6L01Ec2s9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/LmUdb67JBoj9hDxUPH3cdq3MnmY" alt="号卡宇宙"><span class="card-num">16</span></a>
+        <a class="card" href="https://app.xiuyuetongxun.com/index?k=V2QxNzA1aTQ2Smc9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Q9ALb8Tx1ooj2PxuYkycboC7nkf" alt="朽月号卡"><span class="card-num">17</span></a>
+        <a class="card" href="https://kk.sviphk.cn/index?k=SDY3Uzh4cUZhdlE9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/RjNObgYmDo4Q4Ox6d5CcUE8anLd" alt="夏沐号卡"><span class="card-num">18</span></a>
+        <a class="card" href="https://lingqu.87haoka.cn/shop#/?promoCode=jgcjTJXe&amp;indexFirstGroup=2" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/ZN7Mbj9njoZ3e0xsXmacyYtSnWc" alt="翼卡云"><span class="card-num">19</span></a>
+        <a class="card" href="https://h5.app.yuxuantongxin.com/#/?shop_id=6606&amp;sell_id=6606&amp;t=1791472118" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/EUjKb4JKFo5lR4xYpCqctFJhnzc" alt="号码家园"><span class="card-num">20</span></a>
+        <a class="card" href="https://svip.yunjuka.cn/index?k=Vzgzc2I2ZUN0YjA9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/FNvVbWY6loGmIsx2rMtc6tjOnxg" alt="号卡研究所"><span class="card-num">21</span></a>
+        <a class="card" href="http://55555.wang/index?k=K3EzdlYwNk5wWDQ9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/PkiwbXthNoY0LMx7egFcxTn0nCn" alt="五湖通信"><span class="card-num">22</span></a>
+        <a class="card" href="https://h5.szkytx.cn/haoka/?u=60194984" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Fgy3bTsU8oAFrXxYSfJc870Dn2d" alt="卡盈号卡"><span class="card-num">23</span></a>
+        <a class="card" href="https://hk.usim.vip/shop#/?promoCode=IUfTWBfu&amp;indexFirstGroup=2" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/CfCubEnsRoRuAPxuFzqc6Q4AnFd" alt="爱卡通信"><span class="card-num">24</span></a>
+        <a class="card" href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/PO4BbvHNYoi9a2xuZZjcdAemnHf" alt="大鑫卡业"><span class="card-num">25</span></a>
+        <a class="card" href="https://lm3.cn/owhV" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/N8hNbXYfNo6gPfxTWiCcwlyznsg" alt="卡业联盟"><span class="card-num">26</span></a>
+        <a class="card" href="https://hk.enetpush.com/s/3VgbCxMa" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/LCDwbbQMooX5grx9kwIcfXrVnpB" alt="亿网联盟"><span class="card-num">27</span></a>
+        <a class="card" href="http://m.wywlhk.cn/index?k=dklYeDg3SjFjb2c9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/CpalbAhR1oB2SFxgZOJcRP02nAe" alt="琬玥号卡"><span class="card-num">28</span></a>
+        <a class="card" href="https://sznxwl.com/s/5rp1e21C" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Q8OPbRxhToxwqRxXAXiczvzInUc" alt="轻仙号卡"><span class="card-num">29</span></a>
+        <a class="card" href="https://bsx.jfys.cn/s/FqZmhkS0" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/VvWrbShbjo8e1hxbjxWcfOTEnHd" alt="宝时信"><span class="card-num">30</span></a>
       </div>
       </div>
     </div>
@@ -734,7 +724,7 @@
 
         <a class="onefive" href="https://getsimnum.caict.ac.cn/m/#/" target="_blank" rel="noopener">
           <div class="t">一证五户查询<span>查询名下已办理的手机号数量，办理新卡前可先自查</span></div>
-          <span class="btn">进入查询 →</span>
+          <span class="btn">进入查询</span>
         </a>
       </div>
     </div>
@@ -874,9 +864,9 @@
             <h4>二、为什么必须首充？</h4>
             <p>① <strong>完成实名激活闭环</strong>：根据工信部实名制要求，电话卡必须完成"实名登记+话费预存"双验证，才能正式入网激活；② <strong>保障号码正常计费</strong>：新卡激活后立即生效套餐，首充预存的话费可直接抵扣首月月租，避免出现欠费停机、套餐失效的情况；③ <strong>规范市场防范黑产</strong>：首充要求可有效过滤批量开卡的黑产行为，避免非实名、闲置卡被倒卖用于电信诈骗，是"断卡行动"的配套管控措施之一。</p>
             <h4>三、3个常见误区澄清</h4>
-            <p>❌ <strong>误区1：首充是额外收费，钱会被吃掉</strong>。✅ 正解：首充金额=用户预存话费，全额可抵扣月租，话费明细可在运营商APP实时查询。</p>
-            <p>❌ <strong>误区2：不首充也能激活用卡，或少充一点就行</strong>。✅ 正解：首充是激活套餐的必要条件，金额必须达到运营商指定标准，一笔充值到位，不达标仅为待激活状态，部分卡甚至会自动回收号码。</p>
-            <p>❌ <strong>误区3：只有流量卡需要首充</strong>。✅ 正解：所有运营商的正规电话卡（主卡、副卡、流量卡），新办理激活时均需完成符合要求的首充，是全行业统一规则。</p>
+            <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" style="width:14px;height:14px;vertical-align:-2px;color:#C8362A"><path d="M6 6l12 12M18 6 6 18"/></svg> <strong>误区1：首充是额外收费，钱会被吃掉</strong>。<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;vertical-align:-2px;color:#1259D9"><path d="M4 12.5 9.5 18 20 6.5"/></svg> 正解：首充金额=用户预存话费，全额可抵扣月租，话费明细可在运营商APP实时查询。</p>
+            <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" style="width:14px;height:14px;vertical-align:-2px;color:#C8362A"><path d="M6 6l12 12M18 6 6 18"/></svg> <strong>误区2：不首充也能激活用卡，或少充一点就行</strong>。<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;vertical-align:-2px;color:#1259D9"><path d="M4 12.5 9.5 18 20 6.5"/></svg> 正解：首充是激活套餐的必要条件，金额必须达到运营商指定标准，一笔充值到位，不达标仅为待激活状态，部分卡甚至会自动回收号码。</p>
+            <p><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" style="width:14px;height:14px;vertical-align:-2px;color:#C8362A"><path d="M6 6l12 12M18 6 6 18"/></svg> <strong>误区3：只有流量卡需要首充</strong>。<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" style="width:15px;height:15px;vertical-align:-2px;color:#1259D9"><path d="M4 12.5 9.5 18 20 6.5"/></svg> 正解：所有运营商的正规电话卡（主卡、副卡、流量卡），新办理激活时均需完成符合要求的首充，是全行业统一规则。</p>
             <h4>四、温馨提示</h4>
             <p>办理流量卡前，提前了解首充规则与指定金额，可避免激活时产生误会；首充后可通过运营商官方APP查询话费余额，全程透明可查。</p>
             <p class="news-note">以上基于运营商统一激活规则与通信行业规范整理，供用户办卡前参考。</p>
@@ -920,7 +910,6 @@
       <a class="cs-entry" href="https://work.weixin.qq.com/kfid/kfc6fff05dc0082e1c6" target="_blank" rel="noopener">
         <span class="ic"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 6a2 2 0 0 1 2-2h16a2 2 0 0 1 2 2v9a2 2 0 0 1-2 2h-6.2l-4.5 3.6c-.4.3-1 .06-1-.5V17H4a2 2 0 0 1-2-2V6Z"/></svg></span>
         企业微信客服 · 在线咨询
-        <span class="arrow">→</span>
       </a>
       <div class="qr-grid">
         <div class="qr-card">
@@ -1154,20 +1143,38 @@
       var maxIndex=Math.ceil(total/perView)-1;
       var cur=0;
       // 生成dots
-      for(var i=0;i<=maxIndex;i++){
-        var d=document.createElement('span');
-        d.className='nc-dot'+(i===0?' active':'');
-        (function(idx){d.addEventListener('click',function(){go(idx)})})(i);
-        dotsBox.appendChild(d);
+      function buildDots(){
+        dotsBox.innerHTML='';
+        for(var i=0;i<=maxIndex;i++){
+          var d=document.createElement('span');
+          d.className='nc-dot'+(i===cur?' active':'');
+          (function(idx){d.addEventListener('click',function(){go(idx)})})(i);
+          dotsBox.appendChild(d);
+        }
       }
-      var dots=dotsBox.children;
+      buildDots();
       function go(idx){
         cur=Math.max(0,Math.min(idx,maxIndex));
-        track.style.transform='translateX(-'+(cur*(100/perView))+'%)';
-        for(var i=0;i<dots.length;i++) dots[i].classList.toggle('active',i===cur);
+        var first=cur*perView;
+        var target=cards[Math.min(first,total-1)];
+        var offset=target?target.offsetLeft:0;
+        track.style.transform='translateX(-'+offset+'px)';
+        var ds=dotsBox.children;
+        for(var i=0;i<ds.length;i++) ds[i].classList.toggle('active',i===cur);
       }
       if(prev) prev.addEventListener('click',function(){go(cur-1)});
       if(next) next.addEventListener('click',function(){go(cur+1)});
+      // 窗口尺寸变化时重算
+      window.addEventListener('resize',function(){
+        var np=window.innerWidth<640?1:3;
+        if(np!==perView){
+          perView=np;
+          maxIndex=Math.ceil(total/perView)-1;
+          cur=Math.min(cur,maxIndex);
+          buildDots();
+          go(cur);
+        }
+      });
       // 自动轮播
       var timer=setInterval(function(){go(cur>=maxIndex?0:cur+1)},4000);
       // 鼠标悬停暂停
