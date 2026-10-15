@@ -251,6 +251,11 @@
   .footer-actions{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:14px}
   .footer-share{background:transparent;border:1px solid var(--card-line);color:var(--ink-2);cursor:pointer}
   .footer-share:hover{border-color:rgba(18,89,217,.5);color:var(--brand);background:rgba(18,89,217,.1)}
+  .friend-links{margin-top:18px;font-size:11px;color:var(--ink-3)!important;opacity:.75}
+  .friend-links a{color:inherit;text-decoration:none}
+  .friend-links a:hover{color:var(--ink-2);text-decoration:underline}
+  .friend-link-btn{background:none;border:none;padding:0;font:inherit;color:inherit;cursor:pointer}
+  .friend-link-btn:hover{color:var(--ink-2);text-decoration:underline}
 
   /* ===== Toast ===== */
   .toast{
@@ -284,12 +289,14 @@
   }
   .embed-overlay.open{display:flex}
   .embed-panel{
+    position:relative;
     width:min(1080px,96vw);height:min(86vh,820px);
     background:#FFFFFF;border:1px solid rgba(18,89,217,.35);border-radius:16px;
     overflow:hidden;display:flex;flex-direction:column;
     box-shadow:0 30px 80px rgba(0,0,0,.5);
   }
   .embed-head{
+    position:relative;z-index:6;
     display:flex;align-items:center;justify-content:space-between;flex:none;
     padding:14px 18px;border-bottom:1px solid var(--card-line);
   }
@@ -884,6 +891,9 @@
       <a class="footer-kf" href="https://work.weixin.qq.com/kfid/kfc6fff05dc0082e1c6" target="_blank" rel="noopener">联系客服咨询</a>
       <button id="shareBtn" class="footer-kf footer-share">分享给好友</button>
     </div>
+    <p class="friend-links">
+      <button id="lifeGuideBtn" class="friend-link-btn">高性价比人生指南</button>
+    </p>
   </footer>
 </div>
 
@@ -947,6 +957,24 @@
       <p>正在加载办理页面…</p>
     </div>
     <iframe id="embedFrame" class="embed-frame" src="about:blank" title="号卡办理" sandbox="allow-same-origin allow-scripts allow-forms allow-popups allow-modals allow-downloads"></iframe>
+  </div>
+</div>
+
+<!-- ===== 高性价比人生指南浮层 ===== -->
+<div class="embed-overlay" id="lifeGuideOverlay" role="dialog" aria-modal="true">
+  <div class="embed-panel">
+    <div class="embed-head">
+      <span class="embed-title">高性价比人生指南</span>
+      <div class="embed-actions">
+        <a class="embed-open" href="https://cdyforever.github.io/how-to-live-better/" target="_blank" rel="noopener">外部打开</a>
+        <button id="lifeGuideClose" class="embed-close" aria-label="关闭">×</button>
+      </div>
+    </div>
+    <div class="embed-loading" id="lifeGuideLoading">
+      <div class="spinner"></div>
+      <p>正在加载…</p>
+    </div>
+    <iframe id="lifeGuideFrame" class="embed-frame" src="about:blank" title="高性价比人生指南" sandbox="allow-same-origin allow-scripts allow-popups allow-modals"></iframe>
   </div>
 </div>
 
@@ -1085,6 +1113,32 @@
       embedClose.addEventListener('click',closeEmbed);
       overlay.addEventListener('click',function(e){ if(e.target===overlay) closeEmbed(); });
       document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeEmbed(); });
+    }
+
+    // ===== 高性价比人生指南浮层 =====
+    var lifeGuideOverlay=document.getElementById('lifeGuideOverlay'),
+        lifeGuideFrame=document.getElementById('lifeGuideFrame'),
+        lifeGuideBtn=document.getElementById('lifeGuideBtn'),
+        lifeGuideClose=document.getElementById('lifeGuideClose'),
+        lifeGuideLoading=document.getElementById('lifeGuideLoading');
+    function closeLifeGuide(){
+      lifeGuideOverlay.classList.remove('open');
+      lifeGuideFrame.setAttribute('src','about:blank');
+      document.body.style.overflow='';
+    }
+    if(lifeGuideBtn){
+      lifeGuideBtn.addEventListener('click',function(){
+        lifeGuideLoading.classList.remove('hidden');
+        lifeGuideFrame.setAttribute('src','https://cdyforever.github.io/how-to-live-better/');
+        lifeGuideOverlay.classList.add('open');
+        document.body.style.overflow='hidden';
+      });
+      lifeGuideFrame.addEventListener('load',function(){
+        lifeGuideLoading.classList.add('hidden');
+      });
+      lifeGuideClose.addEventListener('click',closeLifeGuide);
+      lifeGuideOverlay.addEventListener('click',function(e){ if(e.target===lifeGuideOverlay) closeLifeGuide(); });
+      document.addEventListener('keydown',function(e){ if(e.key==='Escape') closeLifeGuide(); });
     }
 
     // ===== 重要提示弹窗 =====
