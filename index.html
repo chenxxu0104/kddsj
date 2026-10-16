@@ -192,7 +192,7 @@
   .news-arrow{color:var(--brand);font-size:14px;transition:transform .25s}
   .news-item.open .news-arrow{transform:rotate(180deg)}
   .news-content{max-height:0;overflow:hidden;transition:max-height .35s ease}
-  .news-item.open .news-content{max-height:1200px}
+  .news-item.open .news-content{max-height:5000px}
   .news-content{padding:0 18px}
   .news-item.open .news-content{padding:0 18px 20px}
   .news-content p{font-size:13.5px;color:var(--ink-3);line-height:1.85;margin:0 0 10px}
@@ -596,6 +596,27 @@
             <p>首充金额100%是你自己的话费，不是额外收费，3个常见误区一次澄清…</p>
           </div>
         </button>
+        <button class="news-card" data-open="news" data-news="6">
+          <span class="nc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4 5.6v6c0 4.7 3.4 9 8 10.9 4.6-1.9 8-6.2 8-10.9v-6L12 2.5Z"/><path d="M12 8.5v4.2M12 16.2h.01"/></svg></span>
+          <div class="nc-body">
+            <h4><span class="nc-tag">避坑</span>运营商黑名单全解析：成因、影响与解除</h4>
+            <p>不上征信但全国禁新办，欠费类结清可解除，涉诈类多为永久拉黑…</p>
+          </div>
+        </button>
+        <button class="news-card" data-open="news" data-news="7">
+          <span class="nc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="2"/><path d="M5 17c.8-1.7 2-2.5 3.5-2.5S11.2 15.3 12 17"/><path d="M15 9.5h4M15 13h4"/></svg></span>
+          <div class="nc-body">
+            <h4><span class="nc-tag">科普</span>一证五户到底是什么？办卡必看</h4>
+            <p>单运营商名下最多5张卡，欠费未销户仍占名额，附30秒自查方法…</p>
+          </div>
+        </button>
+        <button class="news-card" data-open="news" data-news="8">
+          <span class="nc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.4-5.7"/><path d="M20 4v4.5h-4.5"/></svg></span>
+          <div class="nc-body">
+            <h4><span class="nc-tag">科普</span>新卡激活+旧卡注销，必做「号码焕新」</h4>
+            <p>清掉前机主遗留绑定，注册不再提示"已被注册"，3分钟线上完成…</p>
+          </div>
+        </button>
           </div>
         </div>
         <button class="nc-arrow nc-next" id="ncNext" aria-label="下一组">›</button>
@@ -877,6 +898,84 @@
             <h4>四、温馨提示</h4>
             <p>办理流量卡前，提前了解首充规则与指定金额，可避免激活时产生误会；首充后可通过运营商官方APP查询话费余额，全程透明可查。</p>
             <p class="news-note">以上基于运营商统一激活规则与通信行业规范整理，供用户办卡前参考。</p>
+          </div>
+        </div>
+
+        <div class="news-item" data-news="6">
+          <button class="news-title-row">
+            <span class="news-tag">避坑</span>
+            <span class="news-title">运营商黑名单全解析：成因、影响、解除与避坑</span>
+            <span class="news-arrow">▾</span>
+          </button>
+          <div class="news-content">
+            <p>运营商黑名单属于通信行业内部的<strong>信用管控</strong>，不上央行征信，但会直接影响办卡、用网、转网，也是号卡行业高频售后与投诉的重灾区。一次讲清成因、影响、解除流程与常见误区。</p>
+            <h4>一、什么是运营商黑名单</h4>
+            <p>它是移动/联通/电信/广电对<strong>欠费、违约、违规、身份异常</strong>用户施加的全国性业务限制。四大运营商的黑名单<strong>各自独立、互不互通</strong>——被A家拉黑，不影响在B/C/D家办理业务。</p>
+            <p>与征信的区别：普通欠费不上征信；只有恶意大额拖欠、涉诈才可能上报。时效上，欠费类结清即可解除，涉诈/严重违规多为永久拉黑。</p>
+            <h4>二、三大核心拉黑原因</h4>
+            <p><strong>1. 欠费黑名单（占比90%以上）。</strong>流程为欠费→停机→全停→90天自动销户→身份证进黑名单。停机后仍会持续扣月租/保底套餐费并计滞纳金。常见于养卡不销户、合约期内弃卡、宽带/副卡欠费、靓号欠费。</p>
+            <p><strong>2. 违规使用黑名单（行业严打类）。</strong>包括高频骚扰/诈骗电话、垃圾短信、养卡、猫池、跑分、涉黄涉赌等。后果是号码直接封停、无法复机、永久拉黑，严重的会联动公安处理。</p>
+            <p><strong>3. 身份异常黑名单。</strong>他人冒用身份证办卡并欠费、一证超5户、虚假实名、人证不一致，或系统误判、数据信号错误等。</p>
+            <h4>三、被拉黑后的实际影响</h4>
+            <p>① <strong>全国禁新办</strong>：手机卡、宽带、副卡、家庭网、物联网卡均无法办理；② <strong>现有业务受限</strong>：携号转网、改套餐、过户、补卡会被直接拦截；③ <strong>欠费滞留</strong>：月租+滞纳金持续累计，越拖金额越高；④ <strong>渠道受限</strong>：申请优惠套餐、靓号易被拒。</p>
+            <h4>四、黑名单解除完整流程</h4>
+            <p><strong>第一步 自查。</strong>拨打客服电话（移动10086 / 联通10010 / 电信10000 / 广电10099），或携带身份证到线下营业厅查询，结果最准确。</p>
+            <p><strong>第二步 按类型解除。</strong></p>
+            <p>（1）<strong>欠费黑名单（最常见）</strong>：查询欠费号码、金额、滞纳金、归属地 → 结清欠费与违约金（APP"销户号码交费"或营业厅）→ 缴费后1-3个工作日自动解除，未解除可人工提交工单。实用技巧：滞纳金可协商减免，移动最高可减80%，联通等可全免。</p>
+            <p>（2）<strong>违规使用黑名单</strong>：非恶意误判或工作高频通话，可提供工作证明、通话清单、书面承诺申诉解封；恶意涉诈/骚扰基本无解，多为永久拉黑。</p>
+            <p>（3）<strong>身份冒用/系统误判</strong>：报案拿回执 → 营业厅申诉本人办理 → 申请解除欠费及黑名单；系统错误可要求更正并全程跟进。</p>
+            <p><strong>第三步 核验申诉跟进。</strong>优先走运营商内部客服→值班经理；仍无果可提交12300热线或官网申诉（约束力最强，一般7-15天办结）；大额纠纷可走12315、信访或法律诉讼。</p>
+            <h4>五、避坑指南（办卡用卡必看）</h4>
+            <p>不用的卡主动销户，不要等自动销户；同一运营商名下不超5张卡，超量会被限制；不借身份给他人办卡，对方欠费你进黑名单；每年自查一次名下号码，及时清理异常卡。</p>
+            <h4>六、常见误区一次性澄清</h4>
+            <p><strong>拉黑就上征信？</strong>——普通欠费不上征信，仅恶意大额/涉诈可能上报。<strong>一家拉黑，全网都办不了？</strong>——仅限拉黑你的那家运营商，其他三家正常办理。<strong>欠几块钱没事？</strong>——金额再小，长期不处理也会进黑名单。<strong>时间久了自动消除？</strong>——不结清欠费，黑名单永久保留。</p>
+            <p class="news-note">以上基于通信行业黑名单管理规则整理，供用户了解与处理黑名单问题。</p>
+          </div>
+        </div>
+
+        <div class="news-item" data-news="7">
+          <button class="news-title-row">
+            <span class="news-tag">科普</span>
+            <span class="news-title">一证五户到底是什么？办卡必看知识</span>
+            <span class="news-arrow">▾</span>
+          </button>
+          <div class="news-content">
+            <p>很多人办流量卡时都会遇到"名额已满""办理失败"，这其实都和通信行业严格执行的<strong>「一证五户」</strong>政策直接相关。一次讲清规则、原因与自查方法。</p>
+            <h4>一、什么是一证五户</h4>
+            <p>同一张身份证，在<strong>单个运营商</strong>（移动/联通/电信/广电）名下，最多可办理<strong>5张</strong>正规11位电话卡。</p>
+            <p>① 主卡、副卡、宽带附赠卡、eSIM卡均计入名额；② 已正式销户、拆机的卡片不占用名额；③ 欠费未销户、停机保号状态仍占名额；④ 全运营商合计，通常上限为一证十户。</p>
+            <h4>二、为什么要实行一证五户</h4>
+            <p><strong>源头打击电信诈骗。</strong>严格限制办卡数量、提高犯罪成本，阻断黑产批量办卡作案的渠道，配合"断卡行动"净化网络环境。</p>
+            <p><strong>防范身份信息被冒用。</strong>避免身份证丢失或信息泄露后，被他人批量办卡从事违法活动，保护机主的征信与法律风险。</p>
+            <p><strong>规范市场，清理沉睡卡资源。</strong>减少长期闲置的沉睡卡被倒卖、滥用，提升号码资源利用率，降低行业安全隐患。</p>
+            <h4>三、30秒快速自查名下卡片</h4>
+            <p>① 微信搜索"工信微报"；② 进入「一证通查」服务；③ 填写身份信息与验证码，即可一键查询本人在各运营商名下的在网卡片数量。</p>
+            <p>办卡前先自查名额，避免提交后审核失败，省时又省心。</p>
+            <p class="news-note">以上基于通信行业"断卡行动"政策与一证通查服务整理，供用户办卡前参考。</p>
+          </div>
+        </div>
+
+        <div class="news-item" data-news="8">
+          <button class="news-title-row">
+            <span class="news-tag">科普</span>
+            <span class="news-title">新卡激活+旧卡注销，必做「号码焕新」指南</span>
+            <span class="news-arrow">▾</span>
+          </button>
+          <div class="news-content">
+            <p>在号卡使用的全流程中，有一个被老用户反复验证、看似微小却至关重要的操作——<strong>号码焕新</strong>。无论刚拿到新卡激活，还是准备注销旧卡，完成这一步都能有效规避风险。它不是运营商强制流程，也不是号码存在质量问题，而是对自己信息安全负责、兼顾他人用卡权益的专业习惯。</p>
+            <h4>01 新卡激活首步：先做号码焕新</h4>
+            <p>运营商投放的手机号大多是合规回收、重新筛选后入市的，号码循环使用是行业常态，但也带来一个潜在问题：<strong>前机主的关联绑定信息可能残留</strong>，直接使用极易引发不便，新卡激活后第一时间做号码焕新就是解决关键。</p>
+            <p>完成后能彻底"清零焕新"，好处是实打实的：</p>
+            <p>① <strong>规避账号注册障碍</strong>：注册微信、支付宝、抖音、银行卡、各类APP时，不会再出现"该号码已被注册"的提示，无需繁琐的申诉解绑流程；② <strong>远离陌生骚扰</strong>：大幅减少前机主遗留的验证码、广告推销、快递通知、催收电话及短信；③ <strong>提升账号绑定成功率</strong>：办理APP绑定、银行卡预留号码变更、政务实名认证等业务时，避免因账号冲突导致审核失败；④ <strong>筑牢初始用卡安全</strong>：从源头切断前机主账号残留带来的信息关联风险。</p>
+            <h4>02 旧卡注销前置：再做一次号码焕新</h4>
+            <p>很多用户清楚新卡要做号码焕新，却往往忽略了注销旧卡前的这关键一步。号码注销后会重新进入运营商资源池，若未提前清理自身账号残留，不仅给自己留下隐私隐患，还会给下一任号主带来困扰——完成注销前的号码焕新，才是真正的"干净用卡，体面离场"。</p>
+            <p><strong>对自身：彻底规避隐私安全风险。</strong>全面清理用卡期间绑定的所有互联网账号、金融账户、政务平台等信息残留，防止号码回收后他人通过验证码登录你的旧账号，导致个人信息泄露、财产安全受威胁。</p>
+            <p><strong>对他人：践行文明用卡的责任。</strong>避免下一任号主频繁收到你的账号验证码、消费提醒、社交消息、快递通知等信息，减少对他人的用卡打扰，这也是号卡行业倡导的良性用卡准则。</p>
+            <h4>03 超简操作流程：3分钟轻松完成</h4>
+            <p>号码焕新全程线上办理，无需前往线下营业厅，四大运营商办理路径基本一致：① 打开手机对应运营商官方APP（中国移动/中国联通/中国电信/中国广电）；② 在APP首页搜索栏输入关键词"号码焕新/二次焕新/一键解绑"；③ 按照页面提示完成认证，确认相关信息后提交申请；④ 等待系统审核完成，即可成功清理号码残留信息，全程仅需3-5分钟，无任何额外费用。</p>
+            <h4>04 行业知识总结</h4>
+            <p>号码焕新是号卡行业<strong>低成本、高回报</strong>的安全操作。抓住新卡激活、旧卡注销两个关键时间点，做好两次号码焕新，既能让新卡使用无阻碍，也能让旧卡注销无隐患、更安心。无论新用户还是老用户，都建议养成这个专业用卡习惯。</p>
+            <p class="news-note">以上基于号卡行业用卡规范与安全操作整理，供用户参考使用。</p>
           </div>
         </div>
       </div>
