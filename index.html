@@ -117,6 +117,7 @@
   .card:hover{transform:translateY(-3px);border-color:rgba(18,89,217,.45);box-shadow:0 12px 28px rgba(20,40,80,.10)}
   .card-logo{width:76px;height:76px;object-fit:cover;margin:0 auto 2px;display:block;border-radius:50%;overflow:hidden;background:#fff;border:1px solid var(--card-line)}
   .card-num{font-size:13px;font-weight:700;color:var(--brand);letter-spacing:.12em;text-align:center}
+  .card-tag{display:block;width:fit-content;margin:4px auto 0;font-size:10px;font-weight:600;color:#fff;background:#7c3aed;padding:2px 8px;border-radius:6px;letter-spacing:.04em}
   .card-hot{
     border-color:rgba(18,89,217,.55);
     background:var(--brand-soft);
@@ -509,6 +510,7 @@
     .card{flex-direction:row;align-items:center;padding:13px 14px;gap:10px}
     .card-logo{width:46px;height:46px;margin:0;flex:none}
     .card-num{font-size:14px;font-weight:700;letter-spacing:.08em;text-align:left;flex:1;min-width:0}
+    .card-tag{margin:0;flex:none}
     .service-grid{grid-template-columns:1fr}
     .qr-grid{grid-template-columns:repeat(3,1fr);gap:10px}
     .qr-card{padding:12px 8px 12px}
@@ -562,55 +564,62 @@
           </div>
         </button>
         <button class="news-card" data-open="news" data-news="1">
+          <span class="nc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M3 11v2a1 1 0 0 0 1 1h2l4 4V6L6 10H4a1 1 0 0 0-1 1Z"/><path d="M15.5 8.5a5 5 0 0 1 0 7M18.5 5.5a9 9 0 0 1 0 13"/></svg></span>
+          <div class="nc-body">
+            <h4><span class="nc-tag">科普</span>行业现状说明 · 电销卡办理指南</h4>
+            <p>竞合后套餐逐步释放但下卡普遍7个工作日起，理性看待开卡服务费；附电销白名单卡适用行业与风险…</p>
+          </div>
+        </button>
+        <button class="news-card" data-open="news" data-news="2">
           <span class="nc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="4" y="10.5" width="16" height="10" rx="2"/><path d="M8 10.5V7a4 4 0 0 1 8 0v3.5"/></svg></span>
           <div class="nc-body">
             <h4><span class="nc-tag">避坑</span>手机卡被"局停"怎么回事？</h4>
             <p>异地使用、频繁换设备、热点挂机、流量异常等触发风控，附合规用卡指南与解封步骤…</p>
           </div>
         </button>
-        <button class="news-card" data-open="news" data-news="2">
+        <button class="news-card" data-open="news" data-news="3">
           <span class="nc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20.5 12.7 12.7 20.5a2 2 0 0 1-2.8 0L3.5 14.1V3.5H14l6.5 6.4a2 2 0 0 1 0 2.8Z"/><circle cx="7.8" cy="7.8" r="1.4"/></svg></span>
           <div class="nc-body">
             <h4><span class="nc-tag">科普</span>为什么有"原套餐"和"优惠套餐"？</h4>
             <p>原套餐是官方保底资费，优惠套餐是新用户折扣，叠加后实现低价大流量…</p>
           </div>
         </button>
-        <button class="news-card" data-open="news" data-news="3">
+        <button class="news-card" data-open="news" data-news="4">
           <span class="nc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M5 20v-4M10 20v-8M15 20V8M20 20V4"/></svg></span>
           <div class="nc-body">
             <h4><span class="nc-tag">科普</span>别再问"哪张卡信号最好"了</h4>
             <p>信号由你当地基站覆盖决定，跟卡和套餐无关，2步选对运营商…</p>
           </div>
         </button>
-        <button class="news-card" data-open="news" data-news="4">
+        <button class="news-card" data-open="news" data-news="5">
           <span class="nc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="5" y="4" width="14" height="17" rx="2"/><path d="M9 4V3h6v1"/><path d="M9 11h6M9 15h4"/></svg></span>
           <div class="nc-body">
             <h4><span class="nc-tag">避坑</span>办卡一直审核不通过？原因全解析</h4>
             <p>证件异常、人脸不过、地址问题、黑名单…五大类原因一次说清，附自查建议…</p>
           </div>
         </button>
-        <button class="news-card" data-open="news" data-news="5">
+        <button class="news-card" data-open="news" data-news="6">
           <span class="nc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="2.5" y="5" width="19" height="14" rx="2"/><path d="M2.5 10h19"/><path d="M6 14.5h3"/></svg></span>
           <div class="nc-body">
             <h4><span class="nc-tag">科普</span>首充不是套路，是统一激活规则</h4>
             <p>首充金额100%是你自己的话费，不是额外收费，3个常见误区一次澄清…</p>
           </div>
         </button>
-        <button class="news-card" data-open="news" data-news="6">
+        <button class="news-card" data-open="news" data-news="7">
           <span class="nc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2.5 4 5.6v6c0 4.7 3.4 9 8 10.9 4.6-1.9 8-6.2 8-10.9v-6L12 2.5Z"/><path d="M12 8.5v4.2M12 16.2h.01"/></svg></span>
           <div class="nc-body">
             <h4><span class="nc-tag">避坑</span>运营商黑名单全解析：成因、影响与解除</h4>
             <p>不上征信但全国禁新办，欠费类结清可解除，涉诈类多为永久拉黑…</p>
           </div>
         </button>
-        <button class="news-card" data-open="news" data-news="7">
+        <button class="news-card" data-open="news" data-news="8">
           <span class="nc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="4.5" width="18" height="15" rx="2"/><circle cx="8.5" cy="10" r="2"/><path d="M5 17c.8-1.7 2-2.5 3.5-2.5S11.2 15.3 12 17"/><path d="M15 9.5h4M15 13h4"/></svg></span>
           <div class="nc-body">
             <h4><span class="nc-tag">科普</span>一证五户到底是什么？办卡必看</h4>
             <p>单运营商名下最多5张卡，欠费未销户仍占名额，附30秒自查方法…</p>
           </div>
         </button>
-        <button class="news-card" data-open="news" data-news="8">
+        <button class="news-card" data-open="news" data-news="9">
           <span class="nc-icon"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M20 12a8 8 0 1 1-2.4-5.7"/><path d="M20 4v4.5h-4.5"/></svg></span>
           <div class="nc-body">
             <h4><span class="nc-tag">科普</span>新卡激活+旧卡注销，必做「号码焕新」</h4>
@@ -692,7 +701,7 @@
         <a class="card" href="https://h5.app.yuxuantongxin.com/#/?shop_id=6606&amp;sell_id=6606&amp;t=1791472118" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/EUjKb4JKFo5lR4xYpCqctFJhnzc" alt="号码家园"><span class="card-num">20</span></a>
         <a class="card" href="https://svip.yunjuka.cn/index?k=Vzgzc2I2ZUN0YjA9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/FNvVbWY6loGmIsx2rMtc6tjOnxg" alt="号卡研究所"><span class="card-num">21</span></a>
         <a class="card" href="http://55555.wang/index?k=K3EzdlYwNk5wWDQ9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/PkiwbXthNoY0LMx7egFcxTn0nCn" alt="五湖通信"><span class="card-num">22</span></a>
-        <a class="card" href="https://h5.szkytx.cn/haoka/?u=60194984" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Fgy3bTsU8oAFrXxYSfJc870Dn2d" alt="卡盈号卡"><span class="card-num">23</span></a>
+        <a class="card" href="https://h5.szkytx.cn/haoka/?u=60194984" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/Fgy3bTsU8oAFrXxYSfJc870Dn2d" alt="卡盈号卡"><span class="card-num">23</span><span class="card-tag">电销卡·白名单</span></a>
         <a class="card" href="https://hk.usim.vip/shop#/?promoCode=IUfTWBfu&amp;indexFirstGroup=2" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/CfCubEnsRoRuAPxuFzqc6Q4AnFd" alt="爱卡通信"><span class="card-num">24</span></a>
         <a class="card" href="https://daxingkaye.cn/index?k=R3Yvd1QvWEN4cms9" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/R4NEb7Ifko0nNKxPocccNZ4Vn9f" alt="大鑫卡业"><span class="card-num">25</span></a>
         <a class="card" href="https://lm3.cn/owhV" target="_blank" rel="noopener"><img class="card-logo" src="https://media.doubao.com/space/api/box/stream/download/all_by_mount_point/N8hNbXYfNo6gPfxTWiCcwlyznsg" alt="卡业联盟"><span class="card-num">26</span></a>
@@ -795,6 +804,38 @@
         <div class="news-item" data-news="1">
           <button class="news-title-row">
             <span class="news-tag">科普</span>
+            <span class="news-title">行业整改现状说明 · 电销卡（白名单卡）办理指南</span>
+            <span class="news-arrow">▾</span>
+          </button>
+          <div class="news-content">
+            <p>流量卡做久了，常会遇到各种让人哭笑不得的问题。对于过于奇葩、反复纠结内耗的问题，后续不再一一回复，还望理解。以下把近期大家问得最多的行业现状和电销卡业务一次说明白。</p>
+            <h4>一、套餐为什么老下架、锁渠道</h4>
+            <p>老玩家都知道，运营商流量卡从来不是一直稳定供货。在这次全面整改之前，行业已经历过三轮竞合。每一轮竞合落地，大批热门套餐直接下架、锁渠道，这是运营商省内政策博弈的常态。</p>
+            <h4>二、8月整改后：新套餐释放，但下卡偏慢</h4>
+            <p>从8月1日行业整改至今已近两个月，市面上正慢慢释放一批性价比不错的套餐。现实问题是<strong>下卡时效普遍偏慢</strong>，不少订单7个工作日起步，需要耐心等待。</p>
+            <h4>三、开卡服务费与"窜货"，理性看待</h4>
+            <p>不少朋友看到开卡服务费第一反应是抵触。但静下心算笔账就会发现：带服务费的套餐，综合性价比往往反而更高。</p>
+            <p>工信部明文规定，号卡套餐原则上仅限归属地本地办理，严禁异地跨区域发卡，各省、地市运营商政策独立、价差巨大。举个联通的例子：同样39元月租，有的地区能做到550G流量，绝大多数城市同月租却只有50G。</p>
+            <p>这类优质套餐原本要求线下门店当面核验、签反诈告知书、现场办理。渠道要异地出卡，需承担政策风险和渠道管控成本。你拿到低价大流量套餐、渠道赚取合理佣金，本身是双赢。也恳请大家理性看待，<strong>不要随意投诉"炸车"</strong>——一旦批量炸单，整条渠道的优质套餐会直接下架，后面所有人都办不了。</p>
+            <h4>四、正规渠道，规则透明</h4>
+            <p>所有套餐都是运营商正规渠道，可在官方APP内查到订单与资费，宣传和详情页标注一致。短期套餐、长期套餐写得明明白白，不做二次包装、不搞虚假宣传。详情页标注是什么就是什么，无需反复追问"不返费怎么办、流量不够怎么办"。</p>
+            <p>本渠道为浙江电信在职人员整合的合规渠道，套餐来源可控。</p>
+            <h4>五、电销卡（白名单卡）业务</h4>
+            <p>普通个人手机高频拨打陌生号码，极易触发风控、直接封号；而<strong>电销卡是向运营商报备、加入白名单的企业专用卡</strong>，抗高频封号能力远强于普通卡，主打大语音通话套餐，适合日均外呼几十到两三百通的业务场景。</p>
+            <p>需要注意：三大运营商原生基础卡的白名单名额非常稀缺，市面上绝大多数电销卡来自虚拟运营商。</p>
+            <p><strong>可受理行业：</strong>装修、汽修洗车、门店客户回访、财税咨询、本地招商、生活服务回访等正规业务。</p>
+            <p><strong>禁止办理：</strong>催收、股票荐股、贷款推广、博彩、违规医美等高危行业。</p>
+            <p><strong>办理流程：</strong>需提交企业全套资料备案，运营商风控审核，审核周期1-3个工作日，通过后邮寄发卡，必须本人实名、人脸核验激活。</p>
+            <h4>六、重要风险提示</h4>
+            <p>① 哪怕是白名单电销卡，也不是永不会封号——大量客户标记骚扰、遭投诉、拨打禁呼名单，依旧会封卡，严重还会牵连企业备案资质；</p>
+            <p>② 电销本身要遵守反诈、骚扰电话相关法规，客户明确拒绝后禁止再次致电骚扰；</p>
+            <p>③ 市面上无备案、不用营业执照的"所谓电销卡"属于高危黑卡，随时批量关停，甚至牵连实名本人被断卡惩戒。</p>
+            <p class="news-note">以上为渠道行业现状说明与电销卡业务规范，供下单前了解。</p>
+          </div>
+        </div>
+        <div class="news-item" data-news="2">
+          <button class="news-title-row">
+            <span class="news-tag">科普</span>
             <span class="news-title">手机卡被"局停"怎么回事？常见原因+合规用卡指南</span>
             <span class="news-arrow">▾</span>
           </button>
@@ -814,7 +855,7 @@
           </div>
         </div>
 
-        <div class="news-item" data-news="2">
+        <div class="news-item" data-news="3">
           <button class="news-title-row">
             <span class="news-tag">科普</span>
             <span class="news-title">为什么有"原套餐"和"优惠套餐"？</span>
@@ -835,7 +876,7 @@
           </div>
         </div>
 
-        <div class="news-item" data-news="3">
+        <div class="news-item" data-news="4">
           <button class="news-title-row">
             <span class="news-tag">科普</span>
             <span class="news-title">别再问"哪张卡信号最好"了！决定信号的核心只有1个</span>
@@ -856,7 +897,7 @@
           </div>
         </div>
 
-        <div class="news-item" data-news="4">
+        <div class="news-item" data-news="5">
           <button class="news-title-row">
             <span class="news-tag">避坑</span>
             <span class="news-title">办流量卡一直审核不通过？五大类核心原因全解析</span>
@@ -878,7 +919,7 @@
           </div>
         </div>
 
-        <div class="news-item" data-news="5">
+        <div class="news-item" data-news="6">
           <button class="news-title-row">
             <span class="news-tag">科普</span>
             <span class="news-title">流量卡首充不是套路，是运营商统一激活规则</span>
@@ -901,7 +942,7 @@
           </div>
         </div>
 
-        <div class="news-item" data-news="6">
+        <div class="news-item" data-news="7">
           <button class="news-title-row">
             <span class="news-tag">避坑</span>
             <span class="news-title">运营商黑名单全解析：成因、影响、解除与避坑</span>
@@ -933,7 +974,7 @@
           </div>
         </div>
 
-        <div class="news-item" data-news="7">
+        <div class="news-item" data-news="8">
           <button class="news-title-row">
             <span class="news-tag">科普</span>
             <span class="news-title">一证五户到底是什么？办卡必看知识</span>
@@ -955,7 +996,7 @@
           </div>
         </div>
 
-        <div class="news-item" data-news="8">
+        <div class="news-item" data-news="9">
           <button class="news-title-row">
             <span class="news-tag">科普</span>
             <span class="news-title">新卡激活+旧卡注销，必做「号码焕新」指南</span>
