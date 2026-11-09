@@ -366,9 +366,11 @@
   .nc-viewport{flex:1;overflow:hidden}
   .nc-track{display:flex;gap:16px;transition:transform .4s ease}
   .nc-arrow{display:none}
-  .nc-dots{display:flex;justify-content:center;gap:6px;margin-top:14px}
+  .nc-dots{display:flex;justify-content:center;align-items:center;gap:6px;margin-top:12px;flex-wrap:wrap}
   .nc-dot{width:6px;height:6px;border-radius:50%;background:#C9D3E0;cursor:pointer;transition:all .2s}
   .nc-dot.active{background:var(--brand);width:18px;border-radius:3px}
+  .nc-progress{display:none;font-size:12px;color:var(--ink-3);letter-spacing:.08em}
+  .nc-progress b{color:var(--brand);font-weight:700}
   .news-card{
       flex:0 0 calc((100% - 32px)/3);
       display:flex;gap:12px;align-items:flex-start;text-align:left;
@@ -428,13 +430,33 @@
     .entry-btn .eb-ic svg{width:22px;height:22px}
     .entry-btn h3{font-size:16px;letter-spacing:.06em}
     .entry-btn p{font-size:12px;white-space:normal;margin:0}
-    .bgm-wrap{right:10px;bottom:10px;gap:6px}
-    .bgm-btn{width:34px;height:34px;opacity:.6}
-    .bgm-btn svg{width:16px;height:16px}
-    .bgm-next-btn{width:28px;height:28px}
-    .bgm-next-btn svg{width:14px;height:14px}
-    .to-top{right:10px;bottom:54px;width:36px;height:36px}
-    .news-card{flex:0 0 100%}
+    /* 右下角按钮加大间距防误触 */
+    .bgm-wrap{right:10px;bottom:10px;gap:10px}
+    .bgm-btn{width:38px;height:38px;opacity:.65}
+    .bgm-btn svg{width:17px;height:17px}
+    .bgm-next-btn{width:32px;height:32px}
+    .bgm-next-btn svg{width:15px;height:15px}
+    .to-top{right:10px;bottom:62px;width:40px;height:40px}
+    /* 资讯卡片收紧 */
+    .news-card{flex:0 0 100%;padding:14px 14px;gap:10px}
+    .news-card .nc-icon{width:30px;height:30px;border-radius:8px}
+    .news-card .nc-icon svg{width:16px;height:16px}
+    .news-card .nc-body h4{font-size:13px}
+    .news-card .nc-body p{font-size:11.5px;-webkit-line-clamp:2}
+    /* dots 改成进度文字 */
+    .nc-dots{display:none}
+    .nc-progress{display:inline-block}
+    /* 警示横幅紧凑 */
+    .warn-banner{padding:10px 14px;gap:8px}
+    .warn-banner .wb-text{font-size:13px}
+    .wb-tips-btn{padding:5px 12px;font-size:12px}
+    /* Hero 收紧 */
+    .hero{padding:36px 0 20px}
+    .mascot-thumb{width:88px;margin-top:14px}
+    .hero-desc{margin-top:12px;font-size:13.5px}
+    /* 资讯和入口区间距收紧 */
+    .sec{padding:16px 0}
+    .sec-head{margin-bottom:24px}
     .panel-overlay{padding:0;align-items:stretch}
     .panel-overlay-box{width:100vw;min-height:100dvh;border-radius:0;border:0}
     .panel-body{max-height:none}
@@ -451,10 +473,6 @@
     .qr-img-box{margin-bottom:9px}
     .qr-label{font-size:12px;line-height:1.3}
     .qr-sub{display:none}
-    .hero{padding:40px 0 24px}
-    .mascot-thumb{width:90px;margin-top:16px}
-    .sec{padding:20px 0}
-    .sec-head{margin-bottom:30px}
   }
   @media (prefers-reduced-motion:reduce){
     *{transition:none!important;animation:none!important}
@@ -578,6 +596,7 @@
         <button class="nc-arrow nc-next" id="ncNext" aria-label="下一组">›</button>
       </div>
       <div class="nc-dots" id="ncDots"></div>
+      <div style="text-align:center;margin-top:10px"><span class="nc-progress" id="ncProgress"></span></div>
     </div>
   </section>
 
@@ -1268,6 +1287,7 @@
   (function(){
     var track=document.getElementById('ncTrack');
     var dotsBox=document.getElementById('ncDots');
+    var progressEl=document.getElementById('ncProgress');
     var prev=document.getElementById('ncPrev');
     var next=document.getElementById('ncNext');
     if(!track) return;
@@ -1287,6 +1307,13 @@
       }
     }
     buildDots();
+    function updateProgress(){
+      if(!progressEl) return;
+      var showPer=perView;
+      var start=cur*perView+1;
+      var end=Math.min(total,(cur+1)*perView);
+      progressEl.innerHTML='<b>'+start+'</b> / '+total+' 篇';
+    }
     function go(idx){
       cur=Math.max(0,Math.min(idx,maxIndex));
       var first=cur*perView;
@@ -1297,7 +1324,9 @@
         var ds=dotsBox.children;
         for(var i=0;i<ds.length;i++) ds[i].classList.toggle('active',i===cur);
       }
+      updateProgress();
     }
+    updateProgress();
     if(prev) prev.addEventListener('click',function(){go(cur-1)});
     if(next) next.addEventListener('click',function(){go(cur+1)});
     window.addEventListener('resize',function(){
